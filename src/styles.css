@@ -1,0 +1,260 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * BIGSCREW SOLUTIONS — industrial design system.
+ * Brand: industrial yellow #F9C50D + deep black + charcoal + concrete grey + warm off-white.
+ * All color values are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand surfaces */
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-steel: var(--steel);
+  --color-concrete: var(--concrete);
+  --color-bone: var(--bone);
+  --color-yellow: var(--brand-yellow);
+  --color-yellow-deep: var(--brand-yellow-deep);
+  --color-on-ink: var(--on-ink);
+  --color-on-ink-dim: var(--on-ink-dim);
+
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 2px;
+
+  --ink: oklch(0.145 0 0);
+  --charcoal: oklch(0.235 0.004 60);
+  --steel: oklch(0.42 0.005 60);
+  --concrete: oklch(0.72 0.006 70);
+  --bone: oklch(0.968 0.008 85);
+  --brand-yellow: oklch(0.845 0.164 88.5);
+  --brand-yellow-deep: oklch(0.76 0.152 82);
+  --on-ink: oklch(0.97 0.004 85);
+  --on-ink-dim: oklch(0.72 0.006 70);
+
+  --background: oklch(0.985 0.005 85);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.845 0.164 88.5);
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.145 0 0);
+  --secondary-foreground: oklch(0.97 0.004 85);
+  --muted: oklch(0.94 0.005 85);
+  --muted-foreground: oklch(0.46 0.006 70);
+  --accent: oklch(0.845 0.164 88.5);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.55 0.21 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.005 85);
+  --input: oklch(0.88 0.005 85);
+  --ring: oklch(0.845 0.164 88.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  ::selection {
+    background: var(--brand-yellow);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand-yellow);
+    outline-offset: 3px;
+  }
+}
+
+/* ---------- Brand utilities ---------- */
+
+@utility tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 11vw, 11rem);
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.5rem, 7.2vw, 7rem);
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.92;
+  font-size: clamp(2rem, 4.4vw, 3.75rem);
+}
+
+@utility rule-y {
+  display: block;
+  height: 2px;
+  width: 4.5rem;
+  background: var(--brand-yellow);
+}
+
+@utility vrule {
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--brand-yellow) 70%, transparent),
+    transparent
+  );
+}
+
+@utility shell {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 96rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 4rem;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility grain-dark {
+  background-color: var(--ink);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--on-ink) 6%, transparent) 1px,
+    transparent 0
+  );
+  background-size: 4px 4px;
+}
+
+/* ---------- Article content styling ---------- */
+
+@layer components {
+  .article-content h2 {
+    @apply mt-12 mb-6 text-2xl md:text-3xl font-display font-semibold text-foreground uppercase;
+  }
+
+  .article-content h3 {
+    @apply mt-8 mb-4 text-xl md:text-2xl font-display font-semibold text-foreground uppercase;
+  }
+
+  .article-content p {
+    @apply mb-6 text-base leading-relaxed text-muted-foreground;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    @apply mb-6 ml-6;
+  }
+
+  .article-content li {
+    @apply mb-3 text-base leading-relaxed text-muted-foreground;
+  }
+
+  .article-content ul li {
+    @apply list-disc;
+  }
+
+  .article-content ol li {
+    @apply list-decimal;
+  }
+
+  .article-content table {
+    @apply w-full mb-6 border border-border rounded-sm overflow-hidden;
+  }
+
+  .article-content th {
+    @apply bg-ink/50 px-4 py-3 text-left text-sm font-semibold text-foreground uppercase border-b border-border;
+  }
+
+  .article-content td {
+    @apply px-4 py-3 text-sm text-muted-foreground border-b border-border;
+  }
+
+  .article-content strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .article-content em {
+    @apply italic;
+  }
+}
