@@ -17,18 +17,15 @@ import {
 } from "@/lib/data";
 const ease = [0.16, 0.84, 0.24, 1] as const;
 const torqueStyles: Record<string, string> = {
-  "Low-torque": "bg-emerald-50 text-emerald-700 border-emerald-200",
-  "Medium-torque": "bg-amber-50 text-amber-700 border-amber-200",
-  "High-torque": "bg-rose-50 text-rose-700 border-rose-200",
+  "Low-torque": "bg-yellow text-ink",
+  "Medium-torque": "bg-yellow text-ink",
+  "High-torque": "bg-yellow text-ink",
 };
 
 function TorqueBadge({ label }: { label: string }) {
-  const style = torqueStyles[label] ?? "bg-muted text-muted-foreground border-border";
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 border px-2.5 py-1 text-xs font-semibold uppercase tracking-wide ${style}`}
-    >
-      <span className="h-1.5 w-1.5 rounded-full bg-current" />
+    <span className="inline-flex items-center gap-2 bg-yellow px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-ink">
+      <span className="h-1.5 w-1.5 bg-ink/70" />
       {label}
     </span>
   );

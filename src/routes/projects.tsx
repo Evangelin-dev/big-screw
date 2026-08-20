@@ -88,7 +88,7 @@ function ProjectsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: i * 0.04 }}
                     className="group relative overflow-hidden"
-                    style={{ aspectRatio: i % 3 === 0 ? "4/5" : i % 3 === 1 ? "1/1" : "4/3" }}
+                    style={{ aspectRatio: "1386 / 1135" }}
                   >
                     <img
                       src={g.src}

@@ -88,7 +88,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden h-11 rounded-sm bg-yellow px-4 text-[13px] font-medium uppercase tracking-[0.01em] text-on-ink transition-colors duration-200 hover:bg-yellow-deep sm:inline-flex items-center justify-center"
+            className="hidden h-11 rounded-sm bg-yellow px-4 text-[14px] font-bold uppercase tracking-[0.01em] text-black transition-colors duration-200 hover:bg-yellow-deep sm:inline-flex items-center justify-center"
           >
             GET A QUOTE&nbsp;→
           </Link>
