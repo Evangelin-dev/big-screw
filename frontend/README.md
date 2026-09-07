@@ -180,23 +180,23 @@ The visual direction should combine:
 
 HEAVY INDUSTRY
 
-+
+-
 
 STEEL MANUFACTURING
 
-+
+-
 
 CONSTRUCTION
 
-+
+-
 
 INFRASTRUCTURE
 
-+
+-
 
 ENGINEERING
 
-+
+-
 
 PREMIUM EDITORIAL WEB DESIGN
 
@@ -206,19 +206,19 @@ Imagine:
 
 A modern industrial film
 
-+
+-
 
 engineering documentation
 
-+
+-
 
 premium construction photography
 
-+
+-
 
 steel manufacturing
 
-+
+-
 
 large infrastructure projects.
 
@@ -382,11 +382,11 @@ HOMEPAGE
 
 Build the homepage as a continuous visual story.
 
-----------------------------------------------------
+---
 
 SECTION 01 — CINEMATIC HERO
 
-----------------------------------------------------
+---
 
 Create a full viewport hero.
 

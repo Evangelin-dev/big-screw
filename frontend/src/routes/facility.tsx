@@ -27,9 +27,17 @@ const facilityImages = [
   { src: img.facilityImg1, alt: "BigScrew facility photo 1", name: "Rotary Swagging" },
   { src: img.facilityImg2, alt: "BigScrew facility photo 2", name: "Automatic spiral welding" },
   { src: img.facilityImg3, alt: "BigScrew facility photo 3", name: "3KW Tube Laser" },
-  { src: img.facilityImg4, alt: "BigScrew facility photo 4", name: "Automatic Nut Welding Machine" },
+  {
+    src: img.facilityImg4,
+    alt: "BigScrew facility photo 4",
+    name: "Automatic Nut Welding Machine",
+  },
   { src: img.facilityImg5, alt: "BigScrew facility photo 5", name: "CNC Bending machine" },
-  { src: img.facilityImg6, alt: "BigScrew facility photo 6", name: "DNE Bystronic 6KW Laser cutting" },
+  {
+    src: img.facilityImg6,
+    alt: "BigScrew facility photo 6",
+    name: "DNE Bystronic 6KW Laser cutting",
+  },
 ];
 
 function FacilityPage() {

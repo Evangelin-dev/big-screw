@@ -40,7 +40,12 @@ function ApplicationsIndex() {
         <div className="shell grid md:grid-cols-2 lg:grid-cols-3">
           {applications.map((a, i) => (
             <Reveal key={a.slug} delay={(i % 3) * 0.07} className="bg-background">
-              <ArrowLink to="/applications/$slug" params={{ slug: a.slug }} variant="bare" className="group block">
+              <ArrowLink
+                to="/applications/$slug"
+                params={{ slug: a.slug }}
+                variant="bare"
+                className="group block"
+              >
                 <div className="aspect-4/3 overflow-hidden">
                   <img
                     src={a.hero}
@@ -54,7 +59,9 @@ function ApplicationsIndex() {
                   <h2 className="mt-4 font-display text-2xl leading-tight font-bold uppercase text-foreground">
                     {a.title}
                   </h2>
-                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{a.intro}</p>
+                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                    {a.intro}
+                  </p>
                   <span className="mt-6 inline-flex items-center gap-2 tech-label text-foreground">
                     View application <span aria-hidden>→</span>
                   </span>

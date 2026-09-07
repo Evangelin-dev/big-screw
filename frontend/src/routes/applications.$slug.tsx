@@ -14,7 +14,10 @@ export const Route = createFileRoute("/applications/$slug")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Application not found | BigScrew Solutions" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Application not found | BigScrew Solutions" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const a = loaderData.application;
@@ -89,7 +92,9 @@ function ApplicationPage() {
         <div className="shell">
           <Label tone="yellow">Technical specification</Label>
           <h2 className="mt-6 display-md text-foreground">Sizes for this application.</h2>
-          <p className="mt-4 text-sm text-muted-foreground">Dimensions in millimetres. HDG — hot-dip galvanised.</p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Dimensions in millimetres. HDG — hot-dip galvanised.
+          </p>
           <div className="mt-10">
             <SpecTable headers={a.specHeaders} rows={a.specRows} />
           </div>
@@ -105,7 +110,9 @@ function ApplicationPage() {
               <Reveal as="li" key={s.n} delay={i * 0.07}>
                 <TechLine />
                 <p className="mt-5 font-display text-4xl font-bold text-yellow">{s.n}</p>
-                <h3 className="mt-3 font-display text-xl font-bold uppercase text-on-ink">{s.title}</h3>
+                <h3 className="mt-3 font-display text-xl font-bold uppercase text-on-ink">
+                  {s.title}
+                </h3>
                 <p className="mt-2 text-sm text-on-ink-dim">{s.body}</p>
               </Reveal>
             ))}
@@ -143,7 +150,9 @@ function ApplicationPage() {
                 </div>
                 <div className="p-7">
                   <span className="tech-label text-yellow">{o.n}</span>
-                  <h3 className="mt-3 font-display text-xl font-bold uppercase text-foreground">{o.title}</h3>
+                  <h3 className="mt-3 font-display text-xl font-bold uppercase text-foreground">
+                    {o.title}
+                  </h3>
                 </div>
               </ArrowLink>
             ))}

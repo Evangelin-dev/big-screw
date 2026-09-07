@@ -82,35 +82,50 @@ function InstallationPage() {
           <Label tone="yellow">Machinery & soil</Label>
           <h2 className="mt-6 display-md text-foreground">Matched to the ground</h2>
           <p className="mt-5 max-w-4xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Foundation performance depends as much on the installation rig as on the pile. We size the rotary drive
-            head to the torque demand of the site's soil profile and mount it on a carrier. Design starts with the
-            geotechnical report, or with a verification pile where no report exists. Carrier, drive head and helix
-            diameter are then selected as per the terrain.
+            Foundation performance depends as much on the installation rig as on the pile. We size
+            the rotary drive head to the torque demand of the site's soil profile and mount it on a
+            carrier. Design starts with the geotechnical report, or with a verification pile where
+            no report exists. Carrier, drive head and helix diameter are then selected as per the
+            terrain.
           </p>
           <div className="mt-10 overflow-x-auto rounded-lg border border-border bg-white/80">
             <table className="w-full min-w-3xl border-collapse text-left">
               <thead>
                 <tr>
-                  {['Soil condition', 'Carrier machine', 'Drive head', 'Pile approach'].map((h, index) => (
-                    <th
-                      key={h}
-                      scope="col"
-                      className={['border-b border-border py-4 pr-6 tech-label text-muted-foreground', index === 0 ? 'pl-6' : ''].join(' ')}
-                    >
-                      {h}
-                    </th>
-                  ))}
+                  {["Soil condition", "Carrier machine", "Drive head", "Pile approach"].map(
+                    (h, index) => (
+                      <th
+                        key={h}
+                        scope="col"
+                        className={[
+                          "border-b border-border py-4 pr-6 tech-label text-muted-foreground",
+                          index === 0 ? "pl-6" : "",
+                        ].join(" ")}
+                      >
+                        {h}
+                      </th>
+                    ),
+                  )}
                 </tr>
               </thead>
               <tbody>
                 {soilMachinery.map((r) => (
                   <tr key={r.soil} className="align-top">
-                    <th scope="row" className="border-b border-border py-5 pl-6 pr-6 font-display text-lg font-semibold uppercase text-foreground">
+                    <th
+                      scope="row"
+                      className="border-b border-border py-5 pl-6 pr-6 font-display text-lg font-semibold uppercase text-foreground"
+                    >
                       {r.soil}
                     </th>
-                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">{r.carrier}</td>
-                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">{r.driveHead}</td>
-                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">{r.approach}</td>
+                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">
+                      {r.carrier}
+                    </td>
+                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">
+                      {r.driveHead}
+                    </td>
+                    <td className="border-b border-border py-5 pr-6 text-sm text-muted-foreground">
+                      {r.approach}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -118,7 +133,6 @@ function InstallationPage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
@@ -139,6 +153,7 @@ function ProcessSection() {
     offset: ["start 0.7", "end 0.7"],
   });
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const activeStepData = (processSteps[activeStep] ?? processSteps[0])!;
 
   return (
     <section ref={sectionRef} className="overflow-hidden bg-[#111311] py-24 text-white md:py-36">
@@ -150,20 +165,20 @@ function ProcessSection() {
               Built in <span className="text-yellow">five moves.</span>
             </h2>
             <p className="mt-7 max-w-sm text-base leading-relaxed text-white/60 md:text-lg">
-              Every installation is measured, verified, and ready for the next trade the same day. Follow the work from
-              first soil reading to final torque record.
+              Every installation is measured, verified, and ready for the next trade the same day.
+              Follow the work from first soil reading to final torque record.
             </p>
 
             <div className="relative mt-12 hidden aspect-[1448/1086] overflow-hidden border border-white/15 lg:block">
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={processSteps[activeStep].n}
+                  key={activeStepData.n}
                   initial={{ opacity: 0, scale: 1.08, x: 28 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.96, x: -28 }}
                   transition={{ duration: 0.65, ease: [0.16, 0.84, 0.24, 1] }}
-                  src={processSteps[activeStep].image}
-                  alt={`${processSteps[activeStep].title} on a BigScrew installation site`}
+                  src={activeStepData.image}
+                  alt={`${activeStepData.title} on a BigScrew installation site`}
                   className="absolute inset-0 h-full w-full object-cover grayscale-[0.2]"
                 />
               </AnimatePresence>
@@ -171,12 +186,12 @@ function ProcessSection() {
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
                 <span className="tech-label text-white/70">LIVE SITE VIEW</span>
                 <motion.span
-                  key={processSteps[activeStep].n}
+                  key={activeStepData.n}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="font-display text-4xl font-bold text-yellow"
                 >
-                  BS / {processSteps[activeStep].n}
+                  BS / {activeStepData.n}
                 </motion.span>
               </div>
             </div>
@@ -184,7 +199,10 @@ function ProcessSection() {
 
           <div className="relative" role="list" aria-label="Installation process steps">
             <div className="absolute bottom-0 left-[1.2rem] top-0 w-px bg-white/15 md:left-[2.35rem]">
-              <motion.div style={{ height: progressHeight }} className="w-full origin-top bg-yellow" />
+              <motion.div
+                style={{ height: progressHeight }}
+                className="w-full origin-top bg-yellow"
+              />
             </div>
 
             <div className="space-y-8 md:space-y-16">
@@ -207,7 +225,9 @@ function ProcessSection() {
                           <h3 className="font-display text-3xl font-bold uppercase leading-none text-white md:text-5xl">
                             {step.title}
                           </h3>
-                          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">{step.body}</p>
+                          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
+                            {step.body}
+                          </p>
                         </div>
                         <div className="aspect-[4/3] overflow-hidden border border-white/10 bg-white/5">
                           <img

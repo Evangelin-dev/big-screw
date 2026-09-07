@@ -27,7 +27,11 @@ export function BlogCard({ blog }: { blog: BlogArticle }) {
         <div className="flex items-center gap-4 text-xs">
           <span className="tech-label text-yellow uppercase">{blog.category}</span>
           <span className="text-on-ink-dim">
-            {new Date(blog.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+            {new Date(blog.date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
           </span>
           <span className="text-on-ink-dim">{blog.readTime} min</span>
         </div>

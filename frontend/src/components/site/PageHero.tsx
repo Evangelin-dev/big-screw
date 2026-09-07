@@ -34,21 +34,33 @@ export function PageHero({
         <h1 className="mt-6 display-lg text-on-ink">
           {title} {accent ? <span className="text-yellow">{accent}</span> : null}
         </h1>
-        {intro ? <p className="mt-6 max-w-2xl text-base leading-relaxed text-on-ink-dim">{intro}</p> : null}
+        {intro ? (
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-on-ink-dim">{intro}</p>
+        ) : null}
         {children}
       </div>
     </section>
   );
 }
 
-export function SpecTable({ headers, rows }: { headers: string[]; rows: Record<string, string>[] }) {
+export function SpecTable({
+  headers,
+  rows,
+}: {
+  headers: string[];
+  rows: Record<string, string>[];
+}) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full min-w-3xl border-collapse text-left">
         <thead>
           <tr>
             {headers.map((h) => (
-              <th key={h} scope="col" className="border-b border-border py-4 pr-6 tech-label text-muted-foreground">
+              <th
+                key={h}
+                scope="col"
+                className="border-b border-border py-4 pr-6 tech-label text-muted-foreground"
+              >
                 {h}
               </th>
             ))}
@@ -61,7 +73,9 @@ export function SpecTable({ headers, rows }: { headers: string[]; rows: Record<s
                 <td
                   key={h}
                   className={`border-b border-border py-5 pr-6 text-sm ${
-                    j === 0 ? "font-display text-lg font-semibold uppercase text-foreground" : "text-muted-foreground"
+                    j === 0
+                      ? "font-display text-lg font-semibold uppercase text-foreground"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {r[h]}

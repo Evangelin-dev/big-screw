@@ -1,5 +1,10 @@
 import type { BlogFAQ } from "@/lib/blogs";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 export function BlogFAQ({ faqs }: { faqs: BlogFAQ[] }) {
   return (

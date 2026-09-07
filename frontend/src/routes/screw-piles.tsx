@@ -136,7 +136,11 @@ cement work, and no waiting for curing to set before you can build."
                     Pile type
                   </th>
                   {pileMatrix.columns.map((c) => (
-                    <th key={c} scope="col" className="px-6 py-4 tech-label font-semibold text-yellow">
+                    <th
+                      key={c}
+                      scope="col"
+                      className="px-6 py-4 tech-label font-semibold text-yellow"
+                    >
                       {c}
                     </th>
                   ))}
@@ -150,7 +154,10 @@ cement work, and no waiting for curing to set before you can build."
                     whileHover={{ backgroundColor: "rgba(255, 209, 0, 0.1)" }}
                     transition={{ duration: 0.2 }}
                   >
-                    <th scope="row" className="px-6 py-5 font-display text-lg font-semibold uppercase text-on-ink">
+                    <th
+                      scope="row"
+                      className="px-6 py-5 font-display text-lg font-semibold uppercase text-on-ink"
+                    >
                       {r.type}
                     </th>
                     {r.fit.map((f, i) => (
@@ -257,8 +264,24 @@ function OldWayVsScrewPile() {
                         strokeWidth="1.5"
                         className="fill-foreground/10 text-foreground/40"
                       />
-                      <line x1="26" y1="40" x2="64" y2="70" stroke="currentColor" strokeWidth="1" className="text-foreground/30" />
-                      <line x1="26" y1="55" x2="50" y2="79" stroke="currentColor" strokeWidth="1" className="text-foreground/30" />
+                      <line
+                        x1="26"
+                        y1="40"
+                        x2="64"
+                        y2="70"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        className="text-foreground/30"
+                      />
+                      <line
+                        x1="26"
+                        y1="55"
+                        x2="50"
+                        y2="79"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        className="text-foreground/30"
+                      />
                     </svg>
                   ) : (
                     <motion.svg
@@ -313,9 +336,16 @@ function OldWayVsScrewPile() {
                 <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm leading-relaxed text-muted-foreground md:text-base">
                   {c.steps.map((step, idx) => (
                     <span key={step} className="inline-flex items-center gap-2">
-                      <span className={c.variant === "new" ? "font-medium text-foreground" : ""}>{step}</span>
+                      <span className={c.variant === "new" ? "font-medium text-foreground" : ""}>
+                        {step}
+                      </span>
                       {idx < c.steps.length - 1 && (
-                        <span aria-hidden className={c.variant === "new" ? "text-yellow-deep" : "text-foreground/30"}>
+                        <span
+                          aria-hidden
+                          className={
+                            c.variant === "new" ? "text-yellow-deep" : "text-foreground/30"
+                          }
+                        >
                           →
                         </span>
                       )}
@@ -358,7 +388,9 @@ function InstallStrip() {
                 />
                 <span className="font-display text-sm font-bold text-on-ink-dim/50">{s.n}</span>
               </div>
-              <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-wide text-on-ink">{s.title}</h3>
+              <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-wide text-on-ink">
+                {s.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-on-ink-dim">{s.body}</p>
               <span
                 aria-hidden
