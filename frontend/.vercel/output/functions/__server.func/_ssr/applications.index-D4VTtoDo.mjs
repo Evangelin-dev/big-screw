@@ -1,8 +1,8 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { n as Reveal, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
 import { t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
-import { c as ArrowLink, f as img, l as applications } from "./router-CS6gVxxY.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/applications.index-DXOZUgjS.js
+import { c as ArrowLink, f as img, l as applications } from "./router-D16IWlnh.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/applications.index-D4VTtoDo.js
 var import_jsx_runtime = require_jsx_runtime();
 function ApplicationsIndex() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageHero, {
