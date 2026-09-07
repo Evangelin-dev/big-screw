@@ -43,7 +43,9 @@ export const Route = createFileRoute("/blog/$slug")({
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="text-center">
         <p className="tech-label text-yellow">Error 404</p>
-        <h1 className="mt-4 text-3xl font-display font-semibold text-foreground">Article not found</h1>
+        <h1 className="mt-4 text-3xl font-display font-semibold text-foreground">
+          Article not found
+        </h1>
         <p className="mt-4 text-on-ink-dim">The blog article you're looking for doesn't exist.</p>
         <div className="mt-8">
           <ArrowLink to="/blog" variant="yellow">
@@ -79,7 +81,10 @@ function BlogDetail() {
         <div className="shell">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-6">
-            <Link to="/blog" className="text-sm text-on-ink-dim hover:text-yellow transition-colors">
+            <Link
+              to="/blog"
+              className="text-sm text-on-ink-dim hover:text-yellow transition-colors"
+            >
               Blog
             </Link>
             <ChevronRight className="w-4 h-4 text-on-ink-dim" />
@@ -151,7 +156,8 @@ function BlogDetail() {
               Have an engineering project in mind?
             </h2>
             <p className="text-base text-muted-foreground mb-8 max-w-2xl">
-              Talk to our team about your requirements. We design, manufacture and install screw pile foundations tailored to your specific needs.
+              Talk to our team about your requirements. We design, manufacture and install screw
+              pile foundations tailored to your specific needs.
             </p>
             <ArrowLink to="/contact" variant="yellow">
               Contact us

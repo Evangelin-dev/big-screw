@@ -28,7 +28,16 @@ export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
 });
 
-type Category = "ALL" | "SCREW PILES" | "FOUNDATIONS" | "SOLAR" | "BESS" | "INSTALLATION" | "ENGINEERING" | "APPLICATIONS" | "INDUSTRY INSIGHTS";
+type Category =
+  | "ALL"
+  | "SCREW PILES"
+  | "FOUNDATIONS"
+  | "SOLAR"
+  | "BESS"
+  | "INSTALLATION"
+  | "ENGINEERING"
+  | "APPLICATIONS"
+  | "INDUSTRY INSIGHTS";
 
 const CATEGORIES: Category[] = [
   "ALL",
@@ -59,8 +68,8 @@ function BlogIndex() {
   }, [selectedCategory, searchQuery]);
 
   // Featured article is the first one that matches filters
-  const featuredBlog = filteredBlogs.length > 0 ? filteredBlogs[0] : blogs[0];
-  const otherBlogs = filteredBlogs.filter((b) => b.slug !== featuredBlog.slug);
+  const featuredBlog = filteredBlogs[0] ?? blogs[0];
+  const otherBlogs = featuredBlog ? filteredBlogs.filter((b) => b.slug !== featuredBlog.slug) : [];
 
   const hasNoResults = filteredBlogs.length === 0;
 
@@ -137,12 +146,14 @@ function BlogIndex() {
           ) : (
             <>
               {/* Featured Article */}
-              <div className="mb-16">
-                <Label tone="yellow">Featured</Label>
-                <div className="mt-6">
-                  <FeaturedBlogCard blog={featuredBlog} />
+              {featuredBlog && (
+                <div className="mb-16">
+                  <Label tone="yellow">Featured</Label>
+                  <div className="mt-6">
+                    <FeaturedBlogCard blog={featuredBlog} />
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Blog Grid */}
               {otherBlogs.length > 0 && (

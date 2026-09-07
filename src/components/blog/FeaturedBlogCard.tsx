@@ -27,7 +27,11 @@ export function FeaturedBlogCard({ blog }: { blog: BlogArticle }) {
           <div className="flex flex-wrap items-center gap-4 text-sm">
             <span className="tech-label text-yellow uppercase">{blog.category}</span>
             <span className="text-on-ink-dim">
-              {new Date(blog.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+              {new Date(blog.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
             </span>
             <span className="text-on-ink-dim">·</span>
             <span className="text-on-ink-dim">{blog.readTime} MIN READ</span>
@@ -43,16 +47,14 @@ export function FeaturedBlogCard({ blog }: { blog: BlogArticle }) {
           </Link>
 
           {/* Excerpt */}
-          <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-lg">{blog.excerpt}</p>
+          <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-lg">
+            {blog.excerpt}
+          </p>
         </div>
 
         {/* CTA */}
         <div className="mt-8">
-          <ArrowLink
-            to="/blog/$slug"
-            params={{ slug: blog.slug }}
-            variant="yellow"
-          >
+          <ArrowLink to="/blog/$slug" params={{ slug: blog.slug }} variant="yellow">
             Read article
           </ArrowLink>
         </div>

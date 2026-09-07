@@ -66,8 +66,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.9, ease }}
         >
           <p className="max-w-xl text-base leading-relaxed text-on-ink-dim md:text-lg">
-            Screw piles for solar, storage, housing, industrial structures, carports, EV charging, fencing, poles,
-            towers and bridges. Installed in hours, loaded the same day.
+            Screw piles for solar, storage, housing, industrial structures, carports, EV charging,
+            fencing, poles, towers and bridges. Installed in hours, loaded the same day.
           </p>
           <div className="flex flex-wrap gap-3">
             <ArrowLink to="/contact" variant="yellow">
@@ -87,7 +87,9 @@ export function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
       >
         <div className="shell flex items-center gap-6 overflow-x-auto py-4 no-scrollbar">
-          <span className="tech-label whitespace-nowrap text-on-ink-dim">BigScrew / Engineered Foundations</span>
+          <span className="tech-label whitespace-nowrap text-on-ink-dim">
+            BigScrew / Engineered Foundations
+          </span>
           <span className="h-4 w-px shrink-0 bg-on-ink/20" aria-hidden />
           {installSteps.map((s) => (
             <span key={s.n} className="tech-label whitespace-nowrap text-on-ink-dim">

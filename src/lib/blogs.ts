@@ -10,7 +10,15 @@ export type BlogArticle = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "SCREW PILES" | "FOUNDATIONS" | "SOLAR" | "BESS" | "INSTALLATION" | "ENGINEERING" | "APPLICATIONS" | "INDUSTRY INSIGHTS";
+  category:
+    | "SCREW PILES"
+    | "FOUNDATIONS"
+    | "SOLAR"
+    | "BESS"
+    | "INSTALLATION"
+    | "ENGINEERING"
+    | "APPLICATIONS"
+    | "INDUSTRY INSIGHTS";
   date: string; // YYYY-MM-DD
   readTime: number; // in minutes
   author: string;
@@ -28,7 +36,8 @@ export const blogs: BlogArticle[] = [
     id: "1",
     slug: "helical-screw-pile-foundations",
     title: "Helical Screw Pile Foundations: A Complete Guide for Modern Construction",
-    excerpt: "Discover how helical screw pile foundations work, their advantages over traditional concrete, and why they're ideal for solar, storage, and industrial projects.",
+    excerpt:
+      "Discover how helical screw pile foundations work, their advantages over traditional concrete, and why they're ideal for solar, storage, and industrial projects.",
     category: "FOUNDATIONS",
     date: "2026-08-12",
     readTime: 7,
@@ -36,7 +45,8 @@ export const blogs: BlogArticle[] = [
     image: img.solarSite,
     keywords: ["helical screw piles", "foundations", "ground screws", "installation"],
     metaTitle: "Helical Screw Pile Foundations: Complete Guide | BigScrew",
-    metaDescription: "Learn about helical screw pile foundations, installation methods, advantages over concrete, and applications in solar, BESS, and industrial projects.",
+    metaDescription:
+      "Learn about helical screw pile foundations, installation methods, advantages over concrete, and applications in solar, BESS, and industrial projects.",
     content: `
 <section>
 <h2>What is a Helical Screw Pile Foundation?</h2>
@@ -154,43 +164,53 @@ export const blogs: BlogArticle[] = [
     faqs: [
       {
         question: "What is a helical screw pile foundation?",
-        answer: "A helical screw pile is a steel shaft with one or more helical blades that is twisted into the ground to provide foundation support. It works like a giant screw, mechanically anchoring into the soil without requiring concrete, excavation, or curing time.",
+        answer:
+          "A helical screw pile is a steel shaft with one or more helical blades that is twisted into the ground to provide foundation support. It works like a giant screw, mechanically anchoring into the soil without requiring concrete, excavation, or curing time.",
       },
       {
         question: "How do helical screw piles work?",
-        answer: "Screw piles are installed by positioning them on a marked grid and using a torque-controlled drive head mounted on an excavator to twist them into the ground. As they turn, the helical blades cut into the soil and provide bearing capacity. Torque is monitored to verify when design depth is reached.",
+        answer:
+          "Screw piles are installed by positioning them on a marked grid and using a torque-controlled drive head mounted on an excavator to twist them into the ground. As they turn, the helical blades cut into the soil and provide bearing capacity. Torque is monitored to verify when design depth is reached.",
       },
       {
         question: "What are screw piles used for?",
-        answer: "Screw piles are used for solar ground mounts, battery energy storage containers, prefabricated homes, polyhouses, industrial structures, fencing, utility poles, and transmission towers — essentially any structure that requires a strong, fast-to-install foundation.",
+        answer:
+          "Screw piles are used for solar ground mounts, battery energy storage containers, prefabricated homes, polyhouses, industrial structures, fencing, utility poles, and transmission towers — essentially any structure that requires a strong, fast-to-install foundation.",
       },
       {
         question: "Are screw piles better than concrete foundations?",
-        answer: "Screw piles offer significant advantages: faster installation (hours vs. days), immediate loading, weather-independent installation, adaptability to soil conditions, and lower project overhead. Concrete may be preferred only for very large industrial projects or where extremely deep foundations are required.",
+        answer:
+          "Screw piles offer significant advantages: faster installation (hours vs. days), immediate loading, weather-independent installation, adaptability to soil conditions, and lower project overhead. Concrete may be preferred only for very large industrial projects or where extremely deep foundations are required.",
       },
       {
         question: "How long does screw pile installation take?",
-        answer: "Typically 1–2 hours per pile, depending on soil resistance and pile depth. Once installed, structures can be loaded immediately. This is dramatically faster than concrete foundations, which require 7–14 days curing time plus formwork setup.",
+        answer:
+          "Typically 1–2 hours per pile, depending on soil resistance and pile depth. Once installed, structures can be loaded immediately. This is dramatically faster than concrete foundations, which require 7–14 days curing time plus formwork setup.",
       },
       {
         question: "Can screw piles be used for solar projects?",
-        answer: "Yes, screw piles are ideal for solar ground mounts. Single-helix piles are positioned accurately so solar panel tables sit perfectly aligned. Multiple piles can be installed quickly in a line, enabling fast project deployment.",
+        answer:
+          "Yes, screw piles are ideal for solar ground mounts. Single-helix piles are positioned accurately so solar panel tables sit perfectly aligned. Multiple piles can be installed quickly in a line, enabling fast project deployment.",
       },
       {
         question: "Can screw piles be installed in different soil conditions?",
-        answer: "Yes, screw piles are highly adaptable. Different pile configurations (single-helix, multi-helix, ground screws, large-diameter) and installation approaches (standard drive, high-torque, pre-drilling) allow them to work in clay, sand, gravel, rock, and made-up ground.",
+        answer:
+          "Yes, screw piles are highly adaptable. Different pile configurations (single-helix, multi-helix, ground screws, large-diameter) and installation approaches (standard drive, high-torque, pre-drilling) allow them to work in clay, sand, gravel, rock, and made-up ground.",
       },
       {
         question: "How deep can a screw pile be installed?",
-        answer: "Screw piles can typically be installed to depths of 1–5 metres depending on soil conditions, equipment capacity, and structural load requirements. Deeper installations are possible with extended piles coupled together, though this increases cost and complexity.",
+        answer:
+          "Screw piles can typically be installed to depths of 1–5 metres depending on soil conditions, equipment capacity, and structural load requirements. Deeper installations are possible with extended piles coupled together, though this increases cost and complexity.",
       },
       {
         question: "Are screw piles suitable for industrial structures?",
-        answer: "Yes, large-diameter screw piles with multiple helixes are specifically designed for heavy industrial structures, machinery foundations, and factory installations. They provide the heavy-duty bearing capacity required while maintaining installation speed and flexibility.",
+        answer:
+          "Yes, large-diameter screw piles with multiple helixes are specifically designed for heavy industrial structures, machinery foundations, and factory installations. They provide the heavy-duty bearing capacity required while maintaining installation speed and flexibility.",
       },
       {
         question: "How are screw piles installed?",
-        answer: "Installation is straightforward: (1) Mark grid position, (2) Position pile with drive head, (3) Turn slowly with torque control until design depth, (4) Verify alignment and torque, (5) Install structure. No excavation, formwork, or curing required.",
+        answer:
+          "Installation is straightforward: (1) Mark grid position, (2) Position pile with drive head, (3) Turn slowly with torque control until design depth, (4) Verify alignment and torque, (5) Install structure. No excavation, formwork, or curing required.",
       },
     ],
     relatedKeywords: ["ground foundations", "installation methods", "solar projects", "BESS"],
@@ -199,7 +219,8 @@ export const blogs: BlogArticle[] = [
     id: "2",
     slug: "screw-piles-vs-concrete-foundations",
     title: "Screw Piles vs. Concrete Foundations: A Detailed Comparison",
-    excerpt: "Compare helical screw pile foundations with traditional concrete methods. Learn the cost, time, environmental, and performance differences for your project.",
+    excerpt:
+      "Compare helical screw pile foundations with traditional concrete methods. Learn the cost, time, environmental, and performance differences for your project.",
     category: "ENGINEERING",
     date: "2026-08-08",
     readTime: 9,
@@ -207,7 +228,8 @@ export const blogs: BlogArticle[] = [
     image: img.bessFoundation,
     keywords: ["screw piles", "concrete foundations", "comparison", "installation time", "cost"],
     metaTitle: "Screw Piles vs. Concrete Foundations | Comparison Guide",
-    metaDescription: "Detailed comparison of helical screw piles and concrete foundations. Analyze cost, installation time, durability, and suitability for different projects.",
+    metaDescription:
+      "Detailed comparison of helical screw piles and concrete foundations. Analyze cost, installation time, durability, and suitability for different projects.",
     content: `
 <section>
 <h2>Overview</h2>
@@ -396,44 +418,58 @@ export const blogs: BlogArticle[] = [
     faqs: [
       {
         question: "How much faster are screw piles than concrete?",
-        answer: "Screw piles typically take 1–2 hours per pile with immediate loading. Concrete takes 7–14+ days for curing alone, plus excavation and formwork, totalling 21–30 days. For a 30-pile installation, screw piles are completed in 2 days vs. 30 days for concrete.",
+        answer:
+          "Screw piles typically take 1–2 hours per pile with immediate loading. Concrete takes 7–14+ days for curing alone, plus excavation and formwork, totalling 21–30 days. For a 30-pile installation, screw piles are completed in 2 days vs. 30 days for concrete.",
       },
       {
         question: "Are screw piles more expensive than concrete?",
-        answer: "While material costs are comparable, screw piles are often cheaper when you include project delay costs. A 14–30 day foundation delay can cost $10,000–20,000+ per week in overhead. Over a full project, screw piles usually provide better value.",
+        answer:
+          "While material costs are comparable, screw piles are often cheaper when you include project delay costs. A 14–30 day foundation delay can cost $10,000–20,000+ per week in overhead. Over a full project, screw piles usually provide better value.",
       },
       {
         question: "Can screw piles be used in all soil types?",
-        answer: "Screw piles are highly adaptable. Different configurations (single-helix, multi-helix, large-diameter) and installation methods handle clay, sand, gravel, and rock. Concrete requires geotechnical design upfront, making it more rigid when soils vary.",
+        answer:
+          "Screw piles are highly adaptable. Different configurations (single-helix, multi-helix, large-diameter) and installation methods handle clay, sand, gravel, and rock. Concrete requires geotechnical design upfront, making it more rigid when soils vary.",
       },
       {
         question: "Which is more durable: screw piles or concrete?",
-        answer: "Hot-dip galvanised screw piles typically offer 50+ year service life with minimal maintenance. Concrete has 25–50 year life depending on environment, with concrete spalling and reinforcement corrosion being common long-term issues.",
+        answer:
+          "Hot-dip galvanised screw piles typically offer 50+ year service life with minimal maintenance. Concrete has 25–50 year life depending on environment, with concrete spalling and reinforcement corrosion being common long-term issues.",
       },
       {
         question: "Can concrete foundations be adjusted if they're wrong?",
-        answer: "Concrete is permanent and difficult to adjust. If levels are off or loads shift, rework is expensive or impossible. Screw piles can be re-levelled or relocated with minimal cost.",
+        answer:
+          "Concrete is permanent and difficult to adjust. If levels are off or loads shift, rework is expensive or impossible. Screw piles can be re-levelled or relocated with minimal cost.",
       },
       {
         question: "Do screw piles require maintenance?",
-        answer: "Screw piles require minimal maintenance. The galvanised coating provides long-term corrosion protection. Periodic inspection is recommended but not essential for most installations.",
+        answer:
+          "Screw piles require minimal maintenance. The galvanised coating provides long-term corrosion protection. Periodic inspection is recommended but not essential for most installations.",
       },
       {
         question: "Can screw piles be installed in wet weather?",
-        answer: "Yes, screw piles can be installed in rain and wet conditions. Concrete cannot be poured in rain, making concrete foundations weather-dependent and prone to delays.",
+        answer:
+          "Yes, screw piles can be installed in rain and wet conditions. Concrete cannot be poured in rain, making concrete foundations weather-dependent and prone to delays.",
       },
       {
         question: "Are screw piles reversible?",
-        answer: "Yes, screw piles can be extracted from the ground, making them reversible. Concrete is permanent. This matters if the site will be repurposed or if remediation is needed.",
+        answer:
+          "Yes, screw piles can be extracted from the ground, making them reversible. Concrete is permanent. This matters if the site will be repurposed or if remediation is needed.",
       },
     ],
-    relatedKeywords: ["concrete alternatives", "foundation costs", "installation speed", "soil conditions"],
+    relatedKeywords: [
+      "concrete alternatives",
+      "foundation costs",
+      "installation speed",
+      "soil conditions",
+    ],
   },
   {
     id: "3",
     slug: "screw-piles-for-solar-projects",
     title: "Screw Piles for Solar Ground Mount: Why Developers Choose Screw Foundations",
-    excerpt: "Why solar developers worldwide use helical screw piles instead of concrete. Learn about speed, cost, accuracy, and soil adaptability in solar installations.",
+    excerpt:
+      "Why solar developers worldwide use helical screw piles instead of concrete. Learn about speed, cost, accuracy, and soil adaptability in solar installations.",
     category: "SOLAR",
     date: "2026-08-05",
     readTime: 8,
@@ -441,7 +477,8 @@ export const blogs: BlogArticle[] = [
     image: img.solarDual,
     keywords: ["solar", "screw piles", "ground mount", "solar installation", "foundations"],
     metaTitle: "Screw Piles for Solar Ground Mount | BigScrew Solutions",
-    metaDescription: "Why solar developers use helical screw piles for ground mounts. Fast installation, accuracy, cost-effective, and adaptable to any terrain.",
+    metaDescription:
+      "Why solar developers use helical screw piles for ground mounts. Fast installation, accuracy, cost-effective, and adaptable to any terrain.",
     content: `
 <section>
 <h2>Solar Ground Mount Foundations: The Industry Shift</h2>
@@ -632,35 +669,43 @@ export const blogs: BlogArticle[] = [
     faqs: [
       {
         question: "How much faster are screw piles for solar installations?",
-        answer: "Screw piles typically reduce foundation time from 4–6 weeks (concrete) to 3–5 days. For a 10 MW installation, this 32+ day saving translates to faster revenue generation and significantly reduced financing costs.",
+        answer:
+          "Screw piles typically reduce foundation time from 4–6 weeks (concrete) to 3–5 days. For a 10 MW installation, this 32+ day saving translates to faster revenue generation and significantly reduced financing costs.",
       },
       {
         question: "Can screw piles be levelled accurately for solar tables?",
-        answer: "Yes, screw piles include adjustable top plates that allow precise final levelling. Unlike concrete, which can shift during curing, screw piles are immediately set and stable. Tables mount with perfect alignment.",
+        answer:
+          "Yes, screw piles include adjustable top plates that allow precise final levelling. Unlike concrete, which can shift during curing, screw piles are immediately set and stable. Tables mount with perfect alignment.",
       },
       {
         question: "Are screw piles suitable for sloped solar sites?",
-        answer: "Screw piles are ideal for sloped terrain. They adapt naturally to contours without requiring extensive regrading. Concrete requires relatively flat ground, making slope sites significantly more expensive and time-consuming.",
+        answer:
+          "Screw piles are ideal for sloped terrain. They adapt naturally to contours without requiring extensive regrading. Concrete requires relatively flat ground, making slope sites significantly more expensive and time-consuming.",
       },
       {
         question: "Can screw piles be installed during monsoon season?",
-        answer: "Yes. Unlike concrete, screw piles can be installed in rain and wet conditions. This is a critical advantage in monsoon climates where concrete curing is impossible during the wet season.",
+        answer:
+          "Yes. Unlike concrete, screw piles can be installed in rain and wet conditions. This is a critical advantage in monsoon climates where concrete curing is impossible during the wet season.",
       },
       {
         question: "What pile size is typical for solar ground mounts?",
-        answer: "Most solar installations use 76–89 mm diameter single-helix piles, 1200–2000 mm long. Larger tables or soft soils may use double-helix piles. Ground screws are used in stiff soils for lighter applications.",
+        answer:
+          "Most solar installations use 76–89 mm diameter single-helix piles, 1200–2000 mm long. Larger tables or soft soils may use double-helix piles. Ground screws are used in stiff soils for lighter applications.",
       },
       {
         question: "Do solar tables need special installation on screw piles?",
-        answer: "No, solar table installation is standard. The adjustable pile tops accommodate industry-standard mounting brackets. No custom engineering required.",
+        answer:
+          "No, solar table installation is standard. The adjustable pile tops accommodate industry-standard mounting brackets. No custom engineering required.",
       },
       {
         question: "How cost-effective are screw piles for solar projects?",
-        answer: "Material costs are comparable to concrete, but screw piles save significantly on labour, site prep, and project delay costs. For a 10 MW site, total savings are typically $150,000–250,000.",
+        answer:
+          "Material costs are comparable to concrete, but screw piles save significantly on labour, site prep, and project delay costs. For a 10 MW site, total savings are typically $150,000–250,000.",
       },
       {
         question: "What is the expected lifespan of screw pile foundations for solar?",
-        answer: "Hot-dip galvanised screw piles last 50+ years, which exceeds the 30-year typical lifespan of solar assets. Foundation life is not a limitation.",
+        answer:
+          "Hot-dip galvanised screw piles last 50+ years, which exceeds the 30-year typical lifespan of solar assets. Foundation life is not a limitation.",
       },
     ],
     relatedKeywords: ["solar installations", "ground mounts", "renewable energy", "cost savings"],
@@ -669,7 +714,8 @@ export const blogs: BlogArticle[] = [
     id: "4",
     slug: "screw-piles-for-bess-battery-storage",
     title: "Screw Piles for BESS: Efficient Foundations for Battery Energy Storage",
-    excerpt: "Why battery energy storage systems use screw pile foundations. Learn about load handling, installation speed, and cost advantages for BESS projects.",
+    excerpt:
+      "Why battery energy storage systems use screw pile foundations. Learn about load handling, installation speed, and cost advantages for BESS projects.",
     category: "BESS",
     date: "2026-07-30",
     readTime: 6,
@@ -677,7 +723,8 @@ export const blogs: BlogArticle[] = [
     image: img.bessContainer,
     keywords: ["BESS", "battery storage", "screw piles", "energy storage foundations"],
     metaTitle: "Screw Piles for BESS Battery Storage | BigScrew",
-    metaDescription: "Heavy-duty helical screw piles for battery energy storage containers. Corner support, adjustable tops, and no concrete slab required.",
+    metaDescription:
+      "Heavy-duty helical screw piles for battery energy storage containers. Corner support, adjustable tops, and no concrete slab required.",
     content: `
 <section>
 <h2>BESS Foundations: A Special Challenge</h2>
@@ -868,35 +915,43 @@ export const blogs: BlogArticle[] = [
     faqs: [
       {
         question: "How many screw piles are needed for a BESS container?",
-        answer: "Typically 4 piles for a single 30-tonne container (one at each corner). Multi-container sites use 12–16 piles arranged in a grid pattern, with a connecting steel frame distributing loads.",
+        answer:
+          "Typically 4 piles for a single 30-tonne container (one at each corner). Multi-container sites use 12–16 piles arranged in a grid pattern, with a connecting steel frame distributing loads.",
       },
       {
         question: "What size screw piles are used for BESS?",
-        answer: "BESS applications use heavy-duty multi-helix piles: 100–114 mm shaft diameter, 2000–3000 mm length, with 2–3 helical blades. Load capacity is 2–3x higher than single-helix piles.",
+        answer:
+          "BESS applications use heavy-duty multi-helix piles: 100–114 mm shaft diameter, 2000–3000 mm length, with 2–3 helical blades. Load capacity is 2–3x higher than single-helix piles.",
       },
       {
         question: "Can battery containers be installed immediately after piles are driven?",
-        answer: "Yes. After piles are installed and adjustable tops are levelled, containers can be positioned the same day. Unlike concrete, there is no curing time required.",
+        answer:
+          "Yes. After piles are installed and adjustable tops are levelled, containers can be positioned the same day. Unlike concrete, there is no curing time required.",
       },
       {
         question: "How level can screw piles be adjusted?",
-        answer: "Adjustable top plates allow final levelling to within 5 mm or better. This precision meets battery storage requirements for perfect load distribution.",
+        answer:
+          "Adjustable top plates allow final levelling to within 5 mm or better. This precision meets battery storage requirements for perfect load distribution.",
       },
       {
         question: "Can BESS sites be expanded after initial installation?",
-        answer: "Yes, additional piles can be installed and integrated into the connecting framework. Concrete sites require careful planning for expansion; screw piles are inherently modular.",
+        answer:
+          "Yes, additional piles can be installed and integrated into the connecting framework. Concrete sites require careful planning for expansion; screw piles are inherently modular.",
       },
       {
         question: "Are screw piles cost-effective for BESS compared to concrete?",
-        answer: "For single containers, costs are comparable. For multi-container sites or difficult soils, screw piles are typically 20–30% cheaper when including engineering time and installation speed benefits.",
+        answer:
+          "For single containers, costs are comparable. For multi-container sites or difficult soils, screw piles are typically 20–30% cheaper when including engineering time and installation speed benefits.",
       },
       {
         question: "What is the expected lifespan of BESS screw pile foundations?",
-        answer: "Hot-dip galvanised screw piles provide 50+ years of service life, which exceeds typical BESS asset lifespans (20–30 years). Foundation durability is not a limitation.",
+        answer:
+          "Hot-dip galvanised screw piles provide 50+ years of service life, which exceeds typical BESS asset lifespans (20–30 years). Foundation durability is not a limitation.",
       },
       {
         question: "How does soil condition affect BESS pile installation?",
-        answer: "Screw piles adapt to soil conditions during installation: larger helixes for soft soils, standard installation for firm soils, high-torque equipment for dense soils. Concrete requires geotechnical design upfront and struggles if soils are different than expected.",
+        answer:
+          "Screw piles adapt to soil conditions during installation: larger helixes for soft soils, standard installation for firm soils, high-torque equipment for dense soils. Concrete requires geotechnical design upfront and struggles if soils are different than expected.",
       },
     ],
     relatedKeywords: ["energy storage", "battery containers", "heavy-duty foundations"],
@@ -905,7 +960,8 @@ export const blogs: BlogArticle[] = [
     id: "5",
     slug: "screw-pile-installation-step-by-step",
     title: "Screw Pile Installation: Step-by-Step Process and Best Practices",
-    excerpt: "Learn how helical screw pile installation works. From site prep to final verification, understand the complete installation process used by engineers worldwide.",
+    excerpt:
+      "Learn how helical screw pile installation works. From site prep to final verification, understand the complete installation process used by engineers worldwide.",
     category: "INSTALLATION",
     date: "2026-07-25",
     readTime: 7,
@@ -913,7 +969,8 @@ export const blogs: BlogArticle[] = [
     image: img.heroExcavator,
     keywords: ["installation", "process", "screw piles", "construction", "installation methods"],
     metaTitle: "Screw Pile Installation: Step-by-Step Guide | BigScrew",
-    metaDescription: "Complete guide to helical screw pile installation. Learn the process, equipment, best practices, and how to verify bearing capacity on-site.",
+    metaDescription:
+      "Complete guide to helical screw pile installation. Learn the process, equipment, best practices, and how to verify bearing capacity on-site.",
     content: `
 <section>
 <h2>Screw Pile Installation: Overview</h2>
@@ -1232,38 +1289,51 @@ export const blogs: BlogArticle[] = [
     faqs: [
       {
         question: "How long does it take to install a single screw pile?",
-        answer: "Typically 30 minutes to 2 hours per pile, depending on soil resistance and pile depth. A standard installation progresses through penetration, resistance building, and final torque verification phases.",
+        answer:
+          "Typically 30 minutes to 2 hours per pile, depending on soil resistance and pile depth. A standard installation progresses through penetration, resistance building, and final torque verification phases.",
       },
       {
         question: "What equipment is needed for screw pile installation?",
-        answer: "A standard excavator (5–13 t) with a torque-controlled drive head attachment. No specialised or expensive equipment is required — most construction companies already have suitable excavators.",
+        answer:
+          "A standard excavator (5–13 t) with a torque-controlled drive head attachment. No specialised or expensive equipment is required — most construction companies already have suitable excavators.",
       },
       {
         question: "How is bearing capacity verified during installation?",
-        answer: "Torque monitoring is the key verification method. As the pile is twisted, torque increases as soil resistance increases. When design torque is reached and maintained, bearing capacity is confirmed.",
+        answer:
+          "Torque monitoring is the key verification method. As the pile is twisted, torque increases as soil resistance increases. When design torque is reached and maintained, bearing capacity is confirmed.",
       },
       {
         question: "Can screw piles be installed in wet or muddy conditions?",
-        answer: "Yes. Unlike concrete, screw piles work in rain and wet ground. Muddy conditions may reduce equipment traction but don't prevent installation.",
+        answer:
+          "Yes. Unlike concrete, screw piles work in rain and wet ground. Muddy conditions may reduce equipment traction but don't prevent installation.",
       },
       {
         question: "What happens if a screw pile hits rock?",
-        answer: "Installation can be stopped and the pile removed if needed. Alternatively, high-torque equipment or pre-drilling can penetrate rock. These variations are handled during installation without requiring engineering redesign.",
+        answer:
+          "Installation can be stopped and the pile removed if needed. Alternatively, high-torque equipment or pre-drilling can penetrate rock. These variations are handled during installation without requiring engineering redesign.",
       },
       {
         question: "How is vertical alignment verified?",
-        answer: "Immediately after installation, a level or laser is used to check pile verticality. Tolerance is typically ±2–5 mm per metre of height. For critical applications, adjustments are made using adjustable top plates.",
+        answer:
+          "Immediately after installation, a level or laser is used to check pile verticality. Tolerance is typically ±2–5 mm per metre of height. For critical applications, adjustments are made using adjustable top plates.",
       },
       {
         question: "Can structures be loaded immediately after pile installation?",
-        answer: "Yes. Unlike concrete which requires curing time, screw piles are ready for loading the same day installation is complete. This eliminates the 7–14 day curing delay of concrete.",
+        answer:
+          "Yes. Unlike concrete which requires curing time, screw piles are ready for loading the same day installation is complete. This eliminates the 7–14 day curing delay of concrete.",
       },
       {
         question: "What is the installation success rate for screw piles?",
-        answer: "Screw pile installation is highly reliable. Bearing is verified on-site through torque monitoring, making problems immediately obvious. Failure rates are very low (typically <1% when proper techniques are followed).",
+        answer:
+          "Screw pile installation is highly reliable. Bearing is verified on-site through torque monitoring, making problems immediately obvious. Failure rates are very low (typically <1% when proper techniques are followed).",
       },
     ],
-    relatedKeywords: ["installation process", "equipment", "best practices", "on-site verification"],
+    relatedKeywords: [
+      "installation process",
+      "equipment",
+      "best practices",
+      "on-site verification",
+    ],
   },
 ];
 
@@ -1290,7 +1360,11 @@ export const searchBlogs = (query: string) => {
       b.title.toLowerCase().includes(lowerQuery) ||
       b.excerpt.toLowerCase().includes(lowerQuery) ||
       b.keywords.some((k) => k.toLowerCase().includes(lowerQuery)) ||
-      b.faqs.some((f) => f.question.toLowerCase().includes(lowerQuery) || f.answer.toLowerCase().includes(lowerQuery))
+      b.faqs.some(
+        (f) =>
+          f.question.toLowerCase().includes(lowerQuery) ||
+          f.answer.toLowerCase().includes(lowerQuery),
+      ),
   );
 };
 
@@ -1321,5 +1395,3 @@ export const getRelatedArticles = (currentSlug: string, limit = 3) => {
     })
     .slice(0, limit);
 };
-
-export type { BlogArticle, BlogFAQ };

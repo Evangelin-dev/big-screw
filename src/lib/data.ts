@@ -60,7 +60,8 @@ import walkbridge from "@/assets/image-0102.png";
 import pedestrianBridge from "@/assets/image-0103.png";
 import logoMark from "@/assets/logo-mark.png";
 
-const unsplashId = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`;
+const unsplashId = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`;
 
 export const img = {
   heroExcavator,
@@ -129,8 +130,7 @@ export const company = {
     line3: "Rabale, Navi Mumbai 400701,",
     line4: "India",
   },
-  addressOneLine:
-    "Plot No. R-413, MIDC TTC Industrial Area, Rabale, Navi Mumbai 400701, India",
+  addressOneLine: "Plot No. R-413, MIDC TTC Industrial Area, Rabale, Navi Mumbai 400701, India",
   phone: "+91 98923 85568",
   phoneHref: "tel:+919892385568",
   web: "www.bigscrew.in",
@@ -312,15 +312,43 @@ export const applications: Application[] = [
     hero: img.solarSite,
     heroAlt: "Large solar ground mount array founded on screw piles",
     gallery: [
-      { src: img.solarDual, alt: "Dual pole solar table on screw piles", caption: "Dual pole solar" },
-      { src: img.solarSingle, alt: "Single pole solar mount on screw piles", caption: "Single pole" },
-      { src: img.solarSite, alt: "Solar site installation on screw pile foundations", caption: "Site installation" },
-      { src: img.solarHill, alt: "Hillside solar array installed on screw piles", caption: "Site installation" },
+      {
+        src: img.solarDual,
+        alt: "Dual pole solar table on screw piles",
+        caption: "Dual pole solar",
+      },
+      {
+        src: img.solarSingle,
+        alt: "Single pole solar mount on screw piles",
+        caption: "Single pole",
+      },
+      {
+        src: img.solarSite,
+        alt: "Solar site installation on screw pile foundations",
+        caption: "Site installation",
+      },
+      {
+        src: img.solarHill,
+        alt: "Hillside solar array installed on screw piles",
+        caption: "Site installation",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Helix", "Length", "Coating"],
     specRows: [
-      { "Pile type": "Single-helix pile", "Shaft Ø": "76, 89", Helix: "1", Length: "1200–2500", Coating: "HDG" },
-      { "Pile type": "Double-helix pile", "Shaft Ø": "76, 89", Helix: "2", Length: "1200–2500", Coating: "HDG" },
+      {
+        "Pile type": "Single-helix pile",
+        "Shaft Ø": "76, 89",
+        Helix: "1",
+        Length: "1200–2500",
+        Coating: "HDG",
+      },
+      {
+        "Pile type": "Double-helix pile",
+        "Shaft Ø": "76, 89",
+        Helix: "2",
+        Length: "1200–2500",
+        Coating: "HDG",
+      },
       {
         "Pile type": "Ground screw, U-head",
         "Shaft Ø": "76, 89",
@@ -346,10 +374,26 @@ export const applications: Application[] = [
     hero: img.bessSite,
     heroAlt: "Battery energy storage containers on screw pile foundations",
     gallery: [
-      { src: img.bessContainer, alt: "Battery storage container supported on screw piles", caption: "BESS container" },
-      { src: img.bessSite, alt: "Battery energy storage site on screw pile foundations", caption: "BESS site" },
-      { src: img.bessLayout, alt: "Screw pile layout set out on a battery storage site", caption: "Pile layout" },
-      { src: img.bessFoundation, alt: "Steel frame joining screw piles under storage containers", caption: "Foundation detail" },
+      {
+        src: img.bessContainer,
+        alt: "Battery storage container supported on screw piles",
+        caption: "BESS container",
+      },
+      {
+        src: img.bessSite,
+        alt: "Battery energy storage site on screw pile foundations",
+        caption: "BESS site",
+      },
+      {
+        src: img.bessLayout,
+        alt: "Screw pile layout set out on a battery storage site",
+        caption: "Pile layout",
+      },
+      {
+        src: img.bessFoundation,
+        alt: "Steel frame joining screw piles under storage containers",
+        caption: "Foundation detail",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Helix", "Length", "Coating"],
     specRows: [
@@ -381,14 +425,31 @@ export const applications: Application[] = [
     headlineAccent: "& modular homes",
     intro:
       "Prefab, modular homes & polyhouses are light, but they still need a level base to sit on. We install piles to match the home's frame, which can be directly bolted. This works even on sloping or remote land, with no digging and dependency on local civil contractors. Screw pile can help you build in the remotest of the location with minimal labor.",
-    pileTypes: "Modular house single-helix pile · Light-gauge ground screw · Ground screw with single helix",
+    pileTypes:
+      "Modular house single-helix pile · Light-gauge ground screw · Ground screw with single helix",
     hero: img.prefabHouse,
     heroAlt: "Prefab timber house on a slope supported by screw pile foundations",
     gallery: [
-      { src: img.prefabHouse, alt: "Prefab house built on screw piles over sloping ground", caption: "Prefab house" },
-      { src: img.prefabModular, alt: "Modular home levelled on screw pile foundations", caption: "Foundation detail" },
-      { src: img.prefabSite, alt: "Timber prefab site founded on screw piles", caption: "Prefab site" },
-      { src: img.polyhouse, alt: "Polyhouse structure anchored on light-gauge ground screws", caption: "Polyhouse" },
+      {
+        src: img.prefabHouse,
+        alt: "Prefab house built on screw piles over sloping ground",
+        caption: "Prefab house",
+      },
+      {
+        src: img.prefabModular,
+        alt: "Modular home levelled on screw pile foundations",
+        caption: "Foundation detail",
+      },
+      {
+        src: img.prefabSite,
+        alt: "Timber prefab site founded on screw piles",
+        caption: "Prefab site",
+      },
+      {
+        src: img.polyhouse,
+        alt: "Polyhouse structure anchored on light-gauge ground screws",
+        caption: "Polyhouse",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Head", "Length", "Coating"],
     specRows: [
@@ -427,14 +488,31 @@ export const applications: Application[] = [
     headlineAccent: "carports & EV charging",
     intro:
       "Screw piles carry heavy moment induced structures including solar carports, EV charging bays and industrial buildings. Design starts with the geotechnical report or a verification pile, and the pile is then sized to the governing case. Shaft diameter, wall thickness and helix configuration are set per site rather than taken from a catalogue standard. BigScrew designs, manufactures and installs, which keeps engineering, production and site work under one accountable party",
-    pileTypes: "Large-diameter carport screw pile · Light EV groundscrews · Heavy infra screw piles",
+    pileTypes:
+      "Large-diameter carport screw pile · Light EV groundscrews · Heavy infra screw piles",
     hero: img.carport,
     heroAlt: "Solar carport structure founded on large-diameter screw piles",
     gallery: [
-      { src: img.carport, alt: "Solar carport on large-diameter screw pile foundations", caption: "Carport" },
-      { src: img.evCharging, alt: "EV charging bay mounted on a ground screw foundation", caption: "EV charging" },
-      { src: img.industrial, alt: "Industrial silo structure on screw pile foundations", caption: "Industrial structure" },
-      { src: img.heatExchanger, alt: "Heat exchanger base supported on screw piles", caption: "Heat exchanger base" },
+      {
+        src: img.carport,
+        alt: "Solar carport on large-diameter screw pile foundations",
+        caption: "Carport",
+      },
+      {
+        src: img.evCharging,
+        alt: "EV charging bay mounted on a ground screw foundation",
+        caption: "EV charging",
+      },
+      {
+        src: img.industrial,
+        alt: "Industrial silo structure on screw pile foundations",
+        caption: "Industrial structure",
+      },
+      {
+        src: img.heatExchanger,
+        alt: "Heat exchanger base supported on screw piles",
+        caption: "Heat exchanger base",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Helix", "Length", "Coating"],
     specRows: [
@@ -445,8 +523,20 @@ export const applications: Application[] = [
         Length: "3000–5000",
         Coating: "HDG",
       },
-      { "Pile type": "Light EV groundscrews", "Shaft Ø": "76–89", Helix: "2–3", Length: "1500–2500", Coating: "HDG" },
-      { "Pile type": "Heavy infra screw piles", "Shaft Ø": "76–114", Helix: "1–2", Length: "1500–5000", Coating: "HDG" },
+      {
+        "Pile type": "Light EV groundscrews",
+        "Shaft Ø": "76–89",
+        Helix: "2–3",
+        Length: "1500–2500",
+        Coating: "HDG",
+      },
+      {
+        "Pile type": "Heavy infra screw piles",
+        "Shaft Ø": "76–114",
+        Helix: "1–2",
+        Length: "1500–5000",
+        Coating: "HDG",
+      },
     ],
     metaTitle: "Screw Piles for Industrial Structures, Carports & EV | BigScrew",
     metaDescription:
@@ -465,14 +555,36 @@ export const applications: Application[] = [
     hero: img.fenceRun,
     heroAlt: "Long metal fence run installed on screw pile foundations",
     gallery: [
-      { src: img.fenceBoundary, alt: "Boundary wall panel founded on a ground screw", caption: "Boundary wall" },
-      { src: img.fenceLine, alt: "Fence line running across open ground on screw piles", caption: "Fence line" },
-      { src: img.fenceDetail, alt: "Flange plate head bolted to a fence post", caption: "Foundation detail" },
-      { src: img.fenceRun, alt: "Completed fence run on screw pile foundations", caption: "Fence run" },
+      {
+        src: img.fenceBoundary,
+        alt: "Boundary wall panel founded on a ground screw",
+        caption: "Boundary wall",
+      },
+      {
+        src: img.fenceLine,
+        alt: "Fence line running across open ground on screw piles",
+        caption: "Fence line",
+      },
+      {
+        src: img.fenceDetail,
+        alt: "Flange plate head bolted to a fence post",
+        caption: "Foundation detail",
+      },
+      {
+        src: img.fenceRun,
+        alt: "Completed fence run on screw pile foundations",
+        caption: "Fence run",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Head", "Length", "Coating"],
     specRows: [
-      { "Pile type": "Fence-post ground screw", "Shaft Ø": "76–89", Head: "Flange plate", Length: "1000–1500", Coating: "HDG" },
+      {
+        "Pile type": "Fence-post ground screw",
+        "Shaft Ø": "76–89",
+        Head: "Flange plate",
+        Length: "1000–1500",
+        Coating: "HDG",
+      },
       {
         "Pile type": "Single-helix pile, flange head",
         "Shaft Ø": "76–89",
@@ -494,18 +606,41 @@ export const applications: Application[] = [
     headlineAccent: "& transmission towers",
     intro:
       "Streetlights, electric poles and transmission towers are tall and thin, so the biggest risk is wind or cable pull pushing them over — not just their weight. Our proprietary screw piles can withstand heavy lateral loads. Screw piles are the perfect solution for high volume, heavy infrastructure products.",
-    pileTypes: "Single-helix pile, base plate · Double-helix pile, high-moment · Multi-leg tower footing pile",
+    pileTypes:
+      "Single-helix pile, base plate · Double-helix pile, high-moment · Multi-leg tower footing pile",
     hero: img.transmissionTower,
     heroAlt: "Transmission tower structures under construction on screw pile foundations",
     gallery: [
-      { src: img.lightPole, alt: "Roadside light poles founded on screw piles", caption: "Light pole" },
-      { src: img.towerLeg, alt: "Tower leg seated on a screw pile base plate", caption: "Tower leg detail" },
-      { src: img.transmissionTower, alt: "Transmission tower site on screw pile foundations", caption: "Transmission tower" },
-      { src: img.poleDetail, alt: "Section detail of a pole foundation on screw piles", caption: "Pole detail" },
+      {
+        src: img.lightPole,
+        alt: "Roadside light poles founded on screw piles",
+        caption: "Light pole",
+      },
+      {
+        src: img.towerLeg,
+        alt: "Tower leg seated on a screw pile base plate",
+        caption: "Tower leg detail",
+      },
+      {
+        src: img.transmissionTower,
+        alt: "Transmission tower site on screw pile foundations",
+        caption: "Transmission tower",
+      },
+      {
+        src: img.poleDetail,
+        alt: "Section detail of a pole foundation on screw piles",
+        caption: "Pole detail",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Head", "Length", "Coating"],
     specRows: [
-      { "Pile type": "Single-helix pile, base plate", "Shaft Ø": "—", Head: "Bolted base plate", Length: "—", Coating: "HDG" },
+      {
+        "Pile type": "Single-helix pile, base plate",
+        "Shaft Ø": "—",
+        Head: "Bolted base plate",
+        Length: "—",
+        Coating: "HDG",
+      },
       {
         "Pile type": "Double-helix pile, high-moment",
         "Shaft Ø": "—",
@@ -513,7 +648,13 @@ export const applications: Application[] = [
         Length: "—",
         Coating: "HDG",
       },
-      { "Pile type": "Multi-leg tower footing pile", "Shaft Ø": "—", Head: "Stub angle / grillage", Length: "—", Coating: "HDG" },
+      {
+        "Pile type": "Multi-leg tower footing pile",
+        "Shaft Ø": "—",
+        Head: "Stub angle / grillage",
+        Length: "—",
+        Coating: "HDG",
+      },
     ],
     metaTitle: "Screw Piles for Poles & Transmission Towers | BigScrew",
     metaDescription:
@@ -532,10 +673,26 @@ export const applications: Application[] = [
     hero: img.bridgePlatform,
     heroAlt: "Elevated viewing platform and walkbridge on screw pile foundations",
     gallery: [
-      { src: img.walkbridge, alt: "Underside of a walkbridge deck carried on screw piles", caption: "Walkbridge" },
-      { src: img.seaview, alt: "Screw piles installed through a forest walkway route", caption: "Sea view platform" },
-      { src: img.pedestrianBridge, alt: "Pedestrian bridge on screw pile foundations", caption: "Pedestrian bridge" },
-      { src: img.bridgePlatform, alt: "Viewing platform structure over rocky ground on screw piles", caption: "Installation over water" },
+      {
+        src: img.walkbridge,
+        alt: "Underside of a walkbridge deck carried on screw piles",
+        caption: "Walkbridge",
+      },
+      {
+        src: img.seaview,
+        alt: "Screw piles installed through a forest walkway route",
+        caption: "Sea view platform",
+      },
+      {
+        src: img.pedestrianBridge,
+        alt: "Pedestrian bridge on screw pile foundations",
+        caption: "Pedestrian bridge",
+      },
+      {
+        src: img.bridgePlatform,
+        alt: "Viewing platform structure over rocky ground on screw piles",
+        caption: "Installation over water",
+      },
     ],
     specHeaders: ["Pile type", "Shaft Ø", "Head", "Length", "Coating"],
     specRows: [

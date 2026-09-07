@@ -43,8 +43,9 @@ export function BrandStatement() {
               India's largest exporter of screw piles:
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              BigScrew Solutions makes every pile in-house, on fully automated manufacturing lines. We have been
-              exporting screw piles for the last 3 years, and today we export more than any other manufacturer in India.
+              BigScrew Solutions makes every pile in-house, on fully automated manufacturing lines.
+              We have been exporting screw piles for the last 3 years, and today we export more than
+              any other manufacturer in India.
             </p>
           </div>
         </Reveal>
@@ -125,9 +126,9 @@ export function ProductCloseUp() {
             Steel, thread, <span className="text-yellow">and ground</span>
           </h2>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-            A steel shaft with one or more helical plates, turned into the soil until it reaches the resistance the
-            design calls for. Hot-dip galvanised, made in-house on automated lines and checked batch by batch before
-            it leaves the factory.
+            A steel shaft with one or more helical plates, turned into the soil until it reaches the
+            resistance the design calls for. Hot-dip galvanised, made in-house on automated lines
+            and checked batch by batch before it leaves the factory.
           </p>
           <dl className="mt-10 grid grid-cols-2 border-y border-border">
             {[
@@ -141,7 +142,9 @@ export function ProductCloseUp() {
                 className={`px-4 py-5 md:px-5 ${i % 2 === 0 ? "border-r border-border" : ""} ${i < 2 ? "border-b border-border" : ""}`}
               >
                 <dt className="tech-label text-muted-foreground">{k}</dt>
-                <dd className="mt-2 font-display text-xl font-bold text-foreground md:text-2xl">{v}</dd>
+                <dd className="mt-2 font-display text-xl font-bold text-foreground md:text-2xl">
+                  {v}
+                </dd>
               </div>
             ))}
           </dl>
@@ -214,7 +217,9 @@ export function Stats() {
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>
               <TechLine />
-              <p className="mt-6 font-display text-6xl leading-none font-bold text-on-ink md:text-7xl">{s.value}</p>
+              <p className="mt-6 font-display text-6xl leading-none font-bold text-on-ink md:text-7xl">
+                {s.value}
+              </p>
               <p className="mt-4 text-sm text-on-ink-dim">{s.label}</p>
             </Reveal>
           ))}
@@ -236,7 +241,9 @@ export function Process() {
           {installSteps.map((s, i) => (
             <Reveal as="li" key={s.n} delay={i * 0.08} className="bg-background p-8">
               <span className="font-display text-5xl font-bold text-yellow">{s.n}</span>
-              <h3 className="mt-6 font-display text-2xl font-bold uppercase text-foreground">{s.title}</h3>
+              <h3 className="mt-6 font-display text-2xl font-bold uppercase text-foreground">
+                {s.title}
+              </h3>
               <p className="mt-3 text-sm text-muted-foreground">{s.body}</p>
             </Reveal>
           ))}
@@ -269,7 +276,11 @@ export function PileTypes() {
 
         <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {pileTypes.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.1} className="group flex flex-col items-center text-center">
+            <Reveal
+              key={p.slug}
+              delay={i * 0.1}
+              className="group flex flex-col items-center text-center"
+            >
               <div className="relative">
                 {/* number badge */}
                 <motion.span
@@ -294,7 +305,9 @@ export function PileTypes() {
                 </div>
               </div>
 
-              <h3 className="mt-7 font-display text-2xl font-bold uppercase text-on-ink">{p.name}</h3>
+              <h3 className="mt-7 font-display text-2xl font-bold uppercase text-on-ink">
+                {p.name}
+              </h3>
 
               {/* animated underline */}
               <span className="mt-3 h-[2px] w-8 origin-center bg-yellow/60 transition-all duration-500 ease-out group-hover:w-16 group-hover:bg-yellow" />
@@ -314,11 +327,18 @@ export function PileTypes() {
             <caption className="sr-only">Which pile type suits which application</caption>
             <thead>
               <tr>
-                <th scope="col" className="border-b border-on-ink/20 py-4 pr-6 tech-label text-on-ink-dim">
+                <th
+                  scope="col"
+                  className="border-b border-on-ink/20 py-4 pr-6 tech-label text-on-ink-dim"
+                >
                   Pile type
                 </th>
                 {pileMatrix.columns.map((c) => (
-                  <th key={c} scope="col" className="border-b border-on-ink/20 py-4 pr-6 text-center tech-label text-on-ink-dim">
+                  <th
+                    key={c}
+                    scope="col"
+                    className="border-b border-on-ink/20 py-4 pr-6 text-center tech-label text-on-ink-dim"
+                  >
                     {c}
                   </th>
                 ))}
@@ -327,17 +347,32 @@ export function PileTypes() {
             <tbody>
               {pileMatrix.rows.map((r) => (
                 <tr key={r.type} className="transition-colors duration-300 hover:bg-on-ink/[0.03]">
-                  <th scope="row" className="border-b border-on-ink/10 py-4 pr-6 font-display text-lg font-semibold uppercase text-on-ink">
+                  <th
+                    scope="row"
+                    className="border-b border-on-ink/10 py-4 pr-6 font-display text-lg font-semibold uppercase text-on-ink"
+                  >
                     {r.type}
                   </th>
                   {r.fit.map((f, i) => (
                     <td key={i} className="border-b border-on-ink/10 py-4 pr-6 text-center">
                       {f === "primary" ? (
-                        <Check className="mx-auto h-5 w-5 text-yellow" strokeWidth={2} aria-label="Primary fit" />
+                        <Check
+                          className="mx-auto h-5 w-5 text-yellow"
+                          strokeWidth={2}
+                          aria-label="Primary fit"
+                        />
                       ) : f === "no" ? (
-                        <Minus className="mx-auto h-5 w-5 text-on-ink-dim" strokeWidth={2} aria-label="Secondary fit" />
+                        <Minus
+                          className="mx-auto h-5 w-5 text-on-ink-dim"
+                          strokeWidth={2}
+                          aria-label="Secondary fit"
+                        />
                       ) : (
-                        <X className="mx-auto h-5 w-5 text-on-ink-dim/40" strokeWidth={2} aria-label="Not suited" />
+                        <X
+                          className="mx-auto h-5 w-5 text-on-ink-dim/40"
+                          strokeWidth={2}
+                          aria-label="Not suited"
+                        />
                       )}
                     </td>
                   ))}
@@ -396,7 +431,9 @@ export function ApplicationsGrid() {
                       <h3 className="mt-4 font-display text-3xl leading-tight font-bold uppercase text-foreground md:text-4xl">
                         {a.title}
                       </h3>
-                      <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">{a.intro}</p>
+                      <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+                        {a.intro}
+                      </p>
                       <span className="mt-8 inline-flex w-fit items-center gap-2 bg-yellow px-5 py-3 tech-label text-foreground transition-all duration-300 group-hover:gap-3 group-hover:bg-yellow-deep">
                         View application <span aria-hidden>→</span>
                       </span>
@@ -408,7 +445,12 @@ export function ApplicationsGrid() {
 
             return (
               <Reveal key={a.slug} delay={(i % 3) * 0.07} className="group bg-background">
-                <ArrowLink to="/applications/$slug" params={{ slug: a.slug }} variant="bare" className="block">
+                <ArrowLink
+                  to="/applications/$slug"
+                  params={{ slug: a.slug }}
+                  variant="bare"
+                  className="block"
+                >
                   <div className="aspect-16/11 overflow-hidden">
                     <img
                       src={a.hero}
@@ -422,7 +464,9 @@ export function ApplicationsGrid() {
                     <h3 className="mt-4 font-display text-2xl leading-tight font-bold uppercase text-foreground">
                       {a.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{a.intro}</p>
+                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+                      {a.intro}
+                    </p>
                     <span className="mt-6 inline-flex w-fit items-center gap-2 border border-yellow/70 px-4 py-2 tech-label text-yellow-deep transition-all duration-300 group-hover:gap-3 group-hover:border-yellow group-hover:bg-yellow group-hover:text-foreground">
                       View application <span aria-hidden>→</span>
                     </span>
@@ -447,33 +491,34 @@ export function Machinery() {
         <Label tone="yellow">Machinery & soil</Label>
         <h2 className="mt-6 display-lg text-foreground">Matched to the ground</h2>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-  Foundation performance depends as much on the installation rig as on the pile. We size the rotary
-  drive head to the torque demand of the site's soil profile and mount it on a carrier. Design starts
-  with the geotechnical report, or with a verification pile where no report exists. Carrier, drive head
-  and helix diameter are then selected as per the terrain.
-</p>
+          Foundation performance depends as much on the installation rig as on the pile. We size the
+          rotary drive head to the torque demand of the site's soil profile and mount it on a
+          carrier. Design starts with the geotechnical report, or with a verification pile where no
+          report exists. Carrier, drive head and helix diameter are then selected as per the
+          terrain.
+        </p>
 
-{/* ---------- gallery image ---------- */}
-<Reveal className="mt-12">
-  <figure className="overflow-hidden rounded-[4px] border border-border bg-white p-3 shadow-[0_20px_50px_rgba(12,12,12,0.08)] md:p-4">
-    <div className="overflow-hidden rounded-[2px] bg-concrete/20">
-      <img
-        src={img.heroExcavator}
-        alt="Drive heads and carriers matched to soil condition — equipment gallery"
-        loading="lazy"
-        className="h-auto w-full object-cover"
-        width={1200}
-        height={760}
-      />
-    </div>
-    <figcaption className="mt-4 px-1 pb-1 tech-label text-muted-foreground">
-      Drive heads and carriers — equipment gallery
-    </figcaption>
-  </figure>
-</Reveal>
+        {/* ---------- gallery image ---------- */}
+        <Reveal className="mt-12">
+          <figure className="overflow-hidden rounded-[4px] border border-border bg-white p-3 shadow-[0_20px_50px_rgba(12,12,12,0.08)] md:p-4">
+            <div className="overflow-hidden rounded-[2px] bg-concrete/20">
+              <img
+                src={img.heroExcavator}
+                alt="Drive heads and carriers matched to soil condition — equipment gallery"
+                loading="lazy"
+                className="h-auto w-full object-cover"
+                width={1200}
+                height={760}
+              />
+            </div>
+            <figcaption className="mt-4 px-1 pb-1 tech-label text-muted-foreground">
+              Drive heads and carriers — equipment gallery
+            </figcaption>
+          </figure>
+        </Reveal>
 
-{/* ---------- desktop / tablet: aligned grid table ---------- */}
-<div className="mt-14 hidden md:block">
+        {/* ---------- desktop / tablet: aligned grid table ---------- */}
+        <div className="mt-14 hidden md:block">
           <div className="grid grid-cols-[1.1fr_1fr_0.9fr_1.3fr] gap-x-6 border-t-2 border-foreground/80 pb-2">
             {["Soil condition", "Carrier machine", "Drive head", "Pile approach"].map((h) => (
               <span key={h} className="pt-5 tech-label text-muted-foreground">
@@ -508,7 +553,9 @@ export function Machinery() {
           {soilMachinery.map((r, i) => (
             <Reveal key={r.soil} delay={i * 0.05} className="border border-border bg-white p-5">
               <div className="flex items-center justify-between gap-3">
-                <h3 className="font-display text-lg font-semibold uppercase text-foreground">{r.soil}</h3>
+                <h3 className="font-display text-lg font-semibold uppercase text-foreground">
+                  {r.soil}
+                </h3>
                 <TorqueBadge label={r.driveHead} />
               </div>
               <dl className="mt-4 grid grid-cols-1 gap-3">

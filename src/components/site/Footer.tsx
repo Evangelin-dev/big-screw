@@ -19,8 +19,9 @@ export function Footer() {
               />
             </div>
             <p className="mt-6 text-sm leading-relaxed text-on-ink-dim">
-              Helical screw pile foundations — designed, manufactured and installed. Screw piles for solar,
-              storage, housing, industrial structures, carports, EV charging, fencing, poles, towers and bridges.
+              Helical screw pile foundations — designed, manufactured and installed. Screw piles for
+              solar, storage, housing, industrial structures, carports, EV charging, fencing, poles,
+              towers and bridges.
             </p>
             <div className="mt-8">
               <ArrowLink to="/contact" variant="yellow">
@@ -44,7 +45,10 @@ export function Footer() {
                   </li>
                 ))}
                 <li>
-                  <Link to="/contact" className="text-sm text-on-ink-dim uppercase transition-colors hover:text-yellow">
+                  <Link
+                    to="/contact"
+                    className="text-sm text-on-ink-dim uppercase transition-colors hover:text-yellow"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -101,7 +105,9 @@ export function Footer() {
       <div className="border-t border-on-ink/10">
         <div className="shell flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="tech-label text-on-ink-dim">Engineered Foundations / Navi Mumbai, India</p>
-          <p className="tech-label text-on-ink-dim">© {new Date().getFullYear()} Bigscrew Solutions</p>
+          <p className="tech-label text-on-ink-dim">
+            © {new Date().getFullYear()} Bigscrew Solutions
+          </p>
         </div>
       </div>
     </footer>

@@ -42,7 +42,7 @@ function ProjectsPage() {
   // distribute into 3 columns for masonry effect
   const columns = useMemo(() => {
     const cols: (typeof galleryItems)[] = [[], [], []];
-    filtered.forEach((item, i) => cols[i % 3].push(item));
+    filtered.forEach((item, i) => cols[i % 3]?.push(item));
     return cols;
   }, [filtered]);
 
@@ -99,7 +99,9 @@ function ProjectsPage() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <div className="absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                       {g.app && <p className="tech-label text-yellow">{g.app}</p>}
-                      {g.caption && <p className="mt-1 text-sm font-medium text-white">{g.caption}</p>}
+                      {g.caption && (
+                        <p className="mt-1 text-sm font-medium text-white">{g.caption}</p>
+                      )}
                     </div>
                   </motion.div>
                 ))}

@@ -40,6 +40,7 @@ To add a new blog article, simply add a new object to the `blogs` array in `src/
 ```
 
 **The UI will automatically:**
+
 - Create a card in the blog grid
 - Generate the route `/blog/your-article-slug`
 - Display the full article with proper formatting
@@ -74,21 +75,25 @@ src/
 ## Design System Usage
 
 ### Colors
+
 - **Primary Brand**: `text-yellow` (brand accent)
 - **Text**: `text-foreground` (white), `text-on-ink-dim` (light gray)
 - **Backgrounds**: `bg-background` (off-white), `bg-ink` (dark)
 
 ### Typography
+
 - **Headings**: Use `font-display` + `font-semibold` + `uppercase`
 - **Tech labels**: Use `tech-label` utility class
 - **Body text**: Default sans-serif (Barlow)
 
 ### Components
+
 - **Links**: Use `<ArrowLink>` with variants: `yellow`, `outline`, `bare`
 - **Labels**: Use `<Label tone="yellow">` for section eyebrows
 - **Cards**: Use border + hover effects
 
 ### Spacing
+
 - Use Tailwind spacing classes (`mt-6`, `mb-12`, `px-8`, etc.)
 - Content container: `shell` class (auto width with padding)
 
@@ -97,12 +102,14 @@ src/
 ## Search & Filter Logic
 
 **Search works by matching:**
+
 - Article title (case-insensitive)
 - Article excerpt
 - Article keywords
 - FAQ questions and answers
 
 **Filters work by:**
+
 - Selecting matching category
 - If "ALL" selected, shows all articles
 - Combining search + category filter (AND operation)
@@ -114,11 +121,14 @@ src/
 When writing article content:
 
 1. **Use semantic HTML**
+
    ```html
    <h2>Main Section</h2>
    <h3>Subsection</h3>
    <p>Content...</p>
-   <ul><li>Points</li></ul>
+   <ul>
+     <li>Points</li>
+   </ul>
    ```
 
 2. **Write for readability**
@@ -143,26 +153,36 @@ When writing article content:
 ## Component API
 
 ### `<BlogCard blog={blog} />`
+
 Displays a single article card for the grid.
+
 - Shows: image, category, date, title, excerpt, read link
 - Props: `blog: BlogArticle`
 
 ### `<FeaturedBlogCard blog={blog} />`
+
 Large featured article card (image + content side-by-side).
+
 - Responsive: stacks on mobile
 - Props: `blog: BlogArticle`
 
 ### `<BlogFAQ faqs={faqs} />`
+
 Accordion FAQ section with structured data.
+
 - Automatically renders schema.org JSON-LD
 - Props: `faqs: BlogFAQ[]`
 
 ### `<RelatedArticles articles={articles} />`
+
 Shows 3 related article cards at bottom of page.
+
 - Props: `articles: BlogArticle[]`
 
 ### `<ShareButtons title={title} url={url} />`
+
 Social sharing buttons (LinkedIn, WhatsApp, Copy Link).
+
 - Props: `title: string`, `url: string`
 
 ---
@@ -170,15 +190,19 @@ Social sharing buttons (LinkedIn, WhatsApp, Copy Link).
 ## Utility Functions
 
 ### `getBlogBySlug(slug: string): BlogArticle | undefined`
+
 Get a single article by its slug.
 
 ### `getBlogsByCategory(category: string): BlogArticle[]`
+
 Filter articles by category. Pass "ALL" for all articles.
 
 ### `searchBlogs(query: string): BlogArticle[]`
+
 Search articles by title, excerpt, keywords, or FAQ content.
 
 ### `getRelatedArticles(slug: string, limit = 3): BlogArticle[]`
+
 Get related articles based on keyword matching and same category.
 
 ---
@@ -186,16 +210,15 @@ Get related articles based on keyword matching and same category.
 ## Styling Classes
 
 ### Article Content
+
 Apply class `article-content` to container with rendered HTML:
 
 ```tsx
-<div
-  dangerouslySetInnerHTML={{ __html: blog.content }}
-  className="article-content"
-/>
+<div dangerouslySetInnerHTML={{ __html: blog.content }} className="article-content" />
 ```
 
 Automatically styles:
+
 - `h2`, `h3` headings
 - `p` paragraphs
 - `ul`, `ol` lists
@@ -207,23 +230,27 @@ Automatically styles:
 ## Content Guidelines
 
 ### Article Length
+
 - Recommended: 1500-3000 words
 - Section headings every 300-400 words
 - Minimum 1 image or table
 
 ### FAQ Creation
+
 - 1 FAQ per 100-150 words of content
 - 8-10 FAQs per article minimum
 - Questions should be customer questions, not generic
 - Answers should directly address the question
 
 ### Headlines
+
 - Clear and descriptive
 - Include main keyword naturally
 - Avoid keyword stuffing
 - Professional tone
 
 ### Examples from existing content:
+
 ✅ "Helical Screw Pile Foundations: A Complete Guide for Modern Construction"
 ✅ "Screw Piles vs. Concrete Foundations: A Detailed Comparison"
 ✅ "Screw Piles for Solar Ground Mount: Why Developers Choose Screw Foundations"
@@ -233,12 +260,24 @@ Automatically styles:
 ## Extending the Blog
 
 ### Adding More Categories
+
 Edit the `Category` type in `blogs.ts`:
+
 ```typescript
-type Category = "SCREW PILES" | "FOUNDATIONS" | "SOLAR" | "BESS" | "INSTALLATION" | "ENGINEERING" | "APPLICATIONS" | "INDUSTRY INSIGHTS" | "YOUR_NEW_CATEGORY";
+type Category =
+  | "SCREW PILES"
+  | "FOUNDATIONS"
+  | "SOLAR"
+  | "BESS"
+  | "INSTALLATION"
+  | "ENGINEERING"
+  | "APPLICATIONS"
+  | "INDUSTRY INSIGHTS"
+  | "YOUR_NEW_CATEGORY";
 ```
 
 Update the `CATEGORIES` array in `blog.index.tsx`:
+
 ```typescript
 const CATEGORIES: Category[] = [
   "ALL",
@@ -249,20 +288,26 @@ const CATEGORIES: Category[] = [
 ```
 
 ### Customizing Featured Article Selection
+
 In `blog.index.tsx`, change how featured article is selected:
+
 ```typescript
 // Current: shows first article in filtered results
 const featuredBlog = filteredBlogs.length > 0 ? filteredBlogs[0] : blogs[0];
 
 // Alternative: show most recent
-const featuredBlog = [...filteredBlogs].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
+const featuredBlog = [...filteredBlogs].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+)[0];
 
 // Alternative: show highest read time
 const featuredBlog = [...filteredBlogs].sort((a, b) => b.readTime - a.readTime)[0];
 ```
 
 ### Adding Image Gallery to Articles
+
 Modify `BlogArticle` type to include gallery:
+
 ```typescript
 gallery?: Array<{ src: string; alt: string; caption: string }>;
 ```
@@ -282,27 +327,32 @@ gallery?: Array<{ src: string; alt: string; caption: string }>;
 ## Troubleshooting
 
 ### Blog page not showing articles
+
 - Check that blogs array in `blogs.ts` has entries
 - Verify slug format (lowercase, hyphens, no spaces)
 - Check browser console for errors
 
 ### FAQ accordion not opening
+
 - Verify `BlogFAQ` component is imported
 - Check that `faqs` array is not empty
 - Inspect Radix UI accordion HTML structure
 
 ### Images not loading
+
 - Verify image import at top of `blogs.ts`
 - Check image path is correct
 - Ensure image file exists in `src/assets/`
 - Check for CORS issues if external URL
 
 ### Search not working
+
 - Check search query is not empty
 - Verify keywords array is populated
 - Check FAQ questions/answers are in HTML
 
 ### Layout shifting on mobile
+
 - Check for horizontal overflow with `overflow-x-hidden`
 - Verify max-widths are set
 - Test on actual mobile device or DevTools
@@ -312,6 +362,7 @@ gallery?: Array<{ src: string; alt: string; caption: string }>;
 ## Support & Questions
 
 For implementation details, refer to:
+
 - `src/lib/blogs.ts` - Data structure and utilities
 - `src/routes/blog.index.tsx` - Blog listing logic
 - `src/routes/blog.$slug.tsx` - Blog detail logic

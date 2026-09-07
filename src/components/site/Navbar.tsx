@@ -43,7 +43,9 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-ink/95" : "bg-transparent"}`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-ink/95" : "bg-transparent"}`}
+    >
       <div className="absolute left-6 top-0 z-40 hidden lg:block">
         <Wordmark className="block" />
       </div>
@@ -114,7 +116,12 @@ export function Navbar() {
           >
             <div className="shell flex h-20 items-center justify-between">
               <Wordmark className="w-[95px]" />
-              <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" className="text-on-ink">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="text-on-ink"
+              >
                 <X className="h-7 w-7" strokeWidth={1.5} />
               </button>
             </div>

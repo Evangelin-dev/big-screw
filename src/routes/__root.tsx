@@ -24,7 +24,10 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-8">
-          <Link to="/" className="inline-flex bg-yellow px-6 py-4 tech-label text-primary-foreground">
+          <Link
+            to="/"
+            className="inline-flex bg-yellow px-6 py-4 tech-label text-primary-foreground"
+          >
             Back to home →
           </Link>
         </div>
