@@ -1,0 +1,365 @@
+import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { r as motion } from "../_libs/framer-motion+[...].mjs";
+import { n as Reveal, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
+import { t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
+import { f as img, g as services, v as stats, y as whyBigscrew } from "./router-CS6gVxxY.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/about-CbqucsoC.js
+var import_jsx_runtime = require_jsx_runtime();
+function AboutPage() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PageHero, {
+			eyebrow: "ABOUT US",
+			title: "India's largest exporter of",
+			accent: "screw piles",
+			intro: "BigScrew Solutions makes every pile in-house, on fully automated manufacturing lines. We have been exporting screw piles for the last 3 years, and today we export more than any other manufacturer in India.",
+			image: img.factory,
+			imageAlt: "BigScrew automated screw pile manufacturing plant"
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "bg-off-white py-20 md:py-28",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "shell",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "grid gap-12 lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-20",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "lg:sticky lg:top-28 lg:self-start",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+								tone: "yellow",
+								children: "Why BigScrew"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+								className: "mt-6 font-display text-4xl font-bold uppercase leading-[1.05] text-foreground md:text-5xl",
+								children: "Four reasons the order desk keeps ringing"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground",
+								children: "Nothing here is outsourced. Every claim below happens on our own factory floor, checked before it ships."
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "relative border-t border-foreground/15",
+						children: whyBigscrew.map((w, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							className: "group relative grid grid-cols-[auto_1fr] items-start gap-6 border-b border-foreground/15 py-8 md:gap-10 md:py-10",
+							initial: {
+								opacity: 0,
+								y: 20
+							},
+							whileInView: {
+								opacity: 1,
+								y: 0
+							},
+							viewport: { once: true },
+							transition: {
+								duration: .5,
+								delay: i * .08
+							},
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"aria-hidden": true,
+									className: "absolute inset-y-0 -left-4 -right-4 -z-10 origin-left scale-x-0 bg-white transition-transform duration-500 ease-out group-hover:scale-x-100 md:-left-6 md:-right-6"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "font-display text-5xl font-bold leading-none text-foreground/10 transition-colors duration-500 group-hover:text-yellow md:text-6xl",
+									children: String(i + 1).padStart(2, "0")
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "font-display text-xl font-bold uppercase leading-tight text-foreground transition-transform duration-500 group-hover:translate-x-1 md:text-2xl",
+										children: w.title
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "max-w-md text-sm leading-relaxed text-muted-foreground md:text-right",
+										children: w.body
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"aria-hidden": true,
+									className: "pointer-events-none absolute right-0 top-8 -translate-x-2 text-2xl text-yellow opacity-0 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 md:top-10",
+									children: "→"
+								})
+							]
+						}, w.title))
+					})]
+				})
+			})
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "bg-off-white py-20 md:py-2",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "shell",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-14 border-t border-border pt-10",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "text-center md:text-left",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+								tone: "yellow",
+								children: "Leadership Team"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-5 font-display text-2xl font-semibold uppercase tracking-[0.08em] text-foreground md:text-3xl",
+								children: "BUILT BY OPERATORS, ENGINEERS, AND STRATEGISTS"
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-10 grid gap-8 md:grid-cols-3",
+							children: [
+								{
+									name: "Karandeep Saini",
+									role: "Founder & CEO",
+									initials: "KS",
+									description: "40+ years family manufacturing heritage through Rajog Equipment. Personally, designs custom piling machines, manufacturing automation and soil-adaptive screw geometries. Acts as a bridge between design, manufacturing & installation.",
+									focus: "Innovation, Vertical Integration & Commercial Growth",
+									accent: "from-yellow/20 to-yellow/10",
+									borderColor: "border-yellow/50"
+								},
+								{
+									name: "Dr. Pavan Kumar",
+									role: "Geotechnical Lead",
+									initials: "PK",
+									description: "PhD, IIT Bhubaneswar. Published researcher in geotechnics, deep foundations, and soil-structure interaction. Screw pile design and capacity optimisation specialist.",
+									focus: "Geotech Design & Verification",
+									accent: "from-blue-500/20 to-blue-400/10",
+									borderColor: "border-blue-500/50"
+								},
+								{
+									name: "Harjith Saini",
+									role: "Advisor & Director",
+									initials: "HS",
+									description: "2nd generation entrepreneur. Deep background in heavy engineering manufacturing. Scaled boiler production and automotive fabrication.",
+									focus: "Advisory role",
+									accent: "from-amber-500/20 to-amber-400/10",
+									borderColor: "border-amber-500/50"
+								}
+							].map((member, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+								className: "overflow-hidden rounded-xl border border-border bg-gradient-to-b from-white to-gray-50 shadow-sm hover:shadow-md transition-all duration-300 group",
+								initial: {
+									opacity: 0,
+									y: 20
+								},
+								whileInView: {
+									opacity: 1,
+									y: 0
+								},
+								viewport: { once: true },
+								transition: {
+									duration: .5,
+									delay: idx * .1
+								},
+								whileHover: { y: -4 },
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `h-1.5 bg-gradient-to-r ${member.accent}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "p-8 md:p-7",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-foreground to-foreground/80 text-white font-display font-bold text-lg mb-6 group-hover:scale-110 transition-transform duration-300",
+											children: member.initials
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+											className: "font-display text-2xl font-bold uppercase text-foreground leading-tight",
+											children: member.name
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "mt-3 text-xs font-medium uppercase tracking-[0.18em] text-black bg-yellow/10 w-fit px-3 py-1.5 rounded-full",
+											children: member.role
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "mt-6 text-sm leading-relaxed text-muted-foreground",
+											children: member.description
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "mt-6 border-t border-border pt-4",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+												className: "text-[0.65rem] font-medium uppercase tracking-[0.2em] text-muted-foreground",
+												children: "Focus"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+												className: "mt-2 text-sm font-medium text-foreground",
+												children: member.focus
+											})]
+										})
+									]
+								})]
+							}, member.name))
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mt-14 border-t border-border pt-10",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "tech-label text-muted-foreground",
+								children: "Manufacturing heritage — Rajog Equipment"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "mt-10 grid gap-0 sm:grid-cols-3",
+								children: [
+									{
+										value: "40+",
+										label: "Years in heavy fabrication"
+									},
+									{
+										value: "30,000+",
+										label: "Groundscrews exported"
+									},
+									{
+										value: "300+",
+										label: "Tons of foundations supplied"
+									}
+								].map((stat, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+									initial: {
+										opacity: 0,
+										y: 16
+									},
+									whileInView: {
+										opacity: 1,
+										y: 0
+									},
+									viewport: { once: true },
+									transition: {
+										duration: .5,
+										delay: i * .08
+									},
+									className: "min-h-[94px] border-l-2 border-yellow/60 px-6",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "font-display text-3xl font-bold leading-none text-foreground md:text-4xl",
+										children: stat.value
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "mt-2 text-sm leading-snug text-muted-foreground",
+										children: stat.label
+									})]
+								}, stat.label))
+							})]
+						})
+					]
+				})
+			})
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "grain-dark py-16 md:py-24",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "shell",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid gap-8 md:grid-cols-3",
+					children: services.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+						delay: i * .07,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+							className: "group relative overflow-hidden bg-gradient-to-br from-ink-soft/80 to-ink/60 rounded-lg p-8 border border-on-ink/10 hover:border-yellow/40 transition-all duration-300",
+							whileHover: {
+								scale: 1.02,
+								y: -4
+							},
+							transition: { duration: .3 },
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+									className: "absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-yellow to-transparent",
+									initial: { x: "-100%" },
+									whileInView: { x: "100%" },
+									viewport: { once: true },
+									transition: {
+										duration: 2,
+										delay: i * .15
+									}
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+									className: "absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-yellow opacity-0 group-hover:opacity-100",
+									transition: { duration: .3 }
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+									className: "absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-yellow opacity-0 group-hover:opacity-100",
+									transition: { duration: .3 }
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+									initial: {
+										opacity: 0,
+										y: 10
+									},
+									whileInView: {
+										opacity: 1,
+										y: 0
+									},
+									viewport: { once: true },
+									transition: {
+										duration: .6,
+										delay: i * .1
+									},
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center gap-4 mb-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "relative",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.div, {
+												className: "absolute inset-0 bg-yellow/20 rounded-full blur-md",
+												animate: { scale: [
+													1,
+													1.2,
+													1
+												] },
+												transition: {
+													duration: 3,
+													repeat: Infinity
+												}
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												className: "relative w-12 h-12 rounded-full bg-yellow/10 border border-yellow/40 flex items-center justify-center",
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-lg font-bold text-yellow",
+													children: s.n
+												})
+											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+											className: "font-display text-xl font-bold uppercase text-on-ink flex-1",
+											children: s.title
+										})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-sm leading-relaxed text-on-ink-dim",
+										children: s.body
+									})]
+								})
+							]
+						})
+					}, s.n))
+				})
+			})
+		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+			className: "border-t border-border bg-off-white py-20 md:py-28",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "shell",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+					tone: "yellow",
+					children: "By the numbers"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "mt-6 font-display text-3xl font-bold uppercase leading-[1.05] text-foreground md:text-4xl",
+					children: "Manufacturing at scale"
+				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-14 grid divide-y divide-border border-y border-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4",
+					children: stats.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+						initial: {
+							opacity: 0,
+							y: 24
+						},
+						whileInView: {
+							opacity: 1,
+							y: 0
+						},
+						viewport: { once: true },
+						transition: {
+							duration: .5,
+							delay: i * .08
+						},
+						className: "group px-2 py-8 first:pl-0 sm:px-8 md:px-10",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "tech-label text-yellow-deep/70",
+								children: String(i + 1).padStart(2, "0")
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-5 font-display text-5xl leading-none font-bold text-foreground transition-colors duration-300 group-hover:text-yellow-deep md:text-6xl",
+								children: s.value
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-4 text-sm leading-snug text-muted-foreground",
+								children: s.label
+							})
+						]
+					}, s.label))
+				})]
+			})
+		})
+	] });
+}
+//#endregion
+export { AboutPage as component };

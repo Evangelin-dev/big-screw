@@ -1,0 +1,3200 @@
+import { i as __toESM } from "../_runtime.mjs";
+import { c as require_jsx_runtime, s as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { i as AnimatePresence, r as motion } from "../_libs/framer-motion+[...].mjs";
+import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
+import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
+import { M as notFound, c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, l as useRouterState, m as createFileRoute, p as lazyRouteComponent, s as Scripts, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { c as Menu, t as X } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/data-DICVWIok.js
+var image_0055_default = "/assets/image-0055-CQpMvifC.png";
+var screw_default = "/assets/screw-D9H7Edag.png";
+var ground_default = "/assets/ground-DWvN7S78.png";
+var hp_default = "/assets/hp-DyR4Yci4.png";
+var about_default = "/assets/about-DXAmJ2uS.png";
+var images_default = "/assets/images-DgAvg4Pz.png";
+var _1_default$1 = "/assets/1-aNT9jxZf.png";
+var _2_default$1 = "/assets/2-DZ_gyIth.png";
+var _3_default$1 = "/assets/3-DfNrP3jF.png";
+var _4_default$1 = "/assets/4-Ct5_veRL.png";
+var _5_default$1 = "/assets/5-DGtEw_eI.png";
+var _6_default$1 = "/assets/6-D6iQuVzW.png";
+var _7_default = "/assets/7-DzlA5uTV.png";
+var _8_default = "/assets/8-BWzMFoLI.png";
+var _1_default = "/assets/1-DC4xN5Dz.jpg";
+var _2_default = "/assets/2-DJXTxaTK.jpg";
+var _3_default = "/assets/3-C1M4jJt4.jpg";
+var _4_default = "/assets/4-DgQAsoUX.jpeg";
+var _5_default = "/assets/5-D1xzdhlZ.jpg";
+var _6_default = "/assets/6-Cr-1xqlc.jpg";
+var image_0074_default = "/assets/image-0074-CEjMJTK_.jpg";
+var image_0075_default = "/assets/image-0075-BS9guM6q.png";
+var image_0076_default = "/assets/image-0076-0cnprQ6D.png";
+var _13_default = "/assets/13-zLXBmEdh.png";
+var solar_default = "/assets/solar-kRCl0TA6.png";
+var Picture1_default = "/assets/Picture1-BoLLBTcL.png";
+var Picture2_default = "/assets/Picture2-CZZdTYfp.png";
+var Picture3_default = "/assets/Picture3-CYKQaUGa.png";
+var image_0058_default = "/assets/image-0058-R291bAMc.png";
+var _11_default = "/assets/11-CrvCnQfj.png";
+var image_0063_default = "/assets/image-0063-DL2g6S2R.png";
+var image_0068_default = "/assets/image-0068-DPKjjAUK.png";
+var _12_default = "/assets/12-DjTg3iK7.png";
+var image_0069_default = "/assets/image-0069-CsYnbM6V.png";
+var image_0070_default = "/assets/image-0070-RRm_e1C0.png";
+var image_0081_default = "/assets/image-0081-D83a4Lbm.jpg";
+var image_0082_default = "/assets/image-0082-CSB3j33T.jpg";
+var image_0083_default = "/assets/image-0083-BxQJh46f.png";
+var image_0084_default = "/assets/image-0084-B6cawcJ1.png";
+var image_0087_default = "/assets/image-0087-CVd-YsEh.png";
+var _14_default = "/assets/14-Ssts45t3.png";
+var image_0088_default = "/assets/image-0088-CqSgZxyL.png";
+var image_0089_default = "/assets/image-0089-DI5hNy9g.png";
+var image_0090_default = "/assets/image-0090-BQmnWivj.png";
+var image_0093_default = "/assets/image-0093-CNf5UkNr.png";
+var image_0094_default = "/assets/image-0094-DeGiHC6C.png";
+var image_0095_default = "/assets/image-0095-DpXoywWi.png";
+/**
+* Every value in this file comes from the BigScrew Solutions catalogue.
+* Do not add specifications, claims or contact details that are not in the catalogue.
+*/
+var img = {
+	heroExcavator: image_0055_default,
+	workerInstall: images_default,
+	pilesCrate: screw_default,
+	towerBase: image_0095_default,
+	factory: about_default,
+	pileProduct: screw_default,
+	groundProduct: ground_default,
+	largeDiameterProduct: hp_default,
+	project1: _1_default$1,
+	project2: _2_default$1,
+	project3: _3_default$1,
+	project4: _4_default$1,
+	project5: _5_default$1,
+	project6: _6_default$1,
+	project7: _7_default,
+	project8: _8_default,
+	facilityImg1: _1_default,
+	facilityImg2: _2_default,
+	facilityImg3: _3_default,
+	facilityImg4: _4_default,
+	facilityImg5: _5_default,
+	facilityImg6: _6_default,
+	solarDual: image_0058_default,
+	solarSingle: _11_default,
+	solarSite: solar_default,
+	solarHill: image_0063_default,
+	Picture1: Picture1_default,
+	Picture2: Picture2_default,
+	Picture3: Picture3_default,
+	bessContainer: _12_default,
+	bessSite: image_0068_default,
+	bessLayout: image_0069_default,
+	bessFoundation: image_0070_default,
+	prefabHouse: image_0074_default,
+	prefabModular: image_0075_default,
+	prefabSite: image_0076_default,
+	polyhouse: _13_default,
+	carport: image_0081_default,
+	evCharging: image_0082_default,
+	industrial: image_0083_default,
+	heatExchanger: image_0084_default,
+	fenceBoundary: image_0087_default,
+	fenceLine: _14_default,
+	helicalPilesDetail: image_0088_default,
+	fenceDetail: image_0089_default,
+	fenceRun: image_0090_default,
+	transmissionTower: image_0093_default,
+	lightPole: image_0094_default,
+	towerLeg: image_0095_default,
+	poleDetail: "/assets/15-EOV_xKve.png",
+	bridgePlatform: "/assets/image-0100-DjCRbIcE.png",
+	seaview: "/assets/image-0101-C6KoCZlb.png",
+	walkbridge: "/assets/image-0102-DkX46z7v.png",
+	pedestrianBridge: "/assets/image-0103-C9YfRb6p.png",
+	logoMark: "/assets/logo-mark-icuYga1s.png"
+};
+var company = {
+	name: "BigScrew Solutions",
+	tagline: "Foundations, driven not poured.",
+	address: {
+		line1: "Plot No. R-413,",
+		line2: "MIDC TTC Industrial Area,",
+		line3: "Rabale, Navi Mumbai 400701,",
+		line4: "India"
+	},
+	addressOneLine: "Plot No. R-413, MIDC TTC Industrial Area, Rabale, Navi Mumbai 400701, India",
+	phone: "+91 98923 85568",
+	phoneHref: "tel:+919892385568",
+	web: "www.bigscrew.in",
+	webHref: "https://www.bigscrew.in"
+};
+var stats = [
+	{
+		value: "20,000",
+		label: "Screw pile manufacturing capacity"
+	},
+	{
+		value: "100%",
+		label: "Automated manufacturing"
+	},
+	{
+		value: "3 YRS",
+		label: "Exporting worldwide"
+	},
+	{
+		value: "#1",
+		label: "Exporter in India"
+	}
+];
+var whyBigscrew = [
+	{
+		title: "Made in-house",
+		body: "Every pile is made ourselves, so it can be made to fit your project exactly."
+	},
+	{
+		title: "Quality checked",
+		body: "Every batch is checked before it leaves the factory, for the same quality every time."
+	},
+	{
+		title: "Priced right",
+		body: "Making everything ourselves keeps costs down, without cutting corners on quality."
+	},
+	{
+		title: "Fast turnaround",
+		body: "Automated machines and an organised factory floor keep orders on schedule."
+	}
+];
+var services = [
+	{
+		n: "01",
+		title: "Design",
+		body: "We work out the right pile size and layout for your structure, soil and loads.",
+		image: img.facilityImg1,
+		alt: "BigScrew design engineering and planning process"
+	},
+	{
+		n: "02",
+		title: "Manufacturing",
+		body: "Every pile is made in-house, on automated lines, and checked before it ships.",
+		image: img.facilityImg2,
+		alt: "BigScrew automated manufacturing facility"
+	},
+	{
+		n: "03",
+		title: "Installation",
+		body: "Our own crew and machines turn the piles into the ground and get you building fast.",
+		image: img.facilityImg3,
+		alt: "BigScrew installation team working on site"
+	}
+];
+var installSteps = [
+	{
+		n: "01",
+		title: "Position",
+		body: "Set out on the drawing grid."
+	},
+	{
+		n: "02",
+		title: "Drive",
+		body: "Turned to design depth."
+	},
+	{
+		n: "03",
+		title: "Check",
+		body: "Check it's turned in firmly enough."
+	},
+	{
+		n: "04",
+		title: "Load",
+		body: "Structure set the same day."
+	}
+];
+var pileTypes = [
+	{
+		n: "01",
+		slug: "ground-screws",
+		name: "Ground screws",
+		summary: "A long spiral thread running down the central shaft.",
+		body: "For lighter structures and efficient, low-disturbance installation on solid ground.",
+		applications: "Fencing, prefab house plots, light structures",
+		image: img.groundProduct,
+		alt: "Ground screw with continuous spiral thread down the shaft"
+	},
+	{
+		n: "02",
+		slug: "helical-piles",
+		name: "Helical piles",
+		summary: "A steel shaft with one or more helical plates.",
+		body: "A versatile foundation system used for everyday civil and structural loads.",
+		applications: "Solar, sheds, residential, utility structures",
+		image: img.helicalPilesDetail,
+		alt: "Helical screw pile installed as a foundation element"
+	},
+	{
+		n: "03",
+		slug: "large-diameter-screw-piles",
+		name: "Large diameter screw piles",
+		summary: "A thicker shaft and larger helix for heavier loads.",
+		body: "Designed for higher capacity foundations and more demanding applications.",
+		applications: "Industrial structures, heavy foundations, infrastructure",
+		image: img.largeDiameterProduct,
+		alt: "Large-diameter screw pile foundation under a tower leg"
+	}
+];
+var pileMatrix = {
+	columns: [
+		"Solar",
+		"BESS",
+		"Prefab",
+		"Industrial",
+		"Fencing"
+	],
+	rows: [
+		{
+			type: "Ground screws",
+			fit: [
+				"no",
+				"none",
+				"no",
+				"none",
+				"primary"
+			]
+		},
+		{
+			type: "Helical piles",
+			fit: [
+				"primary",
+				"no",
+				"primary",
+				"no",
+				"primary"
+			]
+		},
+		{
+			type: "Large diameter screw piles",
+			fit: [
+				"none",
+				"no",
+				"none",
+				"primary",
+				"none"
+			]
+		}
+	]
+};
+var soilMachinery = [
+	{
+		soil: "Soft clay, silt",
+		carrier: "Mini excavator, 1.5–3 t",
+		driveHead: "Low-torque",
+		approach: "Larger helix, deeper embedment"
+	},
+	{
+		soil: "Firm clay, sandy soil",
+		carrier: "Excavator, 5–8 t",
+		driveHead: "Medium-torque",
+		approach: "Single or double helix"
+	},
+	{
+		soil: "Dense sand, gravel",
+		carrier: "Excavator, 13–20 t",
+		driveHead: "High-torque",
+		approach: "Reduced helix diameter"
+	},
+	{
+		soil: "Murum, weathered rock",
+		carrier: "Excavator, 20 t and above",
+		driveHead: "High-torque",
+		approach: "Rock helix, pre-drill where needed"
+	},
+	{
+		soil: "Filled or made-up ground",
+		carrier: "Excavator, 8–13 t",
+		driveHead: "Medium-torque",
+		approach: "Extendable pile through the fill"
+	},
+	{
+		soil: "Restricted access, indoors",
+		carrier: "Skid-steer or handheld unit",
+		driveHead: "Low-torque",
+		approach: "Short coupled sections"
+	}
+];
+var applications = [
+	{
+		n: "01",
+		slug: "solar",
+		short: "Solar",
+		title: "Solar ground mount",
+		headline: "Solar",
+		headlineAccent: "ground mount",
+		intro: "Solar panel tables sit directly on screw piles — no concrete base needed. We place a row of piles in one pass, lined up accurately so the panel frame sits straight. BigScrew works on rocky, sandy, clay & mixed soils.",
+		pileTypes: "Single-helix · Double-helix · Ground screw, U-head",
+		hero: img.solarSite,
+		heroAlt: "Large solar ground mount array founded on screw piles",
+		gallery: [
+			{
+				src: img.solarDual,
+				alt: "Dual pole solar table on screw piles",
+				caption: "Dual pole solar"
+			},
+			{
+				src: img.solarSingle,
+				alt: "Single pole solar mount on screw piles",
+				caption: "Single pole"
+			},
+			{
+				src: img.solarSite,
+				alt: "Solar site installation on screw pile foundations",
+				caption: "Site installation"
+			},
+			{
+				src: img.solarHill,
+				alt: "Hillside solar array installed on screw piles",
+				caption: "Site installation"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Helix",
+			"Length",
+			"Coating"
+		],
+		specRows: [
+			{
+				"Pile type": "Single-helix pile",
+				"Shaft Ø": "76, 89",
+				Helix: "1",
+				Length: "1200–2500",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Double-helix pile",
+				"Shaft Ø": "76, 89",
+				Helix: "2",
+				Length: "1200–2500",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Ground screw, U-head",
+				"Shaft Ø": "76, 89",
+				Helix: "Continuous spiral",
+				Length: "1200–2500",
+				Coating: "HDG"
+			}
+		],
+		metaTitle: "Screw Piles for Solar Ground Mount | BigScrew Solutions",
+		metaDescription: "Helical screw pile foundations for solar ground mount. Panel tables sit directly on piles — no concrete base. Shaft Ø 76–89, HDG coated, installed by BigScrew."
+	},
+	{
+		n: "02",
+		slug: "bess",
+		short: "BESS",
+		title: "Battery energy storage",
+		headline: "Battery",
+		headlineAccent: "energy storage",
+		intro: "Battery storage containers are heavy, and that weight sits on just a few corner points. We put a pile under each corner, level it with an adjustable top, and join the piles with a steel frame so the container sits flat — no concrete slab needed.",
+		pileTypes: "Heavy-duty round-shaft pile · Heavy duty groundscrew",
+		hero: img.bessSite,
+		heroAlt: "Battery energy storage containers on screw pile foundations",
+		gallery: [
+			{
+				src: img.bessContainer,
+				alt: "Battery storage container supported on screw piles",
+				caption: "BESS container"
+			},
+			{
+				src: img.bessSite,
+				alt: "Battery energy storage site on screw pile foundations",
+				caption: "BESS site"
+			},
+			{
+				src: img.bessLayout,
+				alt: "Screw pile layout set out on a battery storage site",
+				caption: "Pile layout"
+			},
+			{
+				src: img.bessFoundation,
+				alt: "Steel frame joining screw piles under storage containers",
+				caption: "Foundation detail"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Helix",
+			"Length",
+			"Coating"
+		],
+		specRows: [{
+			"Pile type": "Heavy-duty round-shaft pile",
+			"Shaft Ø": "89, 100, 114",
+			Helix: "2–3",
+			Length: "2000–4000",
+			Coating: "HDG"
+		}, {
+			"Pile type": "Heavy duty groundscrew",
+			"Shaft Ø": "89, 100, 114",
+			Helix: "Continuous spiral",
+			Length: "2000–4000",
+			Coating: "HDG"
+		}],
+		metaTitle: "Screw Pile Foundations for BESS Battery Storage | BigScrew",
+		metaDescription: "Heavy-duty helical screw piles for battery energy storage containers. Corner piles, adjustable tops and a steel frame — no concrete slab needed."
+	},
+	{
+		n: "03",
+		slug: "prefab",
+		short: "Prefab",
+		title: "Polyhouses, prefab & modular homes",
+		headline: "Polyhouses, prefab",
+		headlineAccent: "& modular homes",
+		intro: "Prefab, modular homes & polyhouses are light, but they still need a level base to sit on. We install piles to match the home's frame, which can be directly bolted. This works even on sloping or remote land, with no digging and dependency on local civil contractors. Screw pile can help you build in the remotest of the location with minimal labor.",
+		pileTypes: "Modular house single-helix pile · Light-gauge ground screw · Ground screw with single helix",
+		hero: img.prefabHouse,
+		heroAlt: "Prefab timber house on a slope supported by screw pile foundations",
+		gallery: [
+			{
+				src: img.prefabHouse,
+				alt: "Prefab house built on screw piles over sloping ground",
+				caption: "Prefab house"
+			},
+			{
+				src: img.prefabModular,
+				alt: "Modular home levelled on screw pile foundations",
+				caption: "Foundation detail"
+			},
+			{
+				src: img.prefabSite,
+				alt: "Timber prefab site founded on screw piles",
+				caption: "Prefab site"
+			},
+			{
+				src: img.polyhouse,
+				alt: "Polyhouse structure anchored on light-gauge ground screws",
+				caption: "Polyhouse"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Head",
+			"Length",
+			"Coating"
+		],
+		specRows: [
+			{
+				"Pile type": "Modular house single-helix pile",
+				"Shaft Ø": "76–114",
+				Head: "Bolted bracket",
+				Length: "2000–5000",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Light-gauge ground screw, polyhouse",
+				"Shaft Ø": "60, 76",
+				Head: "U-bracket / tube socket",
+				Length: "1000–1500",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Ground screw with single helix",
+				"Shaft Ø": "76, 89",
+				Head: "Threaded, adjustable",
+				Length: "1500–3000",
+				Coating: "HDG"
+			}
+		],
+		metaTitle: "Screw Piles for Prefab Homes & Polyhouses | BigScrew Solutions",
+		metaDescription: "Screw pile foundations for prefab, modular homes and polyhouses. Bolt the frame straight down — no digging, works on sloping and remote land."
+	},
+	{
+		n: "04",
+		slug: "industrial",
+		short: "Industrial",
+		title: "Industrial structures, carports & EV charging",
+		headline: "Industrial structures,",
+		headlineAccent: "carports & EV charging",
+		intro: "Screw piles carry heavy moment induced structures including solar carports, EV charging bays and industrial buildings. Design starts with the geotechnical report or a verification pile, and the pile is then sized to the governing case. Shaft diameter, wall thickness and helix configuration are set per site rather than taken from a catalogue standard. BigScrew designs, manufactures and installs, which keeps engineering, production and site work under one accountable party",
+		pileTypes: "Large-diameter carport screw pile · Light EV groundscrews · Heavy infra screw piles",
+		hero: img.carport,
+		heroAlt: "Solar carport structure founded on large-diameter screw piles",
+		gallery: [
+			{
+				src: img.carport,
+				alt: "Solar carport on large-diameter screw pile foundations",
+				caption: "Carport"
+			},
+			{
+				src: img.evCharging,
+				alt: "EV charging bay mounted on a ground screw foundation",
+				caption: "EV charging"
+			},
+			{
+				src: img.industrial,
+				alt: "Industrial silo structure on screw pile foundations",
+				caption: "Industrial structure"
+			},
+			{
+				src: img.heatExchanger,
+				alt: "Heat exchanger base supported on screw piles",
+				caption: "Heat exchanger base"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Helix",
+			"Length",
+			"Coating"
+		],
+		specRows: [
+			{
+				"Pile type": "Large-diameter carport screw pile",
+				"Shaft Ø": "89–114",
+				Helix: "2–4",
+				Length: "3000–5000",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Light EV groundscrews",
+				"Shaft Ø": "76–89",
+				Helix: "2–3",
+				Length: "1500–2500",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Heavy infra screw piles",
+				"Shaft Ø": "76–114",
+				Helix: "1–2",
+				Length: "1500–5000",
+				Coating: "HDG"
+			}
+		],
+		metaTitle: "Screw Piles for Industrial Structures, Carports & EV | BigScrew",
+		metaDescription: "Helical screw piles for industrial buildings, solar carports and EV charging bays. Sized to the governing case from geotechnical report or verification pile."
+	},
+	{
+		n: "05",
+		slug: "fencing",
+		short: "Fencing",
+		title: "Fencing and boundary wall",
+		headline: "Fencing and",
+		headlineAccent: "boundary wall",
+		intro: "Fences and boundary walls often run for kilometres over changing ground, and normally every post has to wait for cement to set. With screw piles, we go post by post along the line, level each one, and bolt the post or panel straight on — a whole stretch can be set up and finished the same day.",
+		pileTypes: "Fence-post ground screw · Single-helix pile, flange head",
+		hero: img.fenceRun,
+		heroAlt: "Long metal fence run installed on screw pile foundations",
+		gallery: [
+			{
+				src: img.fenceBoundary,
+				alt: "Boundary wall panel founded on a ground screw",
+				caption: "Boundary wall"
+			},
+			{
+				src: img.fenceLine,
+				alt: "Fence line running across open ground on screw piles",
+				caption: "Fence line"
+			},
+			{
+				src: img.fenceDetail,
+				alt: "Flange plate head bolted to a fence post",
+				caption: "Foundation detail"
+			},
+			{
+				src: img.fenceRun,
+				alt: "Completed fence run on screw pile foundations",
+				caption: "Fence run"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Head",
+			"Length",
+			"Coating"
+		],
+		specRows: [{
+			"Pile type": "Fence-post ground screw",
+			"Shaft Ø": "76–89",
+			Head: "Flange plate",
+			Length: "1000–1500",
+			Coating: "HDG"
+		}, {
+			"Pile type": "Single-helix pile, flange head",
+			"Shaft Ø": "76–89",
+			Head: "Flange plate",
+			Length: "1200–2000",
+			Coating: "HDG"
+		}],
+		metaTitle: "Screw Piles for Fencing & Boundary Walls | BigScrew Solutions",
+		metaDescription: "Ground screws and single-helix piles for fencing and boundary walls. Post by post along the line, bolted straight on, finished the same day."
+	},
+	{
+		n: "06",
+		slug: "poles-towers",
+		short: "Poles & Towers",
+		title: "Light poles, electric poles & transmission towers",
+		headline: "Light poles, electric poles",
+		headlineAccent: "& transmission towers",
+		intro: "Streetlights, electric poles and transmission towers are tall and thin, so the biggest risk is wind or cable pull pushing them over — not just their weight. Our proprietary screw piles can withstand heavy lateral loads. Screw piles are the perfect solution for high volume, heavy infrastructure products.",
+		pileTypes: "Single-helix pile, base plate · Double-helix pile, high-moment · Multi-leg tower footing pile",
+		hero: img.transmissionTower,
+		heroAlt: "Transmission tower structures under construction on screw pile foundations",
+		gallery: [
+			{
+				src: img.lightPole,
+				alt: "Roadside light poles founded on screw piles",
+				caption: "Light pole"
+			},
+			{
+				src: img.towerLeg,
+				alt: "Tower leg seated on a screw pile base plate",
+				caption: "Tower leg detail"
+			},
+			{
+				src: img.transmissionTower,
+				alt: "Transmission tower site on screw pile foundations",
+				caption: "Transmission tower"
+			},
+			{
+				src: img.poleDetail,
+				alt: "Section detail of a pole foundation on screw piles",
+				caption: "Pole detail"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Head",
+			"Length",
+			"Coating"
+		],
+		specRows: [
+			{
+				"Pile type": "Single-helix pile, base plate",
+				"Shaft Ø": "—",
+				Head: "Bolted base plate",
+				Length: "—",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Double-helix pile, high-moment",
+				"Shaft Ø": "—",
+				Head: "Bolted base plate",
+				Length: "—",
+				Coating: "HDG"
+			},
+			{
+				"Pile type": "Multi-leg tower footing pile",
+				"Shaft Ø": "—",
+				Head: "Stub angle / grillage",
+				Length: "—",
+				Coating: "HDG"
+			}
+		],
+		metaTitle: "Screw Piles for Poles & Transmission Towers | BigScrew",
+		metaDescription: "Screw pile foundations for light poles, electric poles and transmission towers. Engineered for heavy lateral loads and high volume infrastructure."
+	},
+	{
+		n: "07",
+		slug: "bridges",
+		short: "Bridges",
+		title: "Walkbridges, sea view platforms & bridges",
+		headline: "Walkbridges, sea view platforms",
+		headlineAccent: "& bridges",
+		intro: "Coastal walkways, viewing decks and footbridges often sit over tidal water, marsh or rocky ground where a concrete footing means building a temporary dam and a long wait for it to dry. Screw piles are installed from the shore itself. They carry the deck's weight and also grip against waves and currents trying to pull them up, with no wet cement work over water.",
+		pileTypes: "Marine-grade round-shaft pile · Extendable pile, coupled sections",
+		hero: img.bridgePlatform,
+		heroAlt: "Elevated viewing platform and walkbridge on screw pile foundations",
+		gallery: [
+			{
+				src: img.walkbridge,
+				alt: "Underside of a walkbridge deck carried on screw piles",
+				caption: "Walkbridge"
+			},
+			{
+				src: img.seaview,
+				alt: "Screw piles installed through a forest walkway route",
+				caption: "Sea view platform"
+			},
+			{
+				src: img.pedestrianBridge,
+				alt: "Pedestrian bridge on screw pile foundations",
+				caption: "Pedestrian bridge"
+			},
+			{
+				src: img.bridgePlatform,
+				alt: "Viewing platform structure over rocky ground on screw piles",
+				caption: "Installation over water"
+			}
+		],
+		specHeaders: [
+			"Pile type",
+			"Shaft Ø",
+			"Head",
+			"Length",
+			"Coating"
+		],
+		specRows: [{
+			"Pile type": "Marine-grade round-shaft pile",
+			"Shaft Ø": "89–114",
+			Head: "Deck bracket",
+			Length: "2000–5000",
+			Coating: "HDG + Epoxy"
+		}, {
+			"Pile type": "Extendable pile, coupled sections",
+			"Shaft Ø": "76–114",
+			Head: "Flange plate",
+			Length: "2000–5000",
+			Coating: "HDG + Epoxy"
+		}],
+		metaTitle: "Screw Piles for Walkbridges & Sea View Platforms | BigScrew",
+		metaDescription: "Marine-grade helical screw piles for walkbridges, viewing decks and footbridges. Installed from the shore, no wet cement work over water."
+	}
+];
+var getApplication = (slug) => applications.find((a) => a.slug === slug);
+var galleryItems = [
+	{
+		src: img.project1,
+		alt: "Project 1 installation",
+		caption: "Project 1",
+		app: "Solar"
+	},
+	{
+		src: img.project2,
+		alt: "Project 2 installation",
+		caption: "Project 2",
+		app: "BESS"
+	},
+	{
+		src: img.project3,
+		alt: "Project 3 installation",
+		caption: "Project 3",
+		app: "Prefab"
+	},
+	{
+		src: img.project4,
+		alt: "Project 4 installation",
+		caption: "Project 4",
+		app: "Industrial"
+	},
+	{
+		src: img.project5,
+		alt: "Project 5 installation",
+		caption: "Project 5",
+		app: "Fencing"
+	},
+	{
+		src: img.project6,
+		alt: "Project 6 installation",
+		caption: "Project 6",
+		app: "Utilities"
+	},
+	{
+		src: img.project7,
+		alt: "Project 7 installation",
+		caption: "Project 7",
+		app: "Infrastructure"
+	},
+	{
+		src: img.project8,
+		alt: "Project 8 installation",
+		caption: "Project 8",
+		app: "Project"
+	}
+];
+var navLinks = [
+	{
+		label: "HOME",
+		to: "/"
+	},
+	{
+		label: "About",
+		to: "/about"
+	},
+	{
+		label: "Applications",
+		to: "/applications"
+	},
+	{
+		label: "Screw Piles",
+		to: "/screw-piles"
+	},
+	{
+		label: "Installation",
+		to: "/installation"
+	},
+	{
+		label: "Projects",
+		to: "/projects"
+	},
+	{
+		label: "Facility",
+		to: "/facility"
+	},
+	{
+		label: "BLOG",
+		to: "/blog"
+	}
+];
+//#endregion
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CS6gVxxY.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var __defProp = Object.defineProperty;
+var __exportAll = (all, no_symbols) => {
+	let target = {};
+	for (var name in all) __defProp(target, name, {
+		get: all[name],
+		enumerable: true
+	});
+	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
+	return target;
+};
+var styles_default = "/assets/styles-CxFiv9mm.css";
+function reportLovableError(error, context = {}) {
+	if (typeof window === "undefined") return;
+	window.__lovableEvents?.captureException?.(error, {
+		source: "react_error_boundary",
+		route: window.location.pathname,
+		...context
+	}, {
+		mechanism: "react_error_boundary",
+		handled: false,
+		severity: "error"
+	});
+	const message = error instanceof Response ? `Response ${error.status}${error.url ? ` at ${error.url}` : ""}` : error instanceof Error ? error.message : String(error);
+	const stack = error instanceof Error ? error.stack : void 0;
+	window.__lovableReportRuntimeError?.({
+		message,
+		...stack !== void 0 && { stack },
+		filename: window.location.pathname
+	});
+}
+function Wordmark({ className }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+		to: "/",
+		className,
+		"aria-label": "BigScrew logo — home",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+			src: img.logoMark,
+			alt: "BigScrew logo",
+			className: "w-[100px] max-w-none object-contain md:w-[120px] lg:w-[140px] lg:-mb-[55px]",
+			width: 140,
+			height: 140
+		})
+	});
+}
+function Navbar() {
+	const [scrolled, setScrolled] = (0, import_react.useState)(false);
+	const [open, setOpen] = (0, import_react.useState)(false);
+	const pathname = useRouterState({ select: (s) => s.location.pathname });
+	(0, import_react.useEffect)(() => {
+		const onScroll = () => setScrolled(window.scrollY > 24);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		setOpen(false);
+	}, [pathname]);
+	(0, import_react.useEffect)(() => {
+		document.body.style.overflow = open ? "hidden" : "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [open]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+		className: `fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-ink/95" : "bg-transparent"}`,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "absolute left-6 top-0 z-40 hidden lg:block",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wordmark, { className: "block" })
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+				"aria-label": "Primary",
+				className: `shell relative z-30 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-20" : "h-20 md:h-24"}`,
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex items-center lg:hidden",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wordmark, { className: "w-[90px]" })
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "hidden w-[130px] lg:block" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						className: "hidden items-center gap-6 lg:flex",
+						children: navLinks.map((l) => {
+							const isAnchor = l.to.includes("#");
+							const linkClass = "group relative text-[13px] font-medium uppercase tracking-[0.01em] text-on-ink transition-colors duration-200 hover:text-yellow after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-yellow after:transition-all after:duration-200 group-hover:after:w-full";
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: isAnchor ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/",
+								hash: "",
+								className: linkClass,
+								children: l.label
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: l.to,
+								className: linkClass,
+								activeProps: { className: "text-yellow after:w-full" },
+								children: l.label
+							}) }, l.label);
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/contact",
+							className: "hidden h-11 rounded-sm bg-yellow px-4 text-[14px] font-bold uppercase tracking-[0.01em] text-black transition-colors duration-200 hover:bg-yellow-deep sm:inline-flex items-center justify-center",
+							children: "GET A QUOTE\xA0→"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: () => setOpen(true),
+							"aria-label": "Open menu",
+							className: "text-on-ink lg:hidden",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, {
+								className: "h-7 w-7",
+								strokeWidth: 1.5
+							})
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: open && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+				className: "fixed inset-0 z-50 bg-ink/95 lg:hidden",
+				initial: {
+					opacity: 0,
+					y: -16
+				},
+				animate: {
+					opacity: 1,
+					y: 0
+				},
+				exit: {
+					opacity: 0,
+					y: -16
+				},
+				transition: {
+					duration: .45,
+					ease: [
+						.16,
+						.84,
+						.24,
+						1
+					]
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "shell flex h-20 items-center justify-between",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Wordmark, { className: "w-[95px]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: () => setOpen(false),
+						"aria-label": "Close menu",
+						className: "text-on-ink",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, {
+							className: "h-7 w-7",
+							strokeWidth: 1.5
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "shell mt-8 flex flex-col gap-5",
+					children: [
+						navLinks.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: l.to.includes("#") ? "/" : l.to,
+							...l.to.includes("#") ? { hash: "solutions" } : {},
+							onClick: () => setOpen(false),
+							className: "block text-[18px] font-medium uppercase tracking-[0.02em] text-on-ink transition-colors duration-200 hover:text-yellow",
+							children: l.label
+						}, l.label)),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/contact",
+							onClick: () => setOpen(false),
+							className: "inline-flex h-11 items-center justify-center rounded-sm bg-yellow px-5 text-[13px] font-medium uppercase tracking-[0.01em] text-on-ink transition-colors duration-200 hover:bg-yellow-deep",
+							children: "GET A QUOTE\xA0→"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: company.phoneHref,
+							className: "mt-4 text-sm text-on-ink-dim",
+							children: company.phone
+						})
+					]
+				})]
+			}) })
+		]
+	});
+}
+var base = "group inline-flex items-center gap-3 px-6 py-4 tech-label transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-3";
+var variants = {
+	yellow: "bg-yellow text-primary-foreground hover:bg-yellow-deep",
+	outlineLight: "border border-on-ink-dim/50 text-on-ink hover:border-yellow hover:text-yellow",
+	outlineDark: "border border-foreground/25 text-foreground hover:border-yellow hover:bg-yellow",
+	ink: "bg-ink text-on-ink hover:bg-charcoal",
+	bare: ""
+};
+function Inner({ children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+		"aria-hidden": true,
+		className: "transition-transform duration-300 group-hover:translate-x-1.5",
+		children: "→"
+	})] });
+}
+function ArrowLink({ to, hash, params, children, variant = "yellow", className = "" }) {
+	const linkProps = {
+		to,
+		...hash ? { hash } : {},
+		...params ? { params } : {}
+	};
+	if (variant === "bare") return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+		...linkProps,
+		className,
+		children
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+		...linkProps,
+		className: `${base} ${variants[variant]} ${className}`,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Inner, { children })
+	});
+}
+function Footer() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
+		className: "grain-dark text-on-ink",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "shell py-20 md:py-28",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex flex-col gap-14 lg:flex-row lg:justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "max-w-md",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "w-40 max-w-full",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: img.logoMark,
+								alt: company.name,
+								className: "h-auto w-full",
+								width: 1200,
+								height: 900
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-6 text-sm leading-relaxed text-on-ink-dim",
+							children: "Helical screw pile foundations — designed, manufactured and installed. Screw piles for solar, storage, housing, industrial structures, carports, EV charging, fencing, poles, towers and bridges."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-8",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLink, {
+								to: "/contact",
+								variant: "yellow",
+								children: "Get a project quote"
+							})
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "grid grid-cols-2 gap-10 sm:grid-cols-3",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+							"aria-label": "Footer",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "tech-label text-yellow",
+								children: "Navigate"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+								className: "mt-5 space-y-3",
+								children: [navLinks.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									to: l.to.includes("#") ? "/" : l.to,
+									className: "text-sm text-on-ink-dim uppercase transition-colors hover:text-yellow",
+									children: l.label
+								}) }, l.label)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									to: "/contact",
+									className: "text-sm text-on-ink-dim uppercase transition-colors hover:text-yellow",
+									children: "Contact"
+								}) })]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+							"aria-label": "Applications",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "tech-label text-yellow",
+								children: "Applications"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+								className: "mt-5 space-y-3",
+								children: applications.map((a) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									to: "/applications/$slug",
+									params: { slug: a.slug },
+									className: "text-sm text-on-ink-dim uppercase transition-colors hover:text-yellow",
+									children: a.short
+								}) }, a.slug))
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("address", {
+							className: "not-italic",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "tech-label text-yellow",
+									children: "Contact"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+									className: "mt-5 text-sm leading-relaxed text-on-ink-dim",
+									children: [
+										company.address.line1,
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+										company.address.line2,
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+										company.address.line3,
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+										company.address.line4
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "mt-4 text-sm",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: company.phoneHref,
+										className: "transition-colors hover:text-yellow",
+										children: company.phone
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "mt-1 text-sm",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: company.webHref,
+										className: "text-on-ink-dim transition-colors hover:text-yellow",
+										rel: "noreferrer",
+										children: company.web
+									})
+								})
+							]
+						})
+					]
+				})]
+			})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "border-t border-on-ink/10",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "shell flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "tech-label text-on-ink-dim",
+					children: "Engineered Foundations / Navi Mumbai, India"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+					className: "tech-label text-on-ink-dim",
+					children: [
+						"© ",
+						(/* @__PURE__ */ new Date()).getFullYear(),
+						" Bigscrew Solutions"
+					]
+				})]
+			})
+		})]
+	});
+}
+function NotFoundComponent() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center grain-dark px-4",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "tech-label text-yellow",
+					children: "Error 404"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "mt-4 display-lg text-on-ink",
+					children: "Nothing driven here."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-4 text-sm text-on-ink-dim",
+					children: "The page you're looking for doesn't exist or has been moved."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-8",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/",
+						className: "inline-flex bg-yellow px-6 py-4 tech-label text-primary-foreground",
+						children: "Back to home →"
+					})
+				})
+			]
+		})
+	});
+}
+function ErrorComponent({ error, reset }) {
+	console.error(error);
+	const router = useRouter();
+	(0, import_react.useEffect)(() => {
+		reportLovableError(error, { boundary: "tanstack_root_error_component" });
+	}, [error]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center grain-dark px-4",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "tech-label text-yellow",
+					children: "System"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "mt-4 display-md text-on-ink",
+					children: "This page didn't load"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-4 text-sm text-on-ink-dim",
+					children: "Something went wrong on our end. You can try refreshing or head back home."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-8 flex flex-wrap justify-center gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => {
+							router.invalidate();
+							reset();
+						},
+						className: "bg-yellow px-6 py-4 tech-label text-primary-foreground",
+						children: "Try again"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "/",
+						className: "border border-on-ink-dim/50 px-6 py-4 tech-label text-on-ink",
+						children: "Go home"
+					})]
+				})
+			]
+		})
+	});
+}
+var Route$11 = createRootRouteWithContext()({
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{ title: "BigScrew Solutions — Helical Screw Pile Foundations" },
+			{
+				name: "description",
+				content: "BigScrew Solutions designs, manufactures and installs helical screw pile foundations in Navi Mumbai, India. Foundations, driven not poured."
+			},
+			{
+				name: "author",
+				content: "BigScrew Solutions"
+			},
+			{
+				property: "og:site_name",
+				content: "BigScrew Solutions"
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				name: "twitter:card",
+				content: "summary_large_image"
+			},
+			{
+				name: "theme-color",
+				content: "#141414"
+			}
+		],
+		links: [
+			{
+				rel: "stylesheet",
+				href: styles_default
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous"
+			},
+			{
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+			},
+			{
+				rel: "icon",
+				href: "/favicon.ico",
+				type: "image/x-icon"
+			}
+		],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				name: "BigScrew Solutions",
+				description: "Manufacturer and installer of helical screw pile foundations for solar, storage, housing, industrial structures, fencing, poles, towers and bridges.",
+				telephone: "+91 98923 85568",
+				url: "https://www.bigscrew.in",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "Plot No. R-413, MIDC TTC Industrial Area, Rabale",
+					addressLocality: "Navi Mumbai",
+					postalCode: "400701",
+					addressCountry: "IN"
+				}
+			})
+		}]
+	}),
+	shellComponent: RootShell,
+	component: RootComponent,
+	notFoundComponent: NotFoundComponent,
+	errorComponent: ErrorComponent
+});
+function RootShell({ children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
+		lang: "en",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+	});
+}
+function RootComponent() {
+	const { queryClient } = Route$11.useRouteContext();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QueryClientProvider, {
+		client: queryClient,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navbar, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+				id: "main",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+				to: "/contact",
+				className: "fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-2 bg-yellow py-4 tech-label text-primary-foreground sm:hidden",
+				children: ["Get a Quote ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					"aria-hidden": true,
+					children: "→"
+				})]
+			})
+		]
+	});
+}
+var $$splitComponentImporter$10 = () => import("./routes--wy0E4mp.mjs");
+var title$8 = "BigScrew Solutions — Helical Screw Pile Foundations";
+var description$8 = "Helical screw pile foundations designed, manufactured and installed by BigScrew Solutions. Solar, storage, prefab, industrial, fencing, poles, towers and bridges.";
+var Route$10 = createFileRoute("/")({
+	head: () => ({
+		meta: [
+			{ title: title$8 },
+			{
+				name: "description",
+				content: description$8
+			},
+			{
+				property: "og:title",
+				content: title$8
+			},
+			{
+				property: "og:description",
+				content: description$8
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$10, "component")
+});
+var $$splitComponentImporter$9 = () => import("./about-CbqucsoC.mjs");
+var title$7 = "About BigScrew Solutions | Screw Pile Manufacturer, Navi Mumbai";
+var description$7 = "BigScrew Solutions designs, manufactures and installs helical screw piles from Rabale, Navi Mumbai — 100% automated manufacturing and India's #1 exporter.";
+var Route$9 = createFileRoute("/about")({
+	head: () => ({
+		meta: [
+			{ title: title$7 },
+			{
+				name: "description",
+				content: description$7
+			},
+			{
+				property: "og:title",
+				content: title$7
+			},
+			{
+				property: "og:description",
+				content: description$7
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/about"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/about"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$9, "component")
+});
+var $$splitComponentImporter$8 = () => import("./contact-B5uWGsVL.mjs");
+var title$6 = "Contact BigScrew Solutions | Screw Pile Foundations";
+var description$6 = "Talk to BigScrew Solutions about screw pile foundations. Plot No. R-413, MIDC TTC Industrial Area, Rabale, Navi Mumbai 400701, India.";
+var Route$8 = createFileRoute("/contact")({
+	head: () => ({
+		meta: [
+			{ title: title$6 },
+			{
+				name: "description",
+				content: description$6
+			},
+			{
+				property: "og:title",
+				content: title$6
+			},
+			{
+				property: "og:description",
+				content: description$6
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/contact"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/contact"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$8, "component")
+});
+var $$splitComponentImporter$7 = () => import("./facility-Dn5srCMy.mjs");
+var title$5 = "Facility | BigScrew Solutions";
+var description$5 = "Facility and production imagery from BigScrew Solutions.";
+var Route$7 = createFileRoute("/facility")({
+	head: () => ({
+		meta: [
+			{ title: title$5 },
+			{
+				name: "description",
+				content: description$5
+			},
+			{
+				property: "og:title",
+				content: title$5
+			},
+			{
+				property: "og:description",
+				content: description$5
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/facility"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/facility"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$7, "component")
+});
+var $$splitComponentImporter$6 = () => import("./installation-C7VpA0_Z.mjs");
+var title$4 = "Project Process for Foundation Construction | BigScrew Solutions";
+var description$4 = "Foundation construction begins with subsoil evaluation, planning, load-bearing validation, installation, and optional dismantling for temporary sites.";
+var Route$6 = createFileRoute("/installation")({
+	head: () => ({
+		meta: [
+			{ title: title$4 },
+			{
+				name: "description",
+				content: description$4
+			},
+			{
+				property: "og:title",
+				content: title$4
+			},
+			{
+				property: "og:description",
+				content: description$4
+			},
+			{
+				property: "og:type",
+				content: "article"
+			},
+			{
+				property: "og:url",
+				content: "/installation"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/installation"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$6, "component")
+});
+var $$splitComponentImporter$5 = () => import("./projects-DsWpAQam.mjs");
+var title$3 = "Screw Pile Projects & Site Gallery | BigScrew Solutions";
+var description$3 = "Site photography from BigScrew screw pile installations across solar, battery storage, prefab, industrial, fencing, poles and bridge projects.";
+var Route$5 = createFileRoute("/projects")({
+	head: () => ({
+		meta: [
+			{ title: title$3 },
+			{
+				name: "description",
+				content: description$3
+			},
+			{
+				property: "og:title",
+				content: title$3
+			},
+			{
+				property: "og:description",
+				content: description$3
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/projects"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/projects"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$5, "component")
+});
+var $$splitComponentImporter$4 = () => import("./screw-piles-DSpEEzlQ.mjs");
+var title$2 = "Helical Screw Piles & Ground Screws | BigScrew Solutions";
+var description$2 = "Single-helix, multi-helix, ground screw and large-diameter piles — manufactured in-house on automated lines and checked batch by batch.";
+var Route$4 = createFileRoute("/screw-piles")({
+	head: () => ({
+		meta: [
+			{ title: title$2 },
+			{
+				name: "description",
+				content: description$2
+			},
+			{
+				property: "og:title",
+				content: title$2
+			},
+			{
+				property: "og:description",
+				content: description$2
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/screw-piles"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/screw-piles"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$4, "component")
+});
+var $$splitComponentImporter$3 = () => import("./applications.index-DXOZUgjS.mjs");
+var title$1 = "Screw Pile Applications | BigScrew Solutions";
+var description$1 = "Screw pile foundations for solar, battery storage, prefab homes, industrial structures, fencing, poles and towers, walkbridges and sea view platforms.";
+var Route$3 = createFileRoute("/applications/")({
+	head: () => ({
+		meta: [
+			{ title: title$1 },
+			{
+				name: "description",
+				content: description$1
+			},
+			{
+				property: "og:title",
+				content: title$1
+			},
+			{
+				property: "og:description",
+				content: description$1
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/applications"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/applications"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
+var $$splitComponentImporter$2 = () => import("./applications._slug-CDRaCi0c.mjs");
+var Route$2 = createFileRoute("/applications/$slug")({
+	loader: ({ params }) => {
+		const application = getApplication(params.slug);
+		if (!application) throw notFound();
+		return { application };
+	},
+	head: ({ params, loaderData }) => {
+		if (!loaderData) return { meta: [{ title: "Application not found | BigScrew Solutions" }, {
+			name: "robots",
+			content: "noindex"
+		}] };
+		const a = loaderData.application;
+		return {
+			meta: [
+				{ title: a.metaTitle },
+				{
+					name: "description",
+					content: a.metaDescription
+				},
+				{
+					property: "og:title",
+					content: a.metaTitle
+				},
+				{
+					property: "og:description",
+					content: a.metaDescription
+				},
+				{
+					property: "og:type",
+					content: "article"
+				},
+				{
+					property: "og:url",
+					content: `/applications/${params.slug}`
+				}
+			],
+			links: [{
+				rel: "canonical",
+				href: `/applications/${params.slug}`
+			}]
+		};
+	},
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+var $$splitComponentImporter$1 = () => import("./blog.index-CGFDO1_i.mjs");
+var title = "Blog | BigScrew Solutions";
+var description = "Engineering insights, knowledge and industry information about helical screw pile foundations, solar projects, battery storage, and construction best practices.";
+var Route$1 = createFileRoute("/blog/")({
+	head: () => ({
+		meta: [
+			{ title },
+			{
+				name: "description",
+				content: description
+			},
+			{
+				property: "og:title",
+				content: title
+			},
+			{
+				property: "og:description",
+				content: description
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "/blog"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "/blog"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+var blogs = [
+	{
+		id: "1",
+		slug: "helical-screw-pile-foundations",
+		title: "Helical Screw Pile Foundations: A Complete Guide for Modern Construction",
+		excerpt: "Discover how helical screw pile foundations work, their advantages over traditional concrete, and why they're ideal for solar, storage, and industrial projects.",
+		category: "FOUNDATIONS",
+		date: "2026-08-12",
+		readTime: 7,
+		author: "BigScrew Engineering Team",
+		image: img.solarSite,
+		keywords: [
+			"helical screw piles",
+			"foundations",
+			"ground screws",
+			"installation"
+		],
+		metaTitle: "Helical Screw Pile Foundations: Complete Guide | BigScrew",
+		metaDescription: "Learn about helical screw pile foundations, installation methods, advantages over concrete, and applications in solar, BESS, and industrial projects.",
+		content: `
+<section>
+<h2>What is a Helical Screw Pile Foundation?</h2>
+<p>A helical screw pile foundation is a type of ground anchor consisting of a steel shaft with one or more helical blades (also called helix or flights). These steel shafts are twisted into the ground, similar to screwing a bolt into wood, until they reach the required soil resistance.</p>
+
+<p>Unlike traditional concrete foundations that require extensive excavation, forming, and curing time, screw piles offer a mechanical solution that can be installed quickly without waiting for concrete to cure.</p>
+
+<h3>Key Components of a Screw Pile</h3>
+<ul>
+<li><strong>Steel Shaft:</strong> Typically 60–114 mm in diameter, hot-dip galvanised for corrosion protection</li>
+<li><strong>Helical Blades:</strong> One or more spiral-shaped metal plates welded to the shaft to provide bearing capacity</li>
+<li><strong>Top Head:</strong> An adjustable plate for levelling and transferring structural loads</li>
+<li><strong>Coupling Sections:</strong> Allows piles to be extended if needed during installation</li>
+</ul>
+
+<h2>How Do Helical Screw Piles Work?</h2>
+<p>The installation process is mechanical and straightforward:</p>
+
+<ol>
+<li><strong>Positioning:</strong> The pile is positioned on the marked grid point using a torque-controlled drive head</li>
+<li><strong>Driving:</strong> The excavator slowly turns the pile, screwing it into the ground</li>
+<li><strong>Resistance Monitoring:</strong> Torque is continuously monitored to track when the pile reaches design depth</li>
+<li><strong>Verification:</strong> Once installed, the pile undergoes a final check for vertical and horizontal alignment</li>
+<li><strong>Installation:</strong> The structure can be loaded immediately — no curing time required</li>
+</ol>
+
+<p>The key advantage is that bearing capacity is achieved by mechanical resistance rather than adhesion, making the installation process predictable and verifiable on-site.</p>
+
+<h2>Screw Piles vs. Traditional Concrete Foundations</h2>
+
+<h3>Installation Speed</h3>
+<p><strong>Screw Piles:</strong> Typically 1–2 hours per pile, ready for loading immediately</p>
+<p><strong>Concrete:</strong> 7–14 days minimum curing time, plus formwork and pour time</p>
+
+<h3>Site Preparation</h3>
+<p><strong>Screw Piles:</strong> Minimal excavation required, low noise, minimal vibration</p>
+<p><strong>Concrete:</strong> Extensive digging, formwork setup, significant noise and dust</p>
+
+<h3>Cost Efficiency</h3>
+<p><strong>Screw Piles:</strong> Lower on-site labour requirements, faster project timeline</p>
+<p><strong>Concrete:</strong> Higher labour costs, longer project duration increases overhead</p>
+
+<h3>Environmental Conditions</h3>
+<p><strong>Screw Piles:</strong> Can be installed in rain, on wet sites, during any weather</p>
+<p><strong>Concrete:</strong> Weather-dependent; cannot pour in rain or excessive heat</p>
+
+<h2>Applications of Helical Screw Piles</h2>
+
+<h3>Solar Ground Mounts</h3>
+<p>Single-helix piles are ideal for solar installations. Panel tables sit directly on piles without needing concrete bases. Accurate placement ensures panels sit perfectly aligned for optimal efficiency.</p>
+
+<h3>Battery Energy Storage (BESS)</h3>
+<p>Multi-helix piles provide the heavy-duty capacity needed to support battery storage containers. Adjustable tops ensure the container sits perfectly level, and steel frames connect piles to distribute loads evenly.</p>
+
+<h3>Prefab & Modular Homes</h3>
+<p>Ground screws provide a fast foundation system for prefabricated houses, polyhouses, and modular structures. The house can be positioned and loaded the same day piles are installed.</p>
+
+<h3>Industrial Structures</h3>
+<p>Large-diameter piles with multiple helixes support heavy industrial equipment, machinery foundations, and factory structures.</p>
+
+<h3>Fencing & Poles</h3>
+<p>Single-helix and ground screw piles are used for boundary fencing, utility poles, transmission towers, and other line infrastructure.</p>
+
+<h2>Soil Adaptability</h2>
+<p>Helical screw piles can be installed in a wide range of soil conditions:</p>
+
+<ul>
+<li><strong>Soft Clay & Silt:</strong> Larger helix diameter, deeper embedment</li>
+<li><strong>Firm Clay & Sandy Soil:</strong> Standard single or double helix</li>
+<li><strong>Dense Sand & Gravel:</strong> Reduced helix diameter to penetrate harder layers</li>
+<li><strong>Rock & Weathered Stone:</strong> High-torque equipment, possibly pre-drilling</li>
+<li><strong>Made-Up Ground & Fill:</strong> Extendable piles to reach stable layers below</li>
+</ul>
+
+<p>Unlike concrete foundations that require site-specific design adjustments, screw piles can be adapted on-site based on actual ground resistance encountered during installation.</p>
+
+<h2>Installation Equipment</h2>
+<p>Screw piles are installed using standard excavation equipment with a torque-controlled drive head attachment:</p>
+
+<ul>
+<li><strong>Mini Excavator (1.5–3 t):</strong> For light structures in accessible locations</li>
+<li><strong>Standard Excavator (5–13 t):</strong> For most commercial and residential projects</li>
+<li><strong>Large Excavator (20+ t):</strong> For heavy industrial structures or difficult soil</li>
+<li><strong>Handheld Units:</strong> For small-scale projects or restricted access areas</li>
+</ul>
+
+<p>No specialised machinery is required — the same excavators used on construction sites worldwide can install screw piles with a simple drive head attachment.</p>
+
+<h2>Quality & Durability</h2>
+<p>All BigScrew piles are:</p>
+
+<ul>
+<li>Hot-dip galvanised (HDG) to ISO 1461 standards for long-term corrosion protection</li>
+<li>Manufactured on automated production lines for consistent quality</li>
+<li>Batch-tested before despatch to ensure load capacity</li>
+<li>Designed for 50+ year service life in most environmental conditions</li>
+</ul>
+
+<h2>Why Choose Screw Pile Foundations?</h2>
+
+<p>Helical screw pile foundations combine engineering reliability with practical advantages that traditional concrete simply cannot match:</p>
+
+<ul>
+<li><strong>Fast Installation:</strong> No curing time — structures can be loaded the same day</li>
+<li><strong>Weather-Independent:</strong> Can be installed in any weather condition</li>
+<li><strong>Predictable:</strong> Bearing capacity is verified on-site through torque monitoring</li>
+<li><strong>Adaptable:</strong> Work in diverse soil conditions without site-specific design changes</li>
+<li><strong>Reversible:</strong> Can be extracted if needed, unlike concrete</li>
+<li><strong>Cost-Effective:</strong> Lower labour and site time requirements reduce project overhead</li>
+<li><strong>Sustainable:</strong> Minimal waste, no curing chemicals, recyclable steel</li>
+</ul>
+
+</section>
+    `,
+		faqs: [
+			{
+				question: "What is a helical screw pile foundation?",
+				answer: "A helical screw pile is a steel shaft with one or more helical blades that is twisted into the ground to provide foundation support. It works like a giant screw, mechanically anchoring into the soil without requiring concrete, excavation, or curing time."
+			},
+			{
+				question: "How do helical screw piles work?",
+				answer: "Screw piles are installed by positioning them on a marked grid and using a torque-controlled drive head mounted on an excavator to twist them into the ground. As they turn, the helical blades cut into the soil and provide bearing capacity. Torque is monitored to verify when design depth is reached."
+			},
+			{
+				question: "What are screw piles used for?",
+				answer: "Screw piles are used for solar ground mounts, battery energy storage containers, prefabricated homes, polyhouses, industrial structures, fencing, utility poles, and transmission towers — essentially any structure that requires a strong, fast-to-install foundation."
+			},
+			{
+				question: "Are screw piles better than concrete foundations?",
+				answer: "Screw piles offer significant advantages: faster installation (hours vs. days), immediate loading, weather-independent installation, adaptability to soil conditions, and lower project overhead. Concrete may be preferred only for very large industrial projects or where extremely deep foundations are required."
+			},
+			{
+				question: "How long does screw pile installation take?",
+				answer: "Typically 1–2 hours per pile, depending on soil resistance and pile depth. Once installed, structures can be loaded immediately. This is dramatically faster than concrete foundations, which require 7–14 days curing time plus formwork setup."
+			},
+			{
+				question: "Can screw piles be used for solar projects?",
+				answer: "Yes, screw piles are ideal for solar ground mounts. Single-helix piles are positioned accurately so solar panel tables sit perfectly aligned. Multiple piles can be installed quickly in a line, enabling fast project deployment."
+			},
+			{
+				question: "Can screw piles be installed in different soil conditions?",
+				answer: "Yes, screw piles are highly adaptable. Different pile configurations (single-helix, multi-helix, ground screws, large-diameter) and installation approaches (standard drive, high-torque, pre-drilling) allow them to work in clay, sand, gravel, rock, and made-up ground."
+			},
+			{
+				question: "How deep can a screw pile be installed?",
+				answer: "Screw piles can typically be installed to depths of 1–5 metres depending on soil conditions, equipment capacity, and structural load requirements. Deeper installations are possible with extended piles coupled together, though this increases cost and complexity."
+			},
+			{
+				question: "Are screw piles suitable for industrial structures?",
+				answer: "Yes, large-diameter screw piles with multiple helixes are specifically designed for heavy industrial structures, machinery foundations, and factory installations. They provide the heavy-duty bearing capacity required while maintaining installation speed and flexibility."
+			},
+			{
+				question: "How are screw piles installed?",
+				answer: "Installation is straightforward: (1) Mark grid position, (2) Position pile with drive head, (3) Turn slowly with torque control until design depth, (4) Verify alignment and torque, (5) Install structure. No excavation, formwork, or curing required."
+			}
+		],
+		relatedKeywords: [
+			"ground foundations",
+			"installation methods",
+			"solar projects",
+			"BESS"
+		]
+	},
+	{
+		id: "2",
+		slug: "screw-piles-vs-concrete-foundations",
+		title: "Screw Piles vs. Concrete Foundations: A Detailed Comparison",
+		excerpt: "Compare helical screw pile foundations with traditional concrete methods. Learn the cost, time, environmental, and performance differences for your project.",
+		category: "ENGINEERING",
+		date: "2026-08-08",
+		readTime: 9,
+		author: "BigScrew Engineering Team",
+		image: img.bessFoundation,
+		keywords: [
+			"screw piles",
+			"concrete foundations",
+			"comparison",
+			"installation time",
+			"cost"
+		],
+		metaTitle: "Screw Piles vs. Concrete Foundations | Comparison Guide",
+		metaDescription: "Detailed comparison of helical screw piles and concrete foundations. Analyze cost, installation time, durability, and suitability for different projects.",
+		content: `
+<section>
+<h2>Overview</h2>
+<p>When planning a foundation system, project teams often face a choice between traditional concrete foundations and modern helical screw pile systems. Each has distinct advantages and limitations. This guide helps you understand the real differences and choose the right solution for your project.</p>
+
+<h2>Installation Timeline</h2>
+
+<h3>Screw Piles: 1–2 hours per pile</h3>
+<p>A typical solar array foundation might require 20–30 piles. Installation could be completed in 1–2 days by a small crew. Structures can be loaded immediately after installation. No curing or waiting period.</p>
+
+<h3>Concrete: 7–14 days minimum</h3>
+<p>Concrete foundations require:</p>
+<ul>
+<li>Site surveying and marking (1–2 days)</li>
+<li>Excavation and formwork setup (2–3 days)</li>
+<li>Concrete pour (1 day)</li>
+<li>Curing (7–14 days minimum, weather-dependent)</li>
+<li>Formwork removal (1 day)</li>
+<li>Backfilling (1–2 days)</li>
+</ul>
+<p><strong>Total Timeline: 14–30 days</strong></p>
+
+<p>For a solar project aiming for rapid deployment, this time difference is critical. Screw piles compress the foundation phase into 1–2 days, allowing actual construction to begin immediately.</p>
+
+<h2>Site Preparation & Disruption</h2>
+
+<h3>Screw Piles</h3>
+<ul>
+<li>Minimal excavation (just the pile footprint)</li>
+<li>Low noise and vibration</li>
+<li>Can work on slopes and uneven terrain without major earth-moving</li>
+<li>Minimal site disruption</li>
+<li>No water pooling or drainage issues</li>
+<li>Can be installed in wet conditions</li>
+</ul>
+
+<h3>Concrete</h3>
+<ul>
+<li>Extensive excavation required</li>
+<li>Formwork setup and material staging</li>
+<li>High noise and dust</li>
+<li>Requires relatively flat, prepared ground</li>
+<li>Cannot pour in rain or extreme temperatures</li>
+<li>Water pooling in excavations complicates installation</li>
+<li>Compacted fill requirements add time and cost</li>
+</ul>
+
+<p>On greenfield sites, screw piles avoid significant earth-moving costs and environmental disruption.</p>
+
+<h2>Cost Analysis</h2>
+
+<h3>Direct Material Costs</h3>
+<p>For a typical 30-pile solar installation:</p>
+
+<ul>
+<li><strong>Screw Piles:</strong> ~$3,000–5,000 per pile (material + installation labour)</li>
+<li><strong>Concrete:</strong> ~$2,500–3,500 per foundation pad (material only)</li>
+</ul>
+
+<p>On paper, concrete appears cheaper. However, this comparison is incomplete.</p>
+
+<h3>Hidden Costs in Concrete</h3>
+
+<p><strong>Extended Project Timeline:</strong> An 14–30 day foundation delay increases project-wide overhead, staff wages, equipment rental, and financing costs. For a $500,000 solar installation, each week of delay may cost $10,000–20,000 in overhead.</p>
+
+<p><strong>Site Preparation:</strong> Grading, compaction, and fill can add $50–200 per square metre, depending on terrain.</p>
+
+<p><strong>Drainage Management:</strong> Excavations often require temporary drainage systems during curing, adding equipment rental and labour.</p>
+
+<p><strong>Weather-Related Delays:</strong> Concrete work stops during rain, snow, or extreme temperature. A single 10-day weather delay extends the project significantly.</p>
+
+<p><strong>Rework & Adjustments:</strong> If levels are off or loads shift, concrete is permanent. Adjustments are expensive or impossible. Screw piles can be re-levelled or relocated at minimal cost.</p>
+
+<h3>Real-World Cost Comparison</h3>
+<p>For a 30-pile solar installation:</p>
+<ul>
+<li><strong>Screw Piles:</strong> Material + labour = $90,000–150,000, completed in 2 days</li>
+<li><strong>Concrete:</strong> Material + labour + drainage + delay costs = $110,000–200,000+, completed in 21–30 days</li>
+</ul>
+
+<p><strong>Result:</strong> Screw piles are often cost-competitive or cheaper when project delay costs are included.</p>
+
+<h2>Soil Adaptability</h2>
+
+<h3>Screw Piles</h3>
+<p>Can be installed in:</p>
+<ul>
+<li>Soft clay (larger helixes, deeper embedment)</li>
+<li>Firm clay and sand (standard installation)</li>
+<li>Dense sand and gravel (high-torque equipment)</li>
+<li>Rock and weathered stone (high-torque, possible pre-drilling)</li>
+<li>Made-up ground and fill (extended piles to stable layers)</li>
+<li>Sloping terrain (natural adaptation to contours)</li>
+</ul>
+
+<p>The beauty of screw piles is adaptability: if you hit harder soil, you simply use a larger helical blade or higher-torque equipment. No design changes required.</p>
+
+<h3>Concrete</h3>
+<p>Requires site-specific geotechnical investigation and engineering design:</p>
+<ul>
+<li>Soft soils may require pile depths of 3–5+ metres, increasing cost dramatically</li>
+<li>Made-up ground often requires piling rather than simple concrete pads</li>
+<li>Sloping sites need significant regrading before foundations can be placed</li>
+<li>Groundwater presence complicates formwork and curing</li>
+</ul>
+
+<p>Concrete is more rigid — if soils are worse than expected, redesign and re-tendering becomes necessary, causing significant delays.</p>
+
+<h2>Structural Performance & Durability</h2>
+
+<h3>Bearing Capacity Verification</h3>
+
+<p><strong>Screw Piles:</strong> Bearing capacity is verified on-site during installation through torque monitoring. You have real-time confirmation that design loads are being achieved in the actual soil.</p>
+
+<p><strong>Concrete:</strong> Bearing capacity relies on geotechnical assumptions made before the pour. If actual soil differs from assumptions, you may discover bearing issues after concrete is cured (creating a costly fix).</p>
+
+<h3>Durability</h3>
+
+<p><strong>Screw Piles (Hot-Dip Galvanised):</strong></p>
+<ul>
+<li>50+ year service life in typical conditions</li>
+<li>Galvanisation is a proven, long-tested protection method</li>
+<li>Can be inspected and maintained if needed</li>
+<li>Minimal loss of capacity over decades</li>
+</ul>
+
+<p><strong>Concrete:</strong></p>
+<ul>
+<li>25–50 year service life depending on environmental exposure</li>
+<li>Reinforcement corrosion can reduce capacity over time</li>
+<li>Concrete spalling and cracking are common in harsh environments</li>
+<li>Repair is difficult and expensive once damage occurs</li>
+</ul>
+
+<p>In coastal, high-humidity, or chemically aggressive environments, screw piles often outperform concrete significantly.</p>
+
+<h2>Regulatory & Environmental Considerations</h2>
+
+<h3>Screw Piles</h3>
+<ul>
+<li>Minimal environmental impact — no concrete chemicals or extensive excavation</li>
+<li>Faster permitting in some jurisdictions due to reduced earth disturbance</li>
+<li>Reversible: piles can be extracted, leaving minimal trace</li>
+<li>No curing chemicals or waste</li>
+<li>Steel is recyclable at end of service life</li>
+</ul>
+
+<h3>Concrete</h3>
+<ul>
+<li>Concrete production is carbon-intensive (cement manufacturing)</li>
+<li>Extensive excavation may require environmental assessment</li>
+<li>Permanent once installed — cannot be reversed</li>
+<li>Concrete waste management can be costly</li>
+</ul>
+
+<p>For projects with sustainability requirements, screw piles offer a clear advantage.</p>
+
+<h2>When to Choose Screw Piles</h2>
+
+<ul>
+<li><strong>Fast-track projects:</strong> Projects requiring rapid deployment</li>
+<li><strong>Remote or difficult terrain:</strong> Where site access is limited</li>
+<li><strong>Variable soil conditions:</strong> Where site-specific adaptation is valuable</li>
+<li><strong>Weather-sensitive timelines:</strong> Where weather delays cannot be tolerated</li>
+<li><strong>Solar, BESS, prefab:</strong> Projects with repeatable, identical loads</li>
+<li><strong>Environmental sensitivity:</strong> Where minimising disruption is critical</li>
+</ul>
+
+<h2>When Concrete May Be Better</h2>
+
+<ul>
+<li><strong>Extremely deep foundations:</strong> Depths greater than 5 metres may require deep piling, where concrete is competitive</li>
+<li><strong>Very soft soils:</strong> Where bearing capacity is extremely low and very large helixes would be required</li>
+<li><strong>Existing infrastructure:</strong> Where concrete connects to existing concrete structures</li>
+<li><strong>Extreme load cases:</strong> Where lateral loads dominate (screw piles are less suited to extreme lateral forces)</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>Helical screw piles and concrete foundations each have their place. However, for most modern construction projects — particularly solar installations, battery storage, and prefabricated structures — screw piles offer compelling advantages in speed, cost, adaptability, and durability.</p>
+
+<p>The key insight is that concrete's apparent cost advantage often disappears when you factor in project delay costs, site preparation, weather impacts, and long-term durability. For fast-track, repeatable, soil-adaptive projects, screw piles are increasingly the engineer's choice.</p>
+
+</section>
+    `,
+		faqs: [
+			{
+				question: "How much faster are screw piles than concrete?",
+				answer: "Screw piles typically take 1–2 hours per pile with immediate loading. Concrete takes 7–14+ days for curing alone, plus excavation and formwork, totalling 21–30 days. For a 30-pile installation, screw piles are completed in 2 days vs. 30 days for concrete."
+			},
+			{
+				question: "Are screw piles more expensive than concrete?",
+				answer: "While material costs are comparable, screw piles are often cheaper when you include project delay costs. A 14–30 day foundation delay can cost $10,000–20,000+ per week in overhead. Over a full project, screw piles usually provide better value."
+			},
+			{
+				question: "Can screw piles be used in all soil types?",
+				answer: "Screw piles are highly adaptable. Different configurations (single-helix, multi-helix, large-diameter) and installation methods handle clay, sand, gravel, and rock. Concrete requires geotechnical design upfront, making it more rigid when soils vary."
+			},
+			{
+				question: "Which is more durable: screw piles or concrete?",
+				answer: "Hot-dip galvanised screw piles typically offer 50+ year service life with minimal maintenance. Concrete has 25–50 year life depending on environment, with concrete spalling and reinforcement corrosion being common long-term issues."
+			},
+			{
+				question: "Can concrete foundations be adjusted if they're wrong?",
+				answer: "Concrete is permanent and difficult to adjust. If levels are off or loads shift, rework is expensive or impossible. Screw piles can be re-levelled or relocated with minimal cost."
+			},
+			{
+				question: "Do screw piles require maintenance?",
+				answer: "Screw piles require minimal maintenance. The galvanised coating provides long-term corrosion protection. Periodic inspection is recommended but not essential for most installations."
+			},
+			{
+				question: "Can screw piles be installed in wet weather?",
+				answer: "Yes, screw piles can be installed in rain and wet conditions. Concrete cannot be poured in rain, making concrete foundations weather-dependent and prone to delays."
+			},
+			{
+				question: "Are screw piles reversible?",
+				answer: "Yes, screw piles can be extracted from the ground, making them reversible. Concrete is permanent. This matters if the site will be repurposed or if remediation is needed."
+			}
+		],
+		relatedKeywords: [
+			"concrete alternatives",
+			"foundation costs",
+			"installation speed",
+			"soil conditions"
+		]
+	},
+	{
+		id: "3",
+		slug: "screw-piles-for-solar-projects",
+		title: "Screw Piles for Solar Ground Mount: Why Developers Choose Screw Foundations",
+		excerpt: "Why solar developers worldwide use helical screw piles instead of concrete. Learn about speed, cost, accuracy, and soil adaptability in solar installations.",
+		category: "SOLAR",
+		date: "2026-08-05",
+		readTime: 8,
+		author: "BigScrew Engineering Team",
+		image: img.solarDual,
+		keywords: [
+			"solar",
+			"screw piles",
+			"ground mount",
+			"solar installation",
+			"foundations"
+		],
+		metaTitle: "Screw Piles for Solar Ground Mount | BigScrew Solutions",
+		metaDescription: "Why solar developers use helical screw piles for ground mounts. Fast installation, accuracy, cost-effective, and adaptable to any terrain.",
+		content: `
+<section>
+<h2>Solar Ground Mount Foundations: The Industry Shift</h2>
+<p>The global shift from concrete to helical screw pile foundations in solar ground mount installations is driven by one simple reality: solar projects operate on tight timelines and tight budgets, and screw piles deliver on both fronts.</p>
+
+<p>In solar project finance, every week of delay translates directly into lost revenue. A 100 MW solar array losing 7 days to concrete curing costs investors $100,000–200,000+ in delayed revenue. Screw piles eliminate this delay entirely.</p>
+
+<h2>Why Solar Developers Choose Screw Piles</h2>
+
+<h3>1. Installation Speed</h3>
+<p>A 20 MW solar site might require 200–500 piles, depending on table spacing and terrain. With screw piles:</p>
+<ul>
+<li><strong>Concrete:</strong> 4–6 weeks including excavation, formwork, pour, curing, and backfilling</li>
+<li><strong>Screw Piles:</strong> 3–5 days with a standard excavator and small crew</li>
+</ul>
+
+<p>The speed advantage directly reduces project completion time, allowing revenue generation sooner and reducing financing costs.</p>
+
+<h3>2. Foundation Cost Reduction</h3>
+<p>For a typical 20 MW installation:</p>
+<ul>
+<li><strong>Concrete Foundation System:</strong> $400,000–600,000 (materials, labour, site prep, delay costs)</li>
+<li><strong>Screw Pile Foundation System:</strong> $250,000–350,000 (piles + installation labour)</li>
+</ul>
+
+<p>Savings of $100,000–250,000 on a single project compound across a developer's portfolio. Over a year, a portfolio company installing 5–10 solar sites saves $500,000–2,500,000.</p>
+
+<h3>3. Accuracy & Alignment</h3>
+<p>Solar tables require precise, level foundations. Slight misalignment causes:</p>
+<ul>
+<li>Tracking system binding</li>
+<li>Accelerated component wear</li>
+<li>Reduced energy output</li>
+<li>Uneven snow loading in winter climates</li>
+</ul>
+
+<p>Screw piles offer:</p>
+<ul>
+<li><strong>Adjustable tops:</strong> Final levelling happens after installation, with precision adjustment</li>
+<li><strong>No concrete settlement:</strong> Unlike concrete which can shift as it cures, screw piles are immediately set</li>
+<li><strong>Real-time verification:</strong> Torque data confirms each pile meets design specifications</li>
+</ul>
+
+<h3>4. Terrain Adaptability</h3>
+<p>Concrete requires relatively flat, well-prepared ground. Screw piles work equally well on:</p>
+<ul>
+<li><strong>Slopes:</strong> Natural adaptation to contours without significant regrading</li>
+<li><strong>Rocky terrain:</strong> Standard excavators with high-torque drive heads penetrate rock</li>
+<li><strong>Clay & silt:</strong> Larger helix configuration provides bearing capacity</li>
+<li><strong>Sandy soils:</strong> Dense sand is ideal for screw pile penetration</li>
+<li><strong>Mixed soils:</strong> Adaptable approach avoids costly site redesign</li>
+</ul>
+
+<p>For solar sites in hilly or remote locations, screw piles dramatically reduce site preparation costs.</p>
+
+<h3>5. Weather Independence</h3>
+<p>Concrete curing is weather-dependent:</p>
+<ul>
+<li>Cannot pour in rain (concrete strength is compromised)</li>
+<li>Affected by temperature extremes</li>
+<li>Winter installations nearly impossible</li>
+<li>A single 10-day rainstorm delays the project significantly</li>
+</ul>
+
+<p>Screw piles install in any weather — rain, snow, or sun. This is particularly valuable in monsoon regions or seasonal climates where delays are costly.</p>
+
+<h2>Practical Installation Example: 10 MW Solar Site</h2>
+
+<h3>Project Details</h3>
+<ul>
+<li>Location: 5-hectare mixed terrain site</li>
+<li>Array: 30 tables, dual-axis trackers</li>
+<li>Soil: Mixed clay, sand, and gravel</li>
+<li>Required piles: 150 single-helix + 20 double-helix</li>
+</ul>
+
+<h3>Screw Pile Installation Timeline</h3>
+<ul>
+<li><strong>Day 1:</strong> Site mobilisation, equipment setup (1 day)</li>
+<li><strong>Days 2–4:</strong> Drive 170 piles at ~40 piles/day (3–4 days)</li>
+<li><strong>Day 5:</strong> Final verification and adjustments (1 day)</li>
+<li><strong>TOTAL: 5 days. Ready for table installation immediately.</strong></li>
+</ul>
+
+<h3>Concrete Alternative (Same Site)</h3>
+<ul>
+<li>Survey & design: 3 days</li>
+<li>Site grading & prep: 5–7 days</li>
+<li>Excavation & formwork: 10–14 days</li>
+<li>Concrete pour: 2–3 days</li>
+<li>Curing: 14 days (weather-dependent, possibly longer)</li>
+<li>Backfilling: 3–5 days</li>
+<li><strong>TOTAL: 37–46 days. Significant delays if weather is poor.</strong></li>
+</ul>
+
+<h3>Time & Cost Comparison</h3>
+<p>Using screw piles saves:</p>
+<ul>
+<li><strong>32 days:</strong> Faster revenue generation, reduced overhead</li>
+<li><strong>$150,000–250,000:</strong> Reduced foundation costs and project overhead</li>
+<li><strong>No weather risk:</strong> Installation proceeds regardless of conditions</li>
+</ul>
+
+<h2>Pile Configuration for Solar Applications</h2>
+
+<h3>Single-Helix Piles (Most Common)</h3>
+<ul>
+<li>Shaft Ø: 76–89 mm</li>
+<li>Length: 1200–2000 mm</li>
+<li>Helix: Single blade near tip</li>
+<li>Suitable for: Standard ground mounts in typical soils</li>
+<li>Cost: Most economical option</li>
+</ul>
+
+<h3>Double-Helix Piles (Heavy Terrain/Larger Tables)</h3>
+<ul>
+<li>Shaft Ø: 76–89 mm</li>
+<li>Length: 1500–2500 mm</li>
+<li>Helix: Two blades spaced along shaft</li>
+<li>Suitable for: Soft soils, higher-capacity tables</li>
+<li>Cost: 15–25% more than single-helix</li>
+</ul>
+
+<h3>Ground Screws (Light Applications)</h3>
+<ul>
+<li>Shaft Ø: 60–76 mm</li>
+<li>Helix: Continuous spiral thread down shaft</li>
+<li>Length: 1200–1800 mm</li>
+<li>Suitable for: Stiff soils, small pilot installations</li>
+<li>Cost: Lower material cost, similar installation cost</li>
+</ul>
+
+<h2>Installation on Slopes</h2>
+<p>Sloped sites are common in hilly regions. Concrete requires extensive grading and compaction. Screw piles adapt naturally:</p>
+
+<ul>
+<li><strong>Angle of repose:</strong> Piles can be installed on slopes up to 45° without significant site prep</li>
+<li><strong>Reduced grading:</strong> Eliminates $50–200/m² grading costs</li>
+<li><strong>Faster deployment:</strong> No wait for compacted fill</li>
+<li><strong>Better for environment:</strong> Minimal site disruption</li>
+</ul>
+
+<h2>Real-World ROI for Solar Developers</h2>
+
+<p>For a portfolio company installing 10 solar sites per year:</p>
+
+<ul>
+<li><strong>Foundation cost savings per site:</strong> $150,000–250,000</li>
+<li><strong>Annual savings:</strong> $1,500,000–2,500,000</li>
+<li><strong>Faster revenue generation:</strong> ~5 weeks faster per site = additional $500,000+/year in cumulative revenue benefit</li>
+<li><strong>Reduced financing costs:</strong> Shorter project timeline reduces interest expenses by $100,000+/year</li>
+<li><strong>Total annual benefit:</strong> $2,000,000–3,000,000 for a company installing 10 sites/year</li>
+</ul>
+
+<p>At this scale, the foundation choice fundamentally impacts company profitability.</p>
+
+<h2>Quality & Reliability</h2>
+
+<p>BigScrew screw piles for solar installations are:</p>
+
+<ul>
+<li>Hot-dip galvanised to ISO 1461 standards (50+ year durability)</li>
+<li>Manufactured on automated lines with consistent quality</li>
+<li>Batch-tested before despatch</li>
+<li>Compatible with all major solar table manufacturers</li>
+<li>Designed for 30+ year solar asset lifecycles</li>
+</ul>
+
+<p>The pile-to-table transition is a straightforward engineering integration — no complex custom design required.</p>
+
+<h2>Why Solar Developers Are Switching</h2>
+
+<p>The foundation system is invisible to the end user but critical to project success. Screw piles deliver:</p>
+
+<ul>
+<li>✓ Faster project completion (revenue sooner)</li>
+<li>✓ Lower foundation costs ($150–250k savings per site)</li>
+<li>✓ Better accuracy (properly levelled tables)</li>
+<li>✓ Adaptability to terrain (reduced site prep)</li>
+<li>✓ Weather independence (no curing delays)</li>
+<li>✓ Proven durability (30+ year track record)</li>
+</ul>
+
+<p>For solar developers operating on thin margins with aggressive deployment schedules, screw piles have become the default choice.</p>
+
+</section>
+    `,
+		faqs: [
+			{
+				question: "How much faster are screw piles for solar installations?",
+				answer: "Screw piles typically reduce foundation time from 4–6 weeks (concrete) to 3–5 days. For a 10 MW installation, this 32+ day saving translates to faster revenue generation and significantly reduced financing costs."
+			},
+			{
+				question: "Can screw piles be levelled accurately for solar tables?",
+				answer: "Yes, screw piles include adjustable top plates that allow precise final levelling. Unlike concrete, which can shift during curing, screw piles are immediately set and stable. Tables mount with perfect alignment."
+			},
+			{
+				question: "Are screw piles suitable for sloped solar sites?",
+				answer: "Screw piles are ideal for sloped terrain. They adapt naturally to contours without requiring extensive regrading. Concrete requires relatively flat ground, making slope sites significantly more expensive and time-consuming."
+			},
+			{
+				question: "Can screw piles be installed during monsoon season?",
+				answer: "Yes. Unlike concrete, screw piles can be installed in rain and wet conditions. This is a critical advantage in monsoon climates where concrete curing is impossible during the wet season."
+			},
+			{
+				question: "What pile size is typical for solar ground mounts?",
+				answer: "Most solar installations use 76–89 mm diameter single-helix piles, 1200–2000 mm long. Larger tables or soft soils may use double-helix piles. Ground screws are used in stiff soils for lighter applications."
+			},
+			{
+				question: "Do solar tables need special installation on screw piles?",
+				answer: "No, solar table installation is standard. The adjustable pile tops accommodate industry-standard mounting brackets. No custom engineering required."
+			},
+			{
+				question: "How cost-effective are screw piles for solar projects?",
+				answer: "Material costs are comparable to concrete, but screw piles save significantly on labour, site prep, and project delay costs. For a 10 MW site, total savings are typically $150,000–250,000."
+			},
+			{
+				question: "What is the expected lifespan of screw pile foundations for solar?",
+				answer: "Hot-dip galvanised screw piles last 50+ years, which exceeds the 30-year typical lifespan of solar assets. Foundation life is not a limitation."
+			}
+		],
+		relatedKeywords: [
+			"solar installations",
+			"ground mounts",
+			"renewable energy",
+			"cost savings"
+		]
+	},
+	{
+		id: "4",
+		slug: "screw-piles-for-bess-battery-storage",
+		title: "Screw Piles for BESS: Efficient Foundations for Battery Energy Storage",
+		excerpt: "Why battery energy storage systems use screw pile foundations. Learn about load handling, installation speed, and cost advantages for BESS projects.",
+		category: "BESS",
+		date: "2026-07-30",
+		readTime: 6,
+		author: "BigScrew Engineering Team",
+		image: img.bessContainer,
+		keywords: [
+			"BESS",
+			"battery storage",
+			"screw piles",
+			"energy storage foundations"
+		],
+		metaTitle: "Screw Piles for BESS Battery Storage | BigScrew",
+		metaDescription: "Heavy-duty helical screw piles for battery energy storage containers. Corner support, adjustable tops, and no concrete slab required.",
+		content: `
+<section>
+<h2>BESS Foundations: A Special Challenge</h2>
+<p>Battery Energy Storage Systems (BESS) present a unique foundation challenge: a shipping container filled with high-value equipment, often weighing 20–40 tonnes, sitting on four corner points. The foundation must be:</p>
+
+<ul>
+<li>Strong enough to support concentrated loads</li>
+<li>Level (batteries require perfect levelling for optimal performance)</li>
+<li>Quick to install (BESS projects operate on compressed timelines)</li>
+<li>Cost-effective (foundation cost is a significant portion of total project cost)</li>
+</ul>
+
+<p>Helical screw piles deliver all four requirements.</p>
+
+<h2>Why BESS Projects Choose Screw Piles</h2>
+
+<h3>1. Heavy-Duty Capacity</h3>
+<p>BESS containers create highly concentrated point loads. Standard single-helix piles are insufficient. BigScrew offers multi-helix and large-diameter piles specifically designed for this application:</p>
+
+<ul>
+<li><strong>Multi-helix piles:</strong> Two or three helical blades provide bearing capacity 50–100% higher than single-helix</li>
+<li><strong>Large-diameter shafts:</strong> 100–114 mm diameter shafts provide additional strength</li>
+<li><strong>Deep installation:</strong> Piles are installed 2–4 metres deep for maximum bearing resistance</li>
+</ul>
+
+<p>A typical BESS container (30 tonnes) can be supported by four heavy-duty multi-helix piles without requiring a reinforced concrete slab.</p>
+
+<h3>2. Perfect Levelling</h3>
+<p>Battery containers require precise, level seating:</p>
+
+<ul>
+<li>Uneven loading stresses battery cells</li>
+<li>Roof water drainage requires slopes that don't exist if the container is tilted</li>
+<li>Equipment cooling relies on proper ventilation, which depends on level mounting</li>
+</ul>
+
+<p>Screw piles include adjustable top plates that allow final levelling to 5 mm or better after installation. This precision is difficult to achieve with concrete pads without custom shimming.</p>
+
+<h3>3. Steel Frame Connection</h3>
+<p>Multi-container BESS sites often use a steel frame connecting all piles, distributing loads evenly. Screw piles integrate seamlessly:</p>
+
+<ul>
+<li>Standardised bolt-on connections to pile tops</li>
+<li>Frame can be designed in standard sections</li>
+<li>Load distribution is predictable and engineered</li>
+<li>Addition or removal of containers is straightforward</li>
+</ul>
+
+<p>Concrete pads cannot be connected in this way without custom concrete reinforcement.</p>
+
+<h3>4. Installation Speed</h3>
+<p>A typical BESS container installation:</p>
+
+<ul>
+<li><strong>Concrete:</strong> 3–4 weeks (site prep, pour, curing, container placement)</li>
+<li><strong>Screw Piles:</strong> 1–2 days (pile installation, top adjustment, container placement)</li>
+</ul>
+
+<p>For BESS projects with grid-connection deadlines and financing requirements, this speed advantage is critical. A 2–3 week reduction in foundation time can mean the difference between meeting revenue projections and missing them.</p>
+
+<h2>Screw Pile Foundation Design for BESS</h2>
+
+<h3>Single Container Installation</h3>
+<p>For a single 30-tonne battery container:</p>
+
+<ul>
+<li><strong>Number of piles:</strong> 4 (one at each corner)</li>
+<li><strong>Pile type:</strong> Multi-helix (2–3 helix)</li>
+<li><strong>Shaft Ø:</strong> 100–114 mm</li>
+<li><strong>Length:</strong> 2000–3000 mm (depending on soil)</li>
+<li><strong>Installation depth:</strong> 2.5–3.5 metres to bedrock or dense soil layer</li>
+<li><strong>Top plate:</strong> Adjustable for final levelling</li>
+</ul>
+
+<h3>Multi-Container Installation (3–4 Containers)</h3>
+<p>For a 3-container site (90 tonnes total):</p>
+
+<ul>
+<li><strong>Number of piles:</strong> 12–16 (typically 4–5 piles per container)</li>
+<li><strong>Arrangement:</strong> Grid pattern, often 2–3 metres on centre</li>
+<li><strong>Connecting framework:</strong> Steel I-beams or welded frame tying all piles</li>
+<li><strong>Advantage:</strong> Load distribution across multiple piles reduces individual pile loading</li>
+<li><strong>Design:</strong> Standard structural analysis using typical load cases</li>
+</ul>
+
+<h3>Soil Adaptability</h3>
+<p>BESS sites are often built on marginal land — not ideal soil conditions. Screw piles adapt:</p>
+
+<ul>
+<li><strong>Soft soils:</strong> Larger helixes, deeper installation</li>
+<li><strong>Dense soils:</strong> Standard installation with reduced depth</li>
+<li><strong>Mixed soils:</strong> Piles penetrate through weak layers to dense soil below</li>
+<li><strong>Rocky ground:</strong> High-torque drive head penetrates or pre-drilling used</li>
+</ul>
+
+<p>Concrete requires geotechnical design upfront. If soils are worse than expected, redesign is necessary. Screw piles adapt on-site.</p>
+
+<h2>Cost Comparison: BESS Foundation</h2>
+
+<h3>Screw Pile Option (4-pile single container)</h3>
+<ul>
+<li>Material (4 piles): $8,000–12,000</li>
+<li>Installation labour: $3,000–5,000</li>
+<li>Adjustments & verification: $1,000–2,000</li>
+<li><strong>Total: $12,000–19,000</strong></li>
+<li>Timeline: 1–2 days</li>
+</ul>
+
+<h3>Concrete Option (4-pad concrete slab)</h3>
+<ul>
+<li>Excavation & formwork: $5,000–8,000</li>
+<li>Concrete material & pour: $8,000–12,000</li>
+<li>Curing (14 days): Included</li>
+<li>Backfilling & grading: $3,000–5,000</li>
+<li><strong>Total: $16,000–25,000</strong></li>
+<li>Timeline: 21–28 days</li>
+</ul>
+
+<h3>Comparison</h3>
+<p>For a single container, costs are comparable. However, for multi-container sites or sites with difficult soil, screw piles provide significant advantages.</p>
+
+<p><strong>Multi-container site (3 containers):</strong></p>
+<ul>
+<li>Screw Piles: $35,000–60,000 (3 days installation)</li>
+<li>Concrete: $50,000–80,000+ (21–28 day timeline)</li>
+</ul>
+
+<p><strong>Difficult soil site:</strong> Concrete costs escalate if soil investigation reveals poor conditions. Screw piles adapt at no additional engineering cost.</p>
+
+<h2>BESS-Specific Advantages</h2>
+
+<h3>No Concrete Slab Required</h3>
+<p>Traditional concrete foundations require a large reinforced slab under and around containers. Screw piles support the container directly at four corner points, with optional cross-bracing:</p>
+
+<ul>
+<li>Eliminates concrete material cost</li>
+<li>Reduces site excavation</li>
+<li>No concrete waste</li>
+<li>More sustainable approach</li>
+</ul>
+
+<h3>Modular & Expandable</h3>
+<p>If a BESS site needs to be expanded from 1 to 3 containers, additional piles are installed alongside existing piles. The connecting frame is extended. No existing concrete needs to be disturbed.</p>
+
+<p>Concrete sites require careful planning to accommodate future expansion. Last-minute expansion becomes expensive.</p>
+
+<h3>Inspection & Maintenance</h3>
+<p>Screw piles allow clear access under containers for inspection, ventilation clearance verification, and future maintenance. Concrete slabs can obscure issues and complicate inspection.</p>
+
+<h3>Exact Load Verification</h3>
+<p>Installation torque data provides real-time verification that each pile achieves design bearing. This documentation is valuable for:</p>
+
+<ul>
+<li>Regulatory compliance and insurance</li>
+<li>Financing requirements</li>
+<li>Site handover documentation</li>
+<li>Future expansion planning</li>
+</ul>
+
+<h2>Quality & Standards</h2>
+
+<p>BigScrew screw piles for BESS are designed to:</p>
+
+<ul>
+<li>Meet structural engineering requirements for 30+ year service life</li>
+<li>Comply with hot-dip galvanising standards (ISO 1461) for durability</li>
+<li>Support documented load capacities with safety factors</li>
+<li>Integrate seamlessly with standard structural design practice</li>
+</ul>
+
+<p>Unlike some proprietary foundation systems, screw piles use standard structural analysis and widely-accepted design methodologies.</p>
+
+<h2>Why BESS Developers Are Choosing Screw Piles</h2>
+
+<p>BESS project developers operate under tight constraints:</p>
+
+<ul>
+<li><strong>Tight timelines:</strong> Grid connection deadlines are fixed. Foundation delays can miss revenue windows.</li>
+<li><strong>Compressed budgets:</strong> Every $10,000 in savings on foundation cost impacts project IRR.</li>
+<li><strong>Difficult sites:</strong> BESS often sits on marginal land with variable soil conditions.</li>
+<li><strong>Scalability:</strong> Developers want a foundation system that scales from 1 to 10 containers without requiring custom design.</li>
+</ul>
+
+<p>Screw piles tick all these boxes, which is why they've become the de facto choice for BESS developers worldwide.</p>
+
+</section>
+    `,
+		faqs: [
+			{
+				question: "How many screw piles are needed for a BESS container?",
+				answer: "Typically 4 piles for a single 30-tonne container (one at each corner). Multi-container sites use 12–16 piles arranged in a grid pattern, with a connecting steel frame distributing loads."
+			},
+			{
+				question: "What size screw piles are used for BESS?",
+				answer: "BESS applications use heavy-duty multi-helix piles: 100–114 mm shaft diameter, 2000–3000 mm length, with 2–3 helical blades. Load capacity is 2–3x higher than single-helix piles."
+			},
+			{
+				question: "Can battery containers be installed immediately after piles are driven?",
+				answer: "Yes. After piles are installed and adjustable tops are levelled, containers can be positioned the same day. Unlike concrete, there is no curing time required."
+			},
+			{
+				question: "How level can screw piles be adjusted?",
+				answer: "Adjustable top plates allow final levelling to within 5 mm or better. This precision meets battery storage requirements for perfect load distribution."
+			},
+			{
+				question: "Can BESS sites be expanded after initial installation?",
+				answer: "Yes, additional piles can be installed and integrated into the connecting framework. Concrete sites require careful planning for expansion; screw piles are inherently modular."
+			},
+			{
+				question: "Are screw piles cost-effective for BESS compared to concrete?",
+				answer: "For single containers, costs are comparable. For multi-container sites or difficult soils, screw piles are typically 20–30% cheaper when including engineering time and installation speed benefits."
+			},
+			{
+				question: "What is the expected lifespan of BESS screw pile foundations?",
+				answer: "Hot-dip galvanised screw piles provide 50+ years of service life, which exceeds typical BESS asset lifespans (20–30 years). Foundation durability is not a limitation."
+			},
+			{
+				question: "How does soil condition affect BESS pile installation?",
+				answer: "Screw piles adapt to soil conditions during installation: larger helixes for soft soils, standard installation for firm soils, high-torque equipment for dense soils. Concrete requires geotechnical design upfront and struggles if soils are different than expected."
+			}
+		],
+		relatedKeywords: [
+			"energy storage",
+			"battery containers",
+			"heavy-duty foundations"
+		]
+	},
+	{
+		id: "5",
+		slug: "screw-pile-installation-step-by-step",
+		title: "Screw Pile Installation: Step-by-Step Process and Best Practices",
+		excerpt: "Learn how helical screw pile installation works. From site prep to final verification, understand the complete installation process used by engineers worldwide.",
+		category: "INSTALLATION",
+		date: "2026-07-25",
+		readTime: 7,
+		author: "BigScrew Engineering Team",
+		image: img.heroExcavator,
+		keywords: [
+			"installation",
+			"process",
+			"screw piles",
+			"construction",
+			"installation methods"
+		],
+		metaTitle: "Screw Pile Installation: Step-by-Step Guide | BigScrew",
+		metaDescription: "Complete guide to helical screw pile installation. Learn the process, equipment, best practices, and how to verify bearing capacity on-site.",
+		content: `
+<section>
+<h2>Screw Pile Installation: Overview</h2>
+<p>Helical screw pile installation is a mechanical process that can be completed by standard construction crews using common equipment. Unlike concrete foundations which require specialised curing knowledge, screw pile installation is straightforward and verifiable.</p>
+
+<p>The process can be summarised in five steps:</p>
+<ol>
+<li>Site preparation and pile positioning</li>
+<li>Attachment of drive head to excavator</li>
+<li>Twisting piles into ground with torque monitoring</li>
+<li>Verification of bearing capacity and alignment</li>
+<li>Load verification and structure installation</li>
+</ol>
+
+<h2>Step 1: Site Preparation & Positioning</h2>
+
+<h3>Survey & Layout</h3>
+<p>Before installation begins, the site engineer marks pile positions using:</p>
+
+<ul>
+<li>Theodolite or laser level to establish accurate grid coordinates</li>
+<li>GPS survey in large installations (solar, BESS)</li>
+<li>Benchmark elevation to establish vertical reference</li>
+</ul>
+
+<p>Accuracy at this stage is critical — small positioning errors compound across large installations.</p>
+
+<h3>Ground Clearance</h3>
+<p>Remove surface obstacles at each pile location:</p>
+
+<ul>
+<li>Vegetation, roots, and organic matter</li>
+<li>Concrete rubble or existing foundations</li>
+<li>Loose surface material (first 100–300 mm)</li>
+</ul>
+
+<p>This clearing accelerates the initial penetration of the helical blade into firm soil.</p>
+
+<h3>Marking & Reference</h3>
+<p>Paint or stake each pile location with:</p>
+
+<ul>
+<li>Coordinates for verification</li>
+<li>Depth target based on design (typically marked on the pile shaft itself)</li>
+<li>Orientation reference if applicable</li>
+</ul>
+
+<h2>Step 2: Equipment Setup & Drive Head Attachment</h2>
+
+<h3>Equipment Selection</h3>
+<p>Pile installation equipment depends on soil type and load requirements:</p>
+
+<table>
+<thead>
+<tr>
+<th>Soil Type</th>
+<th>Equipment</th>
+<th>Torque Capacity</th>
+<th>Typical Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soft clay, silt</td>
+<td>Mini excavator (1.5–3 t)</td>
+<td>Low-torque (1–3 kNm)</td>
+<td>Light solar, fencing</td>
+</tr>
+<tr>
+<td>Firm clay, sand</td>
+<td>Excavator (5–8 t)</td>
+<td>Medium-torque (3–8 kNm)</td>
+<td>Standard solar, BESS, prefab</td>
+</tr>
+<tr>
+<td>Dense sand, gravel</td>
+<td>Excavator (13–20 t)</td>
+<td>High-torque (8–20 kNm)</td>
+<td>Industrial, difficult soils</td>
+</tr>
+<tr>
+<td>Rock, murum</td>
+<td>Large excavator (20+ t)</td>
+<td>Very high-torque (20+ kNm)</td>
+<td>Rock sites, pre-drilling</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Drive Head Installation</h3>
+<p>The drive head is bolted to the excavator's arm:</p>
+
+<ul>
+<li>Hydraulic motor provides rotational force</li>
+<li>Torque gauge displays load in real-time</li>
+<li>Manual or automatic shutoff when target torque is reached</li>
+<li>Safety pins and markers prevent accidental pile release</li>
+</ul>
+
+<p>Modern drive heads include digital torque recorders that create a log of each pile installation — valuable data for verification and future reference.</p>
+
+<h2>Step 3: Pile Installation Process</h2>
+
+<h3>Positioning the Pile</h3>
+<p>The drive head guides the first pile to marked location:</p>
+
+<ul>
+<li>Operator positions excavator arm over target</li>
+<li>Pile is held vertically (or at design angle) by the drive head</li>
+<li>Light downward pressure is applied</li>
+<li>Rotation begins slowly</li>
+</ul>
+
+<h3>Penetration Phase (0–1 metre depth)</h3>
+<p>Initial penetration can be fast in loose surface soils:</p>
+
+<ul>
+<li>Helical blade cuts into softer surface material</li>
+<li>Torque is typically 20–40% of design value</li>
+<li>Pile descends steadily</li>
+<li>Operator monitors vertical alignment continuously</li>
+</ul>
+
+<h3>Mid-Installation Phase (1–2.5 metres depth)</h3>
+<p>As pile reaches firmer soil, resistance increases:</p>
+
+<ul>
+<li>Torque increases steadily as blade encounters denser layers</li>
+<li>Rotation speed decreases naturally as resistance increases</li>
+<li>Operator maintains light downward pressure</li>
+<li>Vertical alignment is verified frequently</li>
+</ul>
+
+<h3>Final Penetration Phase (2.5+ metres depth)</h3>
+<p>The pile approaches design depth:</p>
+
+<ul>
+<li>Torque approaches target value (typically 60–100% of capacity for standard loads)</li>
+<li>Rotation slows as resistance increases</li>
+<li>Operator watches torque gauge closely</li>
+<li>As target torque is reached, rotation is slowed further</li>
+<li>Final turning is done carefully over 1–2 minutes to confirm torque stability</li>
+</ul>
+
+<h3>Installation Completion</h3>
+<p>When design torque is verified over a minimum turning distance (typically 0.1–0.2 metres):</p>
+
+<ul>
+<li>Rotation is stopped</li>
+<li>Downward pressure is released</li>
+<li>Torque reading is recorded</li>
+<li>Drive head is disconnected and raised</li>
+<li>Final visual inspection confirms pile integrity and vertical alignment</li>
+</ul>
+
+<h2>Step 4: Verification & Adjustment</h2>
+
+<h3>Vertical Alignment Check</h3>
+<p>Immediately after installation:</p>
+
+<ul>
+<li>Level or laser is used to verify pile is within acceptable tolerance (typically ±2–5 mm per metre of height)</li>
+<li>Visual inspection confirms no kinks or bends in pile</li>
+<li>Helical blade is inspected for proper engagement with soil</li>
+</ul>
+
+<h3>Adjustable Top Alignment</h3>
+<p>For applications requiring precise levelling (solar, BESS):</p>
+
+<ul>
+<li>Adjustable top plate is shimmed or adjusted to final elevation</li>
+<li>Level is used to verify final levelling</li>
+<li>Precision to within 5 mm is achievable</li>
+</ul>
+
+<h3>Torque Documentation</h3>
+<p>All installation data is recorded:</p>
+
+<ul>
+<li>Pile ID and location</li>
+<li>Installation date and time</li>
+<li>Final torque value</li>
+<li>Soil observations during installation</li>
+<li>Depth achieved</li>
+<li>Operator notes (any unusual resistance, soil changes, etc.)</li>
+</ul>
+
+<h2>Step 5: Load Verification & Structure Installation</h2>
+
+<h3>Immediate Load Readiness</h3>
+<p>Unlike concrete foundations, screw piles are ready for loading immediately:</p>
+
+<ul>
+<li>No curing time required</li>
+<li>Structures can be positioned and loaded the same day</li>
+<li>No moisture or weather protection needed</li>
+</ul>
+
+<h3>Load Transfer Verification</h3>
+<p>For critical applications, a final verification step confirms bearing:</p>
+
+<ul>
+<li>Test loads can be applied to verify no settlement occurs</li>
+<li>Dial gauges placed on pile tops measure any movement (should be minimal — typically <5 mm)</li>
+<li>For most applications, this test is omitted (torque verification is sufficient)</li>
+</ul>
+
+<h3>Structure Installation</h3>
+<p>Structures are then positioned and secured:</p>
+
+<ul>
+<li>Bolts are torqued to specification</li>
+<li>Connections are inspected</li>
+<li>Final alignment is verified</li>
+<li>Loading can proceed according to project schedule</li>
+</ul>
+
+<h2>Best Practices for Screw Pile Installation</h2>
+
+<h3>Torque Monitoring</h3>
+<p>Torque is the key to verification. Best practices include:</p>
+
+<ul>
+<li><strong>Start slow:</strong> Begin installation slowly to ensure proper blade engagement</li>
+<li><strong>Monitor trends:</strong> Watch how torque changes with depth — uniform increase suggests consistent soil</li>
+<li><strong>Target design torque:</strong> Verify design torque is maintained for minimum 0.1–0.2 metres of turning</li>
+<li><strong>Record everything:</strong> Document torque, depth, soil observations for every pile</li>
+<li><strong>No sudden drops:</strong> If torque suddenly decreases, it may indicate blade has bent or jumped past target depth — investigate</li>
+</ul>
+
+<h3>Vertical Alignment</h3>
+<p>Piles must remain vertical (or at design angle):</p>
+
+<ul>
+<li>Level the installation area if necessary</li>
+<li>Ensure excavator is level before starting</li>
+<li>Maintain vertical pressure throughout installation</li>
+<li>Check alignment regularly, especially during initial penetration</li>
+<li>Tilted piles reduce bearing capacity significantly</li>
+</ul>
+
+<h3>Operator Training</h3>
+<p>Successful installation requires skilled operators:</p>
+
+<ul>
+<li>Understand how torque changes with soil type and depth</li>
+<li>Know how to recognise problem installations (e.g., blade bent, wrong depth)</li>
+<li>Maintain consistent technique across multiple piles</li>
+<li>Respond appropriately to unusual soil conditions</li>
+</ul>
+
+<h3>Weather Considerations</h3>
+<p>Screw piles work in any weather, but some conditions require caution:</p>
+
+<ul>
+<li><strong>Heavy rain:</strong> Muddy ground may reduce traction — use caution but installation can proceed</li>
+<li><strong>Frozen ground:</strong> Pre-thaw or use high-torque equipment if necessary</li>
+<li><strong>Heat:</strong> No limitations — unlike concrete, heat doesn't compromise pile integrity</li>
+<li><strong>Wind:</strong> Strong wind may affect safety and control — secure equipment appropriately</li>
+</ul>
+
+<h2>Common Installation Challenges & Solutions</h2>
+
+<h3>Challenge: Unexpectedly High Torque in Initial Penetration</h3>
+<p><strong>Cause:</strong> Dense surface layer (rock, concrete, compacted material)</p>
+<p><strong>Solution:</strong> Stop installation, clear obstruction, restart. Do not force pile through rock without proper equipment.</p>
+
+<h3>Challenge: Torque Increases Suddenly at Depth</h3>
+<p><strong>Cause:</strong> Dense soil layer encountered</p>
+<p><strong>Solution:</strong> Switch to larger helical blade or high-torque equipment. Design may need adjustment if very deep installation is required.</p>
+
+<h3>Challenge: Torque Decreases Before Target Depth</h3>
+<p><strong>Cause:</strong> Pile may have bent or blade may have disengaged</p>
+<p><strong>Solution:</strong> Stop immediately, inspect pile, remove if damaged. This is rare but critical to identify.</p>
+
+<h3>Challenge: Pile Tilts During Installation</h3>
+<p><strong>Cause:</strong> Uneven soil resistance, improper vertical pressure</p>
+<p><strong>Solution:</strong> Correct alignment immediately by adjusting excavator position and pressure. Tilted piles must be extracted and reinstalled.</p>
+
+<h2>Quality Assurance</h2>
+
+<p>The installation process itself provides quality assurance through torque verification. Additional QA practices include:</p>
+
+<ul>
+<li><strong>Photographic documentation:</strong> Photos of each pile after installation</li>
+<li><strong>Torque data logging:</strong> Electronic records of every installation</li>
+<li><strong>Third-party verification:</strong> For critical projects, engineer may observe and approve installations</li>
+<li><strong>Material certification:</strong> Pile material certificates accompany batches and are filed for future reference</li>
+</ul>
+
+<h2>Installation Timeline: Real-World Example</h2>
+
+<h3>30-Pile Solar Installation</h3>
+<ul>
+<li><strong>Site prep (1 day):</strong> Survey, layout, surface clearing</li>
+<li><strong>Installation (3 days):</strong> 30 piles at ~10 piles/day</li>
+<li><strong>Verification (0.5 day):</strong> Final checks, documentation, alignment verification</li>
+<li><strong>Ready for structure (4.5 days total)</strong></li>
+</ul>
+
+<p>By comparison, concrete would require 21–28 days for excavation, forming, pouring, curing, and backfilling.</p>
+
+<h2>Next Steps After Installation</h2>
+
+<p>Once piles are installed and verified:</p>
+
+<ul>
+<li>Structure is positioned and secured per design</li>
+<li>Loading proceeds according to construction schedule</li>
+<li>No further maintenance is required for piles — they're designed for 50+ year service life</li>
+<li>Periodic inspection (e.g., every 5–10 years) is optional but recommended for critical installations</li>
+</ul>
+
+</section>
+    `,
+		faqs: [
+			{
+				question: "How long does it take to install a single screw pile?",
+				answer: "Typically 30 minutes to 2 hours per pile, depending on soil resistance and pile depth. A standard installation progresses through penetration, resistance building, and final torque verification phases."
+			},
+			{
+				question: "What equipment is needed for screw pile installation?",
+				answer: "A standard excavator (5–13 t) with a torque-controlled drive head attachment. No specialised or expensive equipment is required — most construction companies already have suitable excavators."
+			},
+			{
+				question: "How is bearing capacity verified during installation?",
+				answer: "Torque monitoring is the key verification method. As the pile is twisted, torque increases as soil resistance increases. When design torque is reached and maintained, bearing capacity is confirmed."
+			},
+			{
+				question: "Can screw piles be installed in wet or muddy conditions?",
+				answer: "Yes. Unlike concrete, screw piles work in rain and wet ground. Muddy conditions may reduce equipment traction but don't prevent installation."
+			},
+			{
+				question: "What happens if a screw pile hits rock?",
+				answer: "Installation can be stopped and the pile removed if needed. Alternatively, high-torque equipment or pre-drilling can penetrate rock. These variations are handled during installation without requiring engineering redesign."
+			},
+			{
+				question: "How is vertical alignment verified?",
+				answer: "Immediately after installation, a level or laser is used to check pile verticality. Tolerance is typically ±2–5 mm per metre of height. For critical applications, adjustments are made using adjustable top plates."
+			},
+			{
+				question: "Can structures be loaded immediately after pile installation?",
+				answer: "Yes. Unlike concrete which requires curing time, screw piles are ready for loading the same day installation is complete. This eliminates the 7–14 day curing delay of concrete."
+			},
+			{
+				question: "What is the installation success rate for screw piles?",
+				answer: "Screw pile installation is highly reliable. Bearing is verified on-site through torque monitoring, making problems immediately obvious. Failure rates are very low (typically <1% when proper techniques are followed)."
+			}
+		],
+		relatedKeywords: [
+			"installation process",
+			"equipment",
+			"best practices",
+			"on-site verification"
+		]
+	}
+];
+/**
+* Get a blog article by slug
+*/
+var getBlogBySlug = (slug) => blogs.find((b) => b.slug === slug);
+/**
+* Get blog articles filtered by category
+*/
+var getBlogsByCategory = (category) => {
+	if (category === "ALL") return blogs;
+	return blogs.filter((b) => b.category === category);
+};
+/**
+* Search blogs by title, excerpt, keywords, or FAQ content
+*/
+var searchBlogs = (query) => {
+	const lowerQuery = query.toLowerCase();
+	return blogs.filter((b) => b.title.toLowerCase().includes(lowerQuery) || b.excerpt.toLowerCase().includes(lowerQuery) || b.keywords.some((k) => k.toLowerCase().includes(lowerQuery)) || b.faqs.some((f) => f.question.toLowerCase().includes(lowerQuery) || f.answer.toLowerCase().includes(lowerQuery)));
+};
+/**
+* Get related articles based on keywords and category
+*/
+var getRelatedArticles = (currentSlug, limit = 3) => {
+	const current = getBlogBySlug(currentSlug);
+	if (!current) return [];
+	return blogs.filter((b) => b.slug !== currentSlug).sort((a, b) => {
+		let scoreA = 0;
+		let scoreB = 0;
+		current.keywords.forEach((k) => {
+			if (a.keywords.includes(k)) scoreA++;
+			if (b.keywords.includes(k)) scoreB++;
+		});
+		if (a.category === current.category) scoreA += 2;
+		if (b.category === current.category) scoreB += 2;
+		return scoreB - scoreA;
+	}).slice(0, limit);
+};
+var $$splitErrorComponentImporter = () => import("./blog._slug-BRHRjtnK.mjs");
+var $$splitComponentImporter = () => import("./blog._slug-Bu_FR1mv.mjs");
+var Route = createFileRoute("/blog/$slug")({
+	head: ({ params }) => {
+		const blog = getBlogBySlug(params.slug);
+		if (!blog) return { meta: [{ title: "Article not found" }, {
+			name: "description",
+			content: "This article could not be found."
+		}] };
+		return {
+			meta: [
+				{ title: blog.metaTitle },
+				{
+					name: "description",
+					content: blog.metaDescription
+				},
+				{
+					name: "keywords",
+					content: blog.keywords.join(", ")
+				},
+				{
+					property: "og:title",
+					content: blog.metaTitle
+				},
+				{
+					property: "og:description",
+					content: blog.metaDescription
+				},
+				{
+					property: "og:image",
+					content: blog.image
+				},
+				{
+					property: "og:type",
+					content: "article"
+				},
+				{
+					property: "og:url",
+					content: `/blog/${blog.slug}`
+				},
+				{
+					property: "article:published_time",
+					content: blog.date
+				},
+				{
+					property: "article:author",
+					content: blog.author
+				},
+				{
+					property: "article:section",
+					content: blog.category
+				}
+			],
+			links: [{
+				rel: "canonical",
+				href: `/blog/${blog.slug}`
+			}]
+		};
+	},
+	component: lazyRouteComponent($$splitComponentImporter, "component"),
+	errorComponent: lazyRouteComponent($$splitErrorComponentImporter, "errorComponent")
+});
+var IndexRoute = Route$10.update({
+	id: "/",
+	path: "/",
+	getParentRoute: () => Route$11
+});
+var AboutRoute = Route$9.update({
+	id: "/about",
+	path: "/about",
+	getParentRoute: () => Route$11
+});
+var ContactRoute = Route$8.update({
+	id: "/contact",
+	path: "/contact",
+	getParentRoute: () => Route$11
+});
+var FacilityRoute = Route$7.update({
+	id: "/facility",
+	path: "/facility",
+	getParentRoute: () => Route$11
+});
+var InstallationRoute = Route$6.update({
+	id: "/installation",
+	path: "/installation",
+	getParentRoute: () => Route$11
+});
+var ProjectsRoute = Route$5.update({
+	id: "/projects",
+	path: "/projects",
+	getParentRoute: () => Route$11
+});
+var ScrewPilesRoute = Route$4.update({
+	id: "/screw-piles",
+	path: "/screw-piles",
+	getParentRoute: () => Route$11
+});
+var ApplicationsIndexRoute = Route$3.update({
+	id: "/applications/",
+	path: "/applications/",
+	getParentRoute: () => Route$11
+});
+var ApplicationsSlugRoute = Route$2.update({
+	id: "/applications/$slug",
+	path: "/applications/$slug",
+	getParentRoute: () => Route$11
+});
+var BlogIndexRoute = Route$1.update({
+	id: "/blog/",
+	path: "/blog/",
+	getParentRoute: () => Route$11
+});
+var rootRouteChildren = {
+	IndexRoute,
+	AboutRoute,
+	ContactRoute,
+	FacilityRoute,
+	InstallationRoute,
+	ProjectsRoute,
+	ScrewPilesRoute,
+	ApplicationsSlugRoute,
+	BlogSlugRoute: Route.update({
+		id: "/blog/$slug",
+		path: "/blog/$slug",
+		getParentRoute: () => Route$11
+	}),
+	ApplicationsIndexRoute,
+	BlogIndexRoute
+};
+var routeTree = Route$11._addFileChildren(rootRouteChildren)._addFileTypes();
+var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
+var getRouter = () => {
+	const queryClient = new QueryClient();
+	return createRouter({
+		routeTree,
+		context: { queryClient },
+		scrollRestoration: true,
+		defaultPreloadStaleTime: 0
+	});
+};
+//#endregion
+export { soilMachinery as _, getRelatedArticles as a, ArrowLink as c, galleryItems as d, img as f, services as g, pileTypes as h, getBlogsByCategory as i, applications as l, pileMatrix as m, blogs as n, searchBlogs as o, installSteps as p, getBlogBySlug as r, Route$2 as s, router_exports as t, company as u, stats as v, whyBigscrew as y };
