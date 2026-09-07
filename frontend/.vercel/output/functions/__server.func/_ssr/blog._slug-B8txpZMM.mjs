@@ -1,6 +1,6 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
-import { c as ArrowLink } from "./router-D16IWlnh.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-Cr--8RU9.js
+import { c as ArrowLink } from "./router-DUZ1py_X.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/blog._slug-B8txpZMM.js
 var import_jsx_runtime = require_jsx_runtime();
 var SplitErrorComponent = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 	className: "min-h-screen bg-background flex items-center justify-center px-4",
