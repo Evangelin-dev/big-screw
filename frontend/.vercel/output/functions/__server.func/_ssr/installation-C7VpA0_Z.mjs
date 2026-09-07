@@ -3,7 +3,7 @@ import { c as require_jsx_runtime, s as require_react } from "../_libs/@radix-ui
 import { i as AnimatePresence, n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion+[...].mjs";
 import { n as Reveal, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
 import { t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
-import { _ as soilMachinery, f as img } from "./router-CS6gVxxY.mjs";
+import { _ as soilMachinery, f as img } from "./router-D16IWlnh.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/installation-C7VpA0_Z.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();

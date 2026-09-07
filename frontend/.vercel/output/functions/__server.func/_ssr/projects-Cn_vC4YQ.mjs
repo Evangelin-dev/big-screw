@@ -2,8 +2,8 @@ import { i as __toESM } from "../_runtime.mjs";
 import { c as require_jsx_runtime, s as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { r as motion } from "../_libs/framer-motion+[...].mjs";
 import { t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
-import { c as ArrowLink, d as galleryItems, f as img } from "./router-CS6gVxxY.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/projects-DsWpAQam.js
+import { c as ArrowLink, d as galleryItems, f as img } from "./router-D16IWlnh.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/projects-Cn_vC4YQ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ProjectsPage() {

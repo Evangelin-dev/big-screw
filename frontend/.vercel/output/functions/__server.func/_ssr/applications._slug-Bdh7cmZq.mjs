@@ -1,8 +1,8 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { n as Reveal, r as TechLine, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
 import { n as SpecTable, t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
-import { c as ArrowLink, l as applications, p as installSteps, s as Route$2 } from "./router-CS6gVxxY.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/applications._slug-CDRaCi0c.js
+import { c as ArrowLink, l as applications, p as installSteps, s as Route$2 } from "./router-D16IWlnh.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/applications._slug-Bdh7cmZq.js
 var import_jsx_runtime = require_jsx_runtime();
 function ApplicationPage() {
 	const a = Route$2.useLoaderData().application;

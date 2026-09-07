@@ -2,7 +2,7 @@ import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { r as motion } from "../_libs/framer-motion+[...].mjs";
 import { n as Reveal, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
 import { t as PageHero } from "./PageHero-B0eXY2Ef.mjs";
-import { f as img, g as services, v as stats, y as whyBigscrew } from "./router-CS6gVxxY.mjs";
+import { f as img, g as services, v as stats, y as whyBigscrew } from "./router-D16IWlnh.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/about-CbqucsoC.js
 var import_jsx_runtime = require_jsx_runtime();
 function AboutPage() {

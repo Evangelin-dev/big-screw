@@ -841,7 +841,7 @@ var navLinks = [
 	}
 ];
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CS6gVxxY.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-D16IWlnh.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -1310,7 +1310,7 @@ var Route$11 = createRootRouteWithContext()({
 			{
 				rel: "icon",
 				href: "/favicon.ico",
-				type: "image/x-icon"
+				type: "image/png"
 			}
 		],
 		scripts: [{
@@ -1365,7 +1365,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$10 = () => import("./routes--wy0E4mp.mjs");
+var $$splitComponentImporter$10 = () => import("./routes-6600WC9l.mjs");
 var title$8 = "BigScrew Solutions — Helical Screw Pile Foundations";
 var description$8 = "Helical screw pile foundations designed, manufactured and installed by BigScrew Solutions. Solar, storage, prefab, industrial, fencing, poles, towers and bridges.";
 var Route$10 = createFileRoute("/")({
@@ -1470,7 +1470,7 @@ var Route$8 = createFileRoute("/contact")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./facility-Dn5srCMy.mjs");
+var $$splitComponentImporter$7 = () => import("./facility-Cr_BRJS_.mjs");
 var title$5 = "Facility | BigScrew Solutions";
 var description$5 = "Facility and production imagery from BigScrew Solutions.";
 var Route$7 = createFileRoute("/facility")({
@@ -1540,7 +1540,7 @@ var Route$6 = createFileRoute("/installation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./projects-DsWpAQam.mjs");
+var $$splitComponentImporter$5 = () => import("./projects-Cn_vC4YQ.mjs");
 var title$3 = "Screw Pile Projects & Site Gallery | BigScrew Solutions";
 var description$3 = "Site photography from BigScrew screw pile installations across solar, battery storage, prefab, industrial, fencing, poles and bridge projects.";
 var Route$5 = createFileRoute("/projects")({
@@ -1575,7 +1575,7 @@ var Route$5 = createFileRoute("/projects")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./screw-piles-DSpEEzlQ.mjs");
+var $$splitComponentImporter$4 = () => import("./screw-piles-BjqxY9a4.mjs");
 var title$2 = "Helical Screw Piles & Ground Screws | BigScrew Solutions";
 var description$2 = "Single-helix, multi-helix, ground screw and large-diameter piles — manufactured in-house on automated lines and checked batch by batch.";
 var Route$4 = createFileRoute("/screw-piles")({
@@ -1610,7 +1610,7 @@ var Route$4 = createFileRoute("/screw-piles")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./applications.index-DXOZUgjS.mjs");
+var $$splitComponentImporter$3 = () => import("./applications.index-D4VTtoDo.mjs");
 var title$1 = "Screw Pile Applications | BigScrew Solutions";
 var description$1 = "Screw pile foundations for solar, battery storage, prefab homes, industrial structures, fencing, poles and towers, walkbridges and sea view platforms.";
 var Route$3 = createFileRoute("/applications/")({
@@ -1645,7 +1645,7 @@ var Route$3 = createFileRoute("/applications/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./applications._slug-CDRaCi0c.mjs");
+var $$splitComponentImporter$2 = () => import("./applications._slug-Bdh7cmZq.mjs");
 var Route$2 = createFileRoute("/applications/$slug")({
 	loader: ({ params }) => {
 		const application = getApplication(params.slug);
@@ -1690,7 +1690,7 @@ var Route$2 = createFileRoute("/applications/$slug")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./blog.index-CGFDO1_i.mjs");
+var $$splitComponentImporter$1 = () => import("./blog.index-D91KQhgv.mjs");
 var title = "Blog | BigScrew Solutions";
 var description = "Engineering insights, knowledge and industry information about helical screw pile foundations, solar projects, battery storage, and construction best practices.";
 var Route$1 = createFileRoute("/blog/")({
@@ -3056,8 +3056,8 @@ var getRelatedArticles = (currentSlug, limit = 3) => {
 		return scoreB - scoreA;
 	}).slice(0, limit);
 };
-var $$splitErrorComponentImporter = () => import("./blog._slug-BRHRjtnK.mjs");
-var $$splitComponentImporter = () => import("./blog._slug-Bu_FR1mv.mjs");
+var $$splitErrorComponentImporter = () => import("./blog._slug-Cr--8RU9.mjs");
+var $$splitComponentImporter = () => import("./blog._slug-CCc_Dga_.mjs");
 var Route = createFileRoute("/blog/$slug")({
 	head: ({ params }) => {
 		const blog = getBlogBySlug(params.slug);
