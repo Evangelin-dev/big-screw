@@ -1,7 +1,7 @@
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { c as ArrowLink } from "./router-D16IWlnh.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/BlogCard-D8ZmbfQe.js
+import { c as ArrowLink } from "./router-DUZ1py_X.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/BlogCard-BAUmVU7c.js
 var import_jsx_runtime = require_jsx_runtime();
 function BlogCard({ blog }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {

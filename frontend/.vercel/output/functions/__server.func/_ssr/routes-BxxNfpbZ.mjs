@@ -3,8 +3,8 @@ import { c as require_jsx_runtime, s as require_react } from "../_libs/@radix-ui
 import { n as useScroll, r as motion, t as useTransform } from "../_libs/framer-motion+[...].mjs";
 import { n as Reveal, r as TechLine, t as Label } from "./motion-primitives-BfjJ5WDa.mjs";
 import { _ as Check, o as Minus, t as X } from "../_libs/lucide-react.mjs";
-import { _ as soilMachinery, c as ArrowLink, f as img, g as services, h as pileTypes, l as applications, m as pileMatrix, p as installSteps, v as stats, y as whyBigscrew } from "./router-D16IWlnh.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-6600WC9l.js
+import { _ as soilMachinery, c as ArrowLink, f as img, g as services, h as pileTypes, l as applications, m as pileMatrix, p as installSteps, v as stats, y as whyBigscrew } from "./router-DUZ1py_X.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BxxNfpbZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var ease$1 = [

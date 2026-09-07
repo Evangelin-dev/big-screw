@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CGT-CtaK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-h7nsOtyH.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/__root.tsx",
@@ -15,111 +15,111 @@ var tsrStartManifest = () => ({ routes: {
 			"/applications/",
 			"/blog/"
 		],
-		preloads: ["/assets/index-8XqjNgzm.js", "/assets/jsx-runtime-Cltr0gcK.js"],
+		preloads: ["/assets/index-jYtvFCSx.js", "/assets/jsx-runtime-Cltr0gcK.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-8XqjNgzm.js"
+			src: "/assets/index-jYtvFCSx.js"
 		} }]
 	},
 	"/": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-71ySYakO.js",
-			"/assets/use-transform-iWDzi84x.js",
-			"/assets/check-CCMpCnpE.js",
-			"/assets/motion-primitives-B_2HFJtQ.js"
+			"/assets/routes-BI1dMWH5.js",
+			"/assets/use-transform-2xCJPqEQ.js",
+			"/assets/check-BZjThGZ5.js",
+			"/assets/motion-primitives-DXeIJUS5.js"
 		]
 	},
 	"/about": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/about.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/about-BMdyIHb6.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/about-BOyJ36Ta.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/contact": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-BaOp6DXI.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/contact-GfD20vhp.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/facility": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/facility.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/facility-CwzuaJOS.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/facility-D6R4W6ri.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/installation": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/installation.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/installation-CDLsoClH.js",
-			"/assets/use-transform-iWDzi84x.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/installation-C_gzF3dE.js",
+			"/assets/use-transform-2xCJPqEQ.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/projects": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/projects.tsx",
 		children: void 0,
-		preloads: ["/assets/projects-DkL53gEH.js", "/assets/PageHero-CxCN7g0Y.js"]
+		preloads: ["/assets/projects-3DURTd_Y.js", "/assets/PageHero-filfpPfj.js"]
 	},
 	"/screw-piles": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/screw-piles.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/screw-piles-DIfjQ6KU.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/screw-piles-DPtWirHN.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/applications/$slug": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/applications.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/applications._slug-bRCzN9XI.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/applications._slug-BaXVnijN.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/blog/$slug": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/blog.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/blog._slug-DV4u6a9E.js",
-			"/assets/check-CCMpCnpE.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/BlogCard-C54XJF7C.js",
-			"/assets/blog._slug-yOyXNXSL.js"
+			"/assets/blog._slug-9iVGv9Ig.js",
+			"/assets/check-BZjThGZ5.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/BlogCard-DCVJP8ja.js",
+			"/assets/blog._slug-CsP1bo8w.js"
 		]
 	},
 	"/applications/": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/applications.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/applications.index-BFF2yoS0.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js"
+			"/assets/applications.index-CTK1LYni.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js"
 		]
 	},
 	"/blog/": {
 		filePath: "C:/Users/kabil/Downloads/bigscrew-digital-forge-main/bigscrew-digital-forge-main/frontend/src/routes/blog.index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/blog.index-C7fbmme0.js",
-			"/assets/motion-primitives-B_2HFJtQ.js",
-			"/assets/PageHero-CxCN7g0Y.js",
-			"/assets/BlogCard-C54XJF7C.js"
+			"/assets/blog.index-CYjkvEKT.js",
+			"/assets/motion-primitives-DXeIJUS5.js",
+			"/assets/PageHero-filfpPfj.js",
+			"/assets/BlogCard-DCVJP8ja.js"
 		]
 	}
 } });
