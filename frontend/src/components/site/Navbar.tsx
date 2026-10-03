@@ -1,9 +1,20 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useEffect, useState, type ComponentProps } from "react";
 
-import { company, img, navLinks } from "@/lib/data";
+import { company, img, navLinks as baseLinks } from "@/lib/data";
+import { useCart } from "@/lib/shop";
+
+// "Shop Product" is placed right after "Applications".
+// If no "Applications" link is found, it is added at the end.
+const shopLink = { label: "Shop Product", to: "/products" };
+const rest = baseLinks.filter((l) => l.to !== "/products");
+const appIndex = rest.findIndex((l) => /application/i.test(l.label));
+const links =
+  appIndex === -1
+    ? [...rest, shopLink]
+    : [...rest.slice(0, appIndex + 1), shopLink, ...rest.slice(appIndex + 1)];
 
 function Wordmark({ className }: { className?: string }) {
   return (
@@ -15,6 +26,26 @@ function Wordmark({ className }: { className?: string }) {
         width={140}
         height={140}
       />
+    </Link>
+  );
+}
+
+function CartButton() {
+  // Number of distinct products in the cart (not total pieces).
+  const count = useCart((s) => s.lines.length);
+
+  return (
+    <Link
+      {...({ to: "/cart" } as ComponentProps<typeof Link>)}
+      aria-label={count > 0 ? `Cart, ${count} ${count === 1 ? "product" : "products"}` : "Cart"}
+      className="relative inline-flex h-11 w-11 items-center justify-center rounded-sm text-on-ink transition-colors duration-200 hover:text-yellow"
+    >
+      <ShoppingCart className="h-6 w-6" strokeWidth={1.5} />
+      {count > 0 && (
+        <span className="absolute right-0.5 top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-yellow px-1 text-[10px] font-bold text-black">
+          {count}
+        </span>
+      )}
     </Link>
   );
 }
@@ -62,7 +93,7 @@ export function Navbar() {
         <div className="hidden w-[130px] lg:block" />
 
         <ul className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((l) => {
+          {links.map((l) => {
             const isAnchor = l.to.includes("#");
             const linkClass =
               "group relative text-[13px] font-medium uppercase tracking-[0.01em] text-on-ink transition-colors duration-200 hover:text-yellow after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-yellow after:transition-all after:duration-200 group-hover:after:w-full";
@@ -75,7 +106,7 @@ export function Navbar() {
                   </Link>
                 ) : (
                   <Link
-                    to={l.to}
+                    {...({ to: l.to } as ComponentProps<typeof Link>)}
                     className={linkClass}
                     activeProps={{ className: "text-yellow after:w-full" }}
                   >
@@ -87,7 +118,8 @@ export function Navbar() {
           })}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <CartButton />
           <Link
             to="/contact"
             className="hidden h-11 rounded-sm bg-yellow px-4 text-[14px] font-bold uppercase tracking-[0.01em] text-black transition-colors duration-200 hover:bg-yellow-deep sm:inline-flex items-center justify-center"
@@ -116,17 +148,20 @@ export function Navbar() {
           >
             <div className="shell flex h-20 items-center justify-between">
               <Wordmark className="w-[95px]" />
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="Close menu"
-                className="text-on-ink"
-              >
-                <X className="h-7 w-7" strokeWidth={1.5} />
-              </button>
+              <div className="flex items-center gap-2">
+                <CartButton />
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                  className="text-on-ink"
+                >
+                  <X className="h-7 w-7" strokeWidth={1.5} />
+                </button>
+              </div>
             </div>
             <div className="shell mt-8 flex flex-col gap-5">
-              {navLinks.map((l) => (
+              {links.map((l) => (
                 <Link
                   key={l.label}
                   {...({
@@ -142,7 +177,7 @@ export function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-11 items-center justify-center rounded-sm bg-yellow px-5 text-[13px] font-medium uppercase tracking-[0.01em] text-on-ink transition-colors duration-200 hover:bg-yellow-deep"
+                className="inline-flex h-11 items-center justify-center rounded-sm bg-yellow px-5 text-[13px] font-bold uppercase tracking-[0.01em] text-black transition-colors duration-200 hover:bg-yellow-deep"
               >
                 GET A QUOTE&nbsp;→
               </Link>

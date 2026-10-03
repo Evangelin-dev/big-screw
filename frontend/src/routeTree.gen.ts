@@ -11,15 +11,22 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AdminloginRouteImport } from './routes/adminlogin'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FacilityRouteImport } from './routes/facility'
 import { Route as InstallationRouteImport } from './routes/installation'
+import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ScrewPilesRouteImport } from './routes/screw-piles'
 import { Route as ApplicationsIndexRouteImport } from './routes/applications.index'
 import { Route as ApplicationsSlugRouteImport } from './routes/applications.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,6 +36,26 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminloginRoute = AdminloginRouteImport.update({
+  id: '/adminlogin',
+  path: '/adminlogin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -44,6 +71,11 @@ const FacilityRoute = FacilityRouteImport.update({
 const InstallationRoute = InstallationRouteImport.update({
   id: '/installation',
   path: '/installation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentRoute = PaymentRouteImport.update({
+  id: '/payment',
+  path: '/payment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -76,101 +108,160 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/products/$slug',
+  path: '/products/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/adminlogin': typeof AdminloginRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/facility': typeof FacilityRoute
   '/installation': typeof InstallationRoute
+  '/payment': typeof PaymentRoute
   '/projects': typeof ProjectsRoute
   '/screw-piles': typeof ScrewPilesRoute
   '/applications/$slug': typeof ApplicationsSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/applications/': typeof ApplicationsIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/adminlogin': typeof AdminloginRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/facility': typeof FacilityRoute
   '/installation': typeof InstallationRoute
+  '/payment': typeof PaymentRoute
   '/projects': typeof ProjectsRoute
   '/screw-piles': typeof ScrewPilesRoute
   '/applications/$slug': typeof ApplicationsSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/applications': typeof ApplicationsIndexRoute
   '/blog': typeof BlogIndexRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/adminlogin': typeof AdminloginRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/facility': typeof FacilityRoute
   '/installation': typeof InstallationRoute
+  '/payment': typeof PaymentRoute
   '/projects': typeof ProjectsRoute
   '/screw-piles': typeof ScrewPilesRoute
   '/applications/$slug': typeof ApplicationsSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/products/$slug': typeof ProductsSlugRoute
   '/applications/': typeof ApplicationsIndexRoute
   '/blog/': typeof BlogIndexRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
+    | '/adminlogin'
+    | '/cart'
+    | '/checkout'
     | '/contact'
     | '/facility'
     | '/installation'
+    | '/payment'
     | '/projects'
     | '/screw-piles'
     | '/applications/$slug'
     | '/blog/$slug'
+    | '/products/$slug'
     | '/applications/'
     | '/blog/'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/admin'
+    | '/adminlogin'
+    | '/cart'
+    | '/checkout'
     | '/contact'
     | '/facility'
     | '/installation'
+    | '/payment'
     | '/projects'
     | '/screw-piles'
     | '/applications/$slug'
     | '/blog/$slug'
+    | '/products/$slug'
     | '/applications'
     | '/blog'
+    | '/products'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
+    | '/adminlogin'
+    | '/cart'
+    | '/checkout'
     | '/contact'
     | '/facility'
     | '/installation'
+    | '/payment'
     | '/projects'
     | '/screw-piles'
     | '/applications/$slug'
     | '/blog/$slug'
+    | '/products/$slug'
     | '/applications/'
     | '/blog/'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AdminloginRoute: typeof AdminloginRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
   FacilityRoute: typeof FacilityRoute
   InstallationRoute: typeof InstallationRoute
+  PaymentRoute: typeof PaymentRoute
   ProjectsRoute: typeof ProjectsRoute
   ScrewPilesRoute: typeof ScrewPilesRoute
   ApplicationsSlugRoute: typeof ApplicationsSlugRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  ProductsSlugRoute: typeof ProductsSlugRoute
   ApplicationsIndexRoute: typeof ApplicationsIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -187,6 +278,34 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adminlogin': {
+      id: '/adminlogin'
+      path: '/adminlogin'
+      fullPath: '/adminlogin'
+      preLoaderRoute: typeof AdminloginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -208,6 +327,13 @@ declare module '@tanstack/react-router' {
       path: '/installation'
       fullPath: '/installation'
       preLoaderRoute: typeof InstallationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment': {
+      id: '/payment'
+      path: '/payment'
+      fullPath: '/payment'
+      preLoaderRoute: typeof PaymentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -252,21 +378,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/products/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AdminloginRoute: AdminloginRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
   FacilityRoute: FacilityRoute,
   InstallationRoute: InstallationRoute,
+  PaymentRoute: PaymentRoute,
   ProjectsRoute: ProjectsRoute,
   ScrewPilesRoute: ScrewPilesRoute,
   ApplicationsSlugRoute: ApplicationsSlugRoute,
   BlogSlugRoute: BlogSlugRoute,
+  ProductsSlugRoute: ProductsSlugRoute,
   ApplicationsIndexRoute: ApplicationsIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
