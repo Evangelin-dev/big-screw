@@ -39,13 +39,13 @@ def new_public_token():
 class Order(models.Model):
     class Status(models.TextChoices):
         PENDING = "pending", "Waiting for payment"
-        PAYMENT_SUBMITTED = "payment_submitted", "Verify payment"  # customer entered UTR
+        PAYMENT_SUBMITTED = "payment_submitted", "Verify payment"  # customer uploaded screenshot
         PAID = "paid", "Paid"                                       # admin verified in bank app
         DISPATCHED = "dispatched", "Dispatched"
         CANCELLED = "cancelled", "Cancelled"
 
     order_id = models.CharField(max_length=20, unique=True, default=new_order_id)
-    # secret known only to the customer's browser; required to submit the UTR
+    # secret known only to the customer's browser; required to submit the payment
     public_token = models.CharField(max_length=64, default=new_public_token, editable=False)
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.PENDING)
 
@@ -67,6 +67,9 @@ class Order(models.Model):
     # unique: the same UTR can never be used on two orders
     utr = models.CharField(max_length=22, null=True, blank=True, unique=True)
 
+    # NEW: payment proof uploaded by the customer (shown in the admin dashboard)
+    payment_screenshot = models.ImageField(upload_to="payments/", null=True, blank=True)
+
     courier = models.CharField(max_length=80, blank=True)
     tracking_no = models.CharField(max_length=80, blank=True)
 
@@ -74,6 +77,8 @@ class Order(models.Model):
     payment_submitted_at = models.DateTimeField(null=True, blank=True)
     paid_at = models.DateTimeField(null=True, blank=True)
     dispatched_at = models.DateTimeField(null=True, blank=True)
+    payment_email_sent_at = models.DateTimeField(null=True, blank=True)
+    dispatch_email_sent_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ["-created_at"]

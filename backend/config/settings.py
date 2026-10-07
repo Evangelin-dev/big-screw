@@ -80,6 +80,12 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# ───────── Uploaded files (payment screenshots) ─────────
+# NEW: without these, uploads are served from "/payments/..." instead of "/media/payments/..."
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ───────── API ─────────
@@ -101,23 +107,35 @@ CORS_ALLOWED_ORIGINS = [
 # ───────── Shop / UPI ─────────
 UPI_ID = os.environ.get("UPI_ID", "test@upi")  # set your real UPI ID in .env
 UPI_PAYEE_NAME = os.environ.get("UPI_PAYEE_NAME", "BigScrew Solutions")
-GST_PERCENT = 18
-PAYMENT_WINDOW_MINUTES = 30
+GST_PERCENT = 0
+PAYMENT_WINDOW_MINUTES = 10
 
 # ───────── Email ─────────
-if DEBUG:
-    # emails are printed in the terminal running runserver
+EMAIL_CONSOLE = os.environ.get("EMAIL_CONSOLE", "False").strip().lower() == "true"
+if EMAIL_CONSOLE:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")  # Gmail: App Password
-DEFAULT_FROM_EMAIL = "BigScrew Solutions <orders@bigscrew.in>"
-ADMIN_NOTIFY_EMAIL = os.environ.get("ADMIN_NOTIFY_EMAIL", "admin@example.com")
+EMAIL_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.environ.get("SMTP_PORT", "587"))
+EMAIL_USE_SSL = EMAIL_PORT == 465
+EMAIL_USE_TLS = not EMAIL_USE_SSL
+EMAIL_HOST_USER = os.environ.get("SMTP_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("SMTP_PASSWORD", "").replace(" ", "")  # spaces removed automatically
+EMAIL_TIMEOUT = 15  # stops a blocked SMTP connection from freezing checkout
+
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "bigscrew26@gmail.com")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER or ADMIN_EMAIL
+ADMIN_NOTIFY_EMAIL = ADMIN_EMAIL
+
+# Show email success/errors in the terminal
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler"}},
+    "loggers": {"shop": {"handlers": ["console"], "level": "INFO"}},
+}
 
 # ───────── Production-only security (skipped on localhost) ─────────
 if not DEBUG:

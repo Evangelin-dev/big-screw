@@ -43,9 +43,9 @@ function validate(v: CheckoutFormValues): Errors {
   return e;
 }
 
-const eyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-black/50";
+const eyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-black";
 const fieldClass =
-  "mt-1.5 h-11 w-full rounded-md border bg-[#f4f4f2] px-3 text-sm font-normal normal-case tracking-normal text-[#141414] placeholder:text-black/30 focus:border-black focus:bg-white focus:outline-none";
+  "mt-1.5 h-11 w-full rounded-md border bg-[#f4f4f2] px-3 text-sm font-normal normal-case tracking-normal text-black placeholder:text-black/50 focus:border-black focus:bg-white focus:outline-none";
 const ctaPrimary =
   "flex h-12 w-full items-center justify-center gap-2 rounded-full bg-yellow text-xs font-bold uppercase tracking-[0.15em] text-black transition-colors hover:bg-yellow-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:opacity-60";
 
@@ -69,7 +69,7 @@ function Overlay({
   );
 }
 
-// NEW: fetch the slugs of products the backend currently sells.
+// Fetch the slugs of products the backend currently sells.
 // Returns null if the check can't be done (so checkout is never blocked by it).
 async function fetchAvailableSlugs(): Promise<Set<string> | null> {
   try {
@@ -142,7 +142,7 @@ function CheckoutPage() {
     setSubmitting(true);
     setSubmitError("");
     try {
-      // NEW: make sure every cart line exists in the backend before ordering.
+      // Make sure every cart line exists in the backend before ordering.
       const available = await fetchAvailableSlugs();
       if (available) {
         const missing = lines.filter((l) => !available.has(l.slug));
@@ -185,14 +185,27 @@ function CheckoutPage() {
         throw new Error("Order was created but the server response was incomplete.");
       }
 
+      // FIX: store the token where getOrderToken() in lib/checkout.ts reads it
+      // (same key format: bs_order_<orderId>), and keep it out of the URL.
+      try {
+        sessionStorage.setItem(`bs_order_${order.order_id}`, order.public_token);
+      } catch {
+        /* storage unavailable (e.g. private mode); payment page will ask to retry */
+      }
+
       navigate({
         to: "/payment" as any,
-        search: { order: order.order_id, token: order.public_token } as any,
+        search: { order: order.order_id } as any,
       });
     } catch (err: any) {
       console.error(err);
-      // ApiError already carries the server's message (detail / field errors)
-      setSubmitError(err?.message || "Could not place your order. Please try again.");
+      // A TypeError from fetch means the server could not be reached at all.
+      const networkDown = err instanceof TypeError;
+      setSubmitError(
+        networkDown
+          ? "Couldn't reach the server. Please check your connection and try again."
+          : err?.message || "Could not place your order. Please try again.",
+      );
       setSubmitting(false); // stay on the page so the user can try again
     }
   };
@@ -257,7 +270,7 @@ function CheckoutPage() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="checkout-title"
-        className="relative flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-black/10 bg-white text-[#141414] shadow-2xl"
+        className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-black/10 bg-white text-[#141414] shadow-2xl"
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b-4 border-yellow px-5 py-4 sm:px-6">
@@ -272,19 +285,20 @@ function CheckoutPage() {
             onClick={goBack}
             disabled={submitting}
             aria-label="Back to cart"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-xl leading-none text-black/50 transition-colors hover:bg-black/5 hover:text-black disabled:opacity-40"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-xl leading-none text-black transition-colors hover:bg-black/5 hover:text-black disabled:opacity-40"
           >
             ✕
           </button>
         </div>
 
-        {/* Scrollable form body */}
+        {/* Scrollable form body: two columns side by side on wide screens (landscape) */}
         <form
           onSubmit={onSubmit}
           noValidate
-          className="space-y-8 overflow-y-auto p-5 sm:p-6"
+          className="grid gap-y-8 overflow-y-auto p-5 sm:p-6 lg:grid-cols-2 lg:gap-y-6"
         >
-          <fieldset className="space-y-4">
+          {/* Left column: contact */}
+          <fieldset className="space-y-4 lg:pr-8">
             {legend("01", "Contact details")}
             <div className="grid gap-4 sm:grid-cols-2">
               {field("name", "Full name", { autoComplete: "name" })}
@@ -305,9 +319,19 @@ function CheckoutPage() {
               autoComplete: "email",
               placeholder: "you@company.com",
             })}
+            <label className={`block ${eyebrow}`}>
+              Order notes (optional)
+              <textarea
+                value={values.notes}
+                onChange={set("notes")}
+                rows={4}
+                className={`${fieldClass} h-auto border-black/15 py-2`}
+              />
+            </label>
           </fieldset>
 
-          <fieldset className="space-y-4 border-t border-black/10 pt-8">
+          {/* Right column: delivery */}
+          <fieldset className="space-y-4 border-t border-black/10 pt-8 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
             {legend("02", "Delivery address")}
             <label className={`block ${eyebrow}`}>
               Address
@@ -341,39 +365,38 @@ function CheckoutPage() {
                 (s) => s.replace(/\D/g, ""),
               )}
             </div>
-            <label className={`block ${eyebrow}`}>
-              Order notes (optional)
-              <textarea
-                value={values.notes}
-                onChange={set("notes")}
-                rows={2}
-                className={`${fieldClass} h-auto border-black/15 py-2`}
-              />
-            </label>
           </fieldset>
 
-          {submitError && (
-            <p role="alert" className="text-sm text-red-600">
-              {submitError}
-            </p>
-          )}
-
-          <button type="submit" disabled={submitting} className={ctaPrimary}>
-            {submitting ? (
-              "Placing order..."
-            ) : (
-              <>
-                Continue to payment <span aria-hidden>→</span>
-              </>
+          {/* Bottom row across both columns */}
+          <div className="space-y-4 border-t border-black/10 pt-6 lg:col-span-2">
+            {submitError && (
+              <p role="alert" className="text-sm text-red-600">
+                {submitError}
+              </p>
             )}
-          </button>
 
-          <Link
-            to={"/cart" as any}
-            className="block text-center text-xs font-semibold uppercase tracking-[0.15em] text-black/50 transition-colors hover:text-black hover:underline"
-          >
-            ← Edit cart
-          </Link>
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+              <Link
+                to={"/cart" as any}
+                className="text-xs font-semibold uppercase tracking-[0.15em] text-black transition-colors hover:underline"
+              >
+                ← Edit cart
+              </Link>
+              <button
+                type="submit"
+                disabled={submitting}
+                className={`${ctaPrimary} sm:w-80`}
+              >
+                {submitting ? (
+                  "Placing order..."
+                ) : (
+                  <>
+                    Continue to payment <span aria-hidden>→</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </Overlay>

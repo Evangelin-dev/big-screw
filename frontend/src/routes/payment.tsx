@@ -21,12 +21,21 @@ type StatusResponse = {
 };
 
 export const Route = createFileRoute("/payment")({
+  // The secret token is no longer in the URL; only the order id is.
   validateSearch: (s: Record<string, unknown>) => ({
     order: typeof s["order"] === "string" ? (s["order"] as string) : "",
-    token: typeof s["token"] === "string" ? (s["token"] as string) : "",
   }),
   component: PaymentPage,
 });
+
+// Same key that checkout.tsx writes to (and lib/checkout.ts reads from).
+const readToken = (orderId: string) => {
+  try {
+    return sessionStorage.getItem(`bs_order_${orderId}`) || "";
+  } catch {
+    return "";
+  }
+};
 
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-black/50";
 const ctaPrimary =
@@ -63,12 +72,13 @@ function clearCart() {
 }
 
 function PaymentPage() {
-  const { order, token } = Route.useSearch();
+  const { order } = Route.useSearch();
+  // Read the token saved by checkout.tsx (lives only in this browser tab)
+  const token = readToken(order);
 
   const [data, setData] = useState<StatusResponse | null>(null);
   const [loadError, setLoadError] = useState("");
-  const [utr, setUtr] = useState("");
-  const [utrError, setUtrError] = useState("");
+  const [submitError, setSubmitError] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState<number | null>(null);
@@ -95,7 +105,7 @@ function PaymentPage() {
     fetchStatus();
   }, [fetchStatus]);
 
-  // After the UTR is submitted, poll until the admin confirms / dispatches
+  // After the screenshot is submitted, poll until the admin confirms / dispatches
   useEffect(() => {
     if (data?.state !== "PAYMENT_SUBMITTED" && data?.state !== "CONFIRMED") return;
     const id = setInterval(fetchStatus, 5000);
@@ -123,26 +133,26 @@ function PaymentPage() {
     };
   }, [data, fetchStatus]);
 
-  const submitUtr = async (e: React.FormEvent) => {
+  const submitPayment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (submitting) return;
-    if (!/^\d{12}$/.test(utr)) {
-      setUtrError("Enter the 12-digit UTR / UPI reference number.");
+    // The screenshot is what the admin checks, so it is required now.
+    if (!file) {
+      setSubmitError("Upload your payment screenshot.");
       return;
     }
     setSubmitting(true);
-    setUtrError("");
+    setSubmitError("");
     try {
       const form = new FormData();
       form.append("order_id", order);
       form.append("public_token", token);
-      form.append("utr", utr);
-      if (file) form.append("screenshot", file);
+      form.append("screenshot", file);
       await api("/orders/pay/", { method: "POST", body: form });
       clearCart();
       await fetchStatus();
     } catch (err: any) {
-      setUtrError(err?.message || "Could not submit payment details. Please try again.");
+      setSubmitError(err?.message || "Could not submit payment details. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -183,8 +193,8 @@ function PaymentPage() {
   // ───────── Final / waiting states ─────────
   const message: Record<Exclude<PayState, "PENDING">, { title: string; body: string }> = {
     PAYMENT_SUBMITTED: {
-      title: "Verifying your payment",
-      body: "We received your UTR and are checking it. This page updates automatically, and we will also email you once it is confirmed.",
+      title: "Payment submitted",
+      body: "We received your payment screenshot and are checking it. This page updates automatically, and we will also email you once it is confirmed.",
     },
     CONFIRMED: {
       title: "Payment confirmed",
@@ -200,14 +210,15 @@ function PaymentPage() {
     },
     REJECTED: {
       title: "Payment could not be verified",
-      body: "We could not match your payment, and the order was cancelled. If money was debited, contact us with your UTR and we will sort it out.",
+      body: "We could not match your payment, and the order was cancelled. If money was debited, contact us with your order ID and payment screenshot and we will sort it out.",
     },
   };
 
   if (data.state !== "PENDING") {
     const m = message[data.state];
-    const good = data.state === "CONFIRMED" || data.state === "DISPATCHED";
     const bad = data.state === "EXPIRED" || data.state === "REJECTED";
+    // Green tick for every non-failed state, including "payment submitted"
+    const good = !bad;
     return (
       <Overlay>
         <Card>
@@ -218,11 +229,11 @@ function PaymentPage() {
           <div className="space-y-6 p-6 text-center">
             <div
               aria-hidden
-              className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full text-2xl ${
-                good ? "bg-green-100 text-green-700" : bad ? "bg-red-100 text-red-700" : "bg-yellow/40"
+              className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full text-2xl font-bold ${
+                good ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
               }`}
             >
-              {good ? "✓" : bad ? "✕" : "…"}
+              {good ? "✓" : "✕"}
             </div>
             <p className="text-sm leading-relaxed text-black/70">{m.body}</p>
             <p className="text-xs text-black/50">Order ID: {order}</p>
@@ -235,7 +246,7 @@ function PaymentPage() {
     );
   }
 
-  // ───────── Pending: show QR + UTR form ─────────
+  // ───────── Pending: show QR + screenshot form ─────────
   const amount = ((data.amount_paise ?? 0) / 100).toLocaleString("en-IN", {
     style: "currency",
     currency: "INR",
@@ -283,47 +294,33 @@ function PaymentPage() {
           )}
 
           <p className="text-center text-sm text-black/60">
-            Scan with any UPI app and pay the exact amount. Then enter the 12-digit UTR / reference
-            number from the payment receipt.
+            Scan with any UPI app and pay the exact amount. Then upload a screenshot of the
+            successful payment.
           </p>
 
-          <form onSubmit={submitUtr} noValidate className="space-y-4">
+          <form onSubmit={submitPayment} noValidate className="space-y-4">
             <label className={`block ${eyebrow}`}>
-              UTR / reference number
-              <input
-                value={utr}
-                onChange={(e) => {
-                  setUtr(e.target.value.replace(/\D/g, "").slice(0, 12));
-                  if (utrError) setUtrError("");
-                }}
-                inputMode="numeric"
-                maxLength={12}
-                placeholder="123456789012"
-                aria-invalid={!!utrError}
-                aria-describedby={utrError ? "utr-error" : undefined}
-                className={`mt-1.5 h-11 w-full rounded-md border bg-[#f4f4f2] px-3 text-sm font-normal normal-case tracking-normal text-[#141414] placeholder:text-black/30 focus:border-black focus:bg-white focus:outline-none ${
-                  utrError ? "border-red-600" : "border-black/15"
-                }`}
-              />
-              {utrError && (
-                <span
-                  id="utr-error"
-                  role="alert"
-                  className="mt-1 block text-xs font-normal normal-case tracking-normal text-red-600"
-                >
-                  {utrError}
-                </span>
-              )}
-            </label>
-
-            <label className={`block ${eyebrow}`}>
-              Payment screenshot (optional)
+              Payment screenshot
               <input
                 type="file"
                 accept="image/*"
-                onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+                onChange={(e) => {
+                  setFile(e.target.files?.[0] ?? null);
+                  if (submitError) setSubmitError("");
+                }}
+                aria-invalid={!!submitError}
+                aria-describedby={submitError ? "pay-error" : undefined}
                 className="mt-1.5 block w-full text-sm font-normal normal-case tracking-normal text-black/70 file:mr-3 file:rounded-full file:border-0 file:bg-yellow file:px-4 file:py-2 file:text-xs file:font-bold file:uppercase"
               />
+              {submitError && (
+                <span
+                  id="pay-error"
+                  role="alert"
+                  className="mt-1 block text-xs font-normal normal-case tracking-normal text-red-600"
+                >
+                  {submitError}
+                </span>
+              )}
             </label>
 
             <button type="submit" disabled={submitting} className={ctaPrimary}>

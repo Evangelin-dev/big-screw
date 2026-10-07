@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroImage from "../assets/5.png";
 
@@ -13,12 +13,16 @@ const eyebrow = "text-xs font-semibold uppercase tracking-[0.2em] text-black/50"
 const ctaPrimary =
   "flex h-12 w-full items-center justify-center gap-2 rounded-full bg-yellow text-xs font-bold uppercase tracking-[0.15em] text-black transition-colors hover:bg-yellow-deep";
 
+const stepBtn =
+  "flex h-10 w-10 shrink-0 items-center justify-center text-[#141414] transition-colors hover:bg-yellow focus-visible:outline focus-visible:outline-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent";
+
 /**
- * Type-in quantity. Commits on blur or Enter; never goes below the minimum order.
- * If the customer types less than the minimum, the value snaps up to the minimum
- * and a red "Minimum order N pieces" message is shown under the input.
- * `onCommit` fires on every commit (even if the value didn't change), so the
- * parent knows the customer has actually entered a quantity.
+ * Quantity box with  –  [ number ]  +  buttons.
+ * The number can also be typed in: it commits on blur or Enter and never goes
+ * below the minimum order. If the customer types less than the minimum, the
+ * value snaps up to the minimum and a red "Minimum order N pieces" message shows.
+ * `onCommit` fires on every commit or button press (even if the value didn't
+ * change), so the parent knows the customer has actually entered a quantity.
  */
 function QtyInput({
   quantity,
@@ -49,33 +53,75 @@ function QtyInput({
     onCommit();
   };
 
+  // + / – buttons change the quantity by 1 (never below the minimum order)
+  const bump = (delta: number) => {
+    const current = parseInt(draft, 10);
+    const base = Number.isFinite(current) ? current : quantity;
+    const next = Math.max(min, base + delta);
+    setBelowMin(false);
+    setDraft(String(next));
+    if (next !== quantity) onChange(next);
+    onCommit();
+  };
+
+  const atMin = (parseInt(draft, 10) || quantity) <= min;
+
   return (
     <div className="inline-flex flex-col">
-      <label className="inline-flex items-center gap-3">
+      <div className="inline-flex items-center gap-3">
         <span className={eyebrow}>Qty</span>
-        <input
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          aria-label="Quantity"
-          aria-invalid={belowMin}
-          value={draft}
-          onChange={(e) => {
-            const v = e.target.value.replace(/\D/g, "");
-            setDraft(v);
-            // clear the error as soon as they type a valid quantity
-            if (belowMin && parseInt(v, 10) >= min) setBelowMin(false);
-          }}
-          onBlur={commit}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") e.currentTarget.blur();
-          }}
-          onFocus={(e) => e.currentTarget.select()}
-          className={`h-10 w-24 rounded-md border bg-[#f4f4f2] text-center font-semibold text-[#141414] focus:bg-white focus:outline-none ${
-            belowMin ? "border-red-600 focus:border-red-600" : "border-black/15 focus:border-black"
+        <div
+          className={`inline-flex items-center overflow-hidden rounded-md border bg-[#f4f4f2] ${
+            belowMin ? "border-red-600" : "border-black/15"
           }`}
-        />
-      </label>
+        >
+          <button
+            type="button"
+            aria-label="Decrease quantity"
+            onClick={() => bump(-1)}
+            disabled={atMin}
+            className={stepBtn}
+          >
+            <Minus className="h-4 w-4" />
+          </button>
+          <input
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            aria-label="Quantity"
+            aria-invalid={belowMin}
+            value={draft}
+            onChange={(e) => {
+              const v = e.target.value.replace(/\D/g, "");
+              setDraft(v);
+              // clear the error as soon as they type a valid quantity
+              if (belowMin && parseInt(v, 10) >= min) setBelowMin(false);
+            }}
+            onBlur={commit}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") e.currentTarget.blur();
+              if (e.key === "ArrowUp") {
+                e.preventDefault();
+                bump(1);
+              }
+              if (e.key === "ArrowDown") {
+                e.preventDefault();
+                bump(-1);
+              }
+            }}
+            onFocus={(e) => e.currentTarget.select()}
+            className="h-10 w-16 border-x border-black/15 bg-white text-center font-semibold text-[#141414] focus:outline-none"
+          />
+          <button
+            type="button"
+            aria-label="Increase quantity"
+            onClick={() => bump(1)}
+            className={stepBtn}
+          >
+            <Plus className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
       {belowMin && (
         <p role="alert" className="mt-1 text-xs font-semibold text-red-600">
           Minimum order {min} pieces

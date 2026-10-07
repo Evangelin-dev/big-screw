@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import fencingbigscrew from "@/assets/fencingbigscrew.png";
+import { api } from "@/lib/api";
 
 export type ShopProduct = {
   slug: string;
@@ -48,9 +49,11 @@ const galleryFiles: [string, string, string][] = [
   ["sqpost", "Square post", "Square post fitting the Fencing BigScrew pile"],
 ];
 
-// The only product in the shop. Details come from the Fencing BigScrew pile PDF.
+// Rich content (specs, images, install steps) for the Fencing BigScrew pile.
+// price / stock / minOrder here are only a FALLBACK, used if the API is unreachable.
+// The live values always come from Django (see useCatalog below).
 const fencingPile: ShopProduct = {
-  slug: "fencing-pile",
+  slug: "fencing-bigscrew-pile", // must match the Django slug exactly
   name: "Fencing BigScrew pile",
   summary: "76 mm × 900 mm screw pile for fence posts. No digging, no concrete, no curing",
   body: "Driven into the ground with a hand drill and gearbox. No digging, no concrete, no curing. The fence post drops straight into the pile and bolts on the same day.",
@@ -93,15 +96,165 @@ const fencingPile: ShopProduct = {
   }),
   applications: ["fence posts", "farm fencing", "boundary fencing", "plot fencing"],
   price: 600,
-  stock: 500, // TODO: set your real stock
+  stock: 100,
   minOrder: 50,
   badge: "Life up to 10 years",
 };
 
-export const products: ShopProduct[] = [fencingPile];
+// Products that have hand-written content on this site. Keyed by slug.
+const staticProducts: ShopProduct[] = [fencingPile];
 
-export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 export const rupees = (n: number) => `₹${n.toLocaleString("en-IN")}`;
+
+/* ------------------------------------------------------------------ */
+/* Live catalogue from Django                                          */
+/* ------------------------------------------------------------------ */
+
+// TODO: adjust these field names to match your Django serializer
+type ApiProduct = {
+  id?: number | string;
+  slug?: string;
+  name: string;
+  description?: string;
+  price: number | string;
+  stock: number | string;
+  min_order_qty?: number | string; // field name used by the dashboard / Django model
+  min_order?: number | string;
+  min_qty?: number | string;
+  is_active?: boolean;
+  active?: boolean;
+  image?: string | null;
+};
+
+const num = (v: unknown, fallback = 0) => {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : fallback;
+};
+
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+function mergeProducts(remote: ApiProduct[]): ShopProduct[] {
+  return remote
+    .filter((r) => r.is_active ?? r.active ?? true)
+    .map((r): ShopProduct => {
+      const slug = r.slug || slugify(r.name) || String(r.id ?? "");
+      const live = {
+        price: num(r.price),
+        stock: num(r.stock),
+        // min_order_qty first, so the dashboard value is never lost (it used to fall back to 1)
+        minOrder: Math.max(1, num(r.min_order_qty ?? r.min_order ?? r.min_qty, 1)),
+      };
+
+      // Has rich content on the site: keep it, but use live price/stock/minOrder
+      const base = staticProducts.find((p) => p.slug === slug);
+      if (base) return { ...base, name: r.name || base.name, ...live };
+
+      // Added in the dashboard only: build a basic product from the API data
+      const text = r.description ?? "";
+      return {
+        slug,
+        name: r.name,
+        summary: text,
+        body: text,
+        overview: text,
+        features: [],
+        specs: [],
+        installSteps: [],
+        image: r.image || fencingbigscrew,
+        alt: r.name,
+        imagegallery: [],
+        applications: [],
+        ...live,
+      };
+    });
+}
+
+type Catalog = {
+  items: ShopProduct[];
+  loaded: boolean; // finished trying (success or failure)
+  fromApi: boolean; // true only when items came from Django
+  load: () => Promise<void>;
+};
+
+let inflight: Promise<void> | null = null;
+
+export const useCatalog = create<Catalog>()((set, get) => ({
+  items: staticProducts, // shown until the API answers (or if it fails)
+  loaded: false,
+  fromApi: false,
+  load: () => {
+    if (inflight) return inflight;
+    inflight = (async () => {
+      try {
+        // "_" is a cache-buster so the browser / CDN never hands back an old list
+        const data = await api(`/products/?_=${Date.now()}`); // public endpoint, no auth
+        const list: ApiProduct[] = Array.isArray(data) ? data : (data?.results ?? []);
+        const next = mergeProducts(list);
+        const { items, fromApi } = get();
+        // Only replace items when something really changed, so the 30s refresh
+        // does not re-render the whole shop (or re-sync the cart) for nothing.
+        if (!fromApi || JSON.stringify(next) !== JSON.stringify(items)) {
+          set({ items: next, loaded: true, fromApi: true });
+        } else {
+          set({ loaded: true, fromApi: true });
+        }
+      } catch {
+        // Keep whatever we already have (live data from earlier, or the static fallback)
+        set({ loaded: true });
+      } finally {
+        inflight = null;
+      }
+    })();
+    return inflight;
+  },
+}));
+
+/** All active products. Loads from Django once, re-renders when they arrive. */
+export function useProducts(): ShopProduct[] {
+  const items = useCatalog((s) => s.items);
+  const load = useCatalog((s) => s.load);
+  useEffect(() => {
+    load();
+  }, [load]);
+  return items;
+}
+
+/** One product by slug (undefined until found). */
+export function useProduct(slug: string): ShopProduct | undefined {
+  return useProducts().find((p) => p.slug === slug);
+}
+
+/** Re-fetches the live catalogue on mount, when the tab is focused again,
+ *  and every `everyMs`. The cart then re-syncs price / stock / min qty by itself
+ *  (useCartHydration already does that whenever the catalogue changes).
+ *  Call it ONCE for the whole app (e.g. in the Navbar / root layout),
+ *  not in many components, or each one starts its own timer. */
+export function useLiveCatalog(everyMs = 30000) {
+  const load = useCatalog((s) => s.load);
+  useEffect(() => {
+    load();
+    const refresh = () => {
+      if (document.visibilityState === "visible") load();
+    };
+    const id = window.setInterval(refresh, everyMs);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      window.clearInterval(id);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
+  }, [load, everyMs]);
+}
+
+/** Non-reactive lookup for event handlers / non-component code. */
+export const getProduct = (slug: string) =>
+  useCatalog.getState().items.find((p) => p.slug === slug);
 
 /* ------------------------------------------------------------------ */
 /* Cart                                                                */
@@ -123,6 +276,8 @@ type Cart = {
   setQty: (slug: string, qty: number) => void;
   remove: (slug: string) => void;
   clear: () => void;
+  /** Refresh price/stock/minOrder from the live catalogue; drop unavailable items. */
+  sync: (live: ShopProduct[]) => void;
 };
 
 export const useCart = create<Cart>()(
@@ -161,6 +316,23 @@ export const useCart = create<Cart>()(
         })),
       remove: (slug) => set((s) => ({ lines: s.lines.filter((l) => l.slug !== slug) })),
       clear: () => set({ lines: [] }),
+      sync: (live) =>
+        set((s) => ({
+          lines: s.lines.flatMap((l) => {
+            const p = live.find((x) => x.slug === l.slug);
+            if (!p || p.stock <= 0) return []; // deleted, deactivated or sold out
+            return [
+              {
+                ...l,
+                name: p.name,
+                price: p.price,
+                stock: p.stock,
+                minOrder: p.minOrder,
+                quantity: Math.min(p.stock, Math.max(p.minOrder, l.quantity)),
+              },
+            ];
+          }),
+        })),
     }),
     {
       name: "bigscrew-cart-v2",
@@ -177,7 +349,7 @@ export const useCart = create<Cart>()(
 /* ------------------------------------------------------------------ */
 
 // TODO: confirm the GST rate that applies to your products
-export const GST_RATE = 0.18;
+export const GST_RATE = 0;
 
 export function cartTotals(lines: Line[]) {
   const subtotal = lines.reduce((sum, l) => sum + l.price * l.quantity, 0);
@@ -231,22 +403,35 @@ export const useCheckout = create<CheckoutState>()(
 
 /**
  * Call once near the top of the app (the Navbar does this).
- * Loads the saved cart and checkout details after mount.
- * Returns true once they are loaded, so pages that read them
+ * Loads the saved cart and checkout details after mount, loads the live
+ * catalogue from Django, then refreshes cart prices/stock from it.
+ * Returns true once the saved cart is loaded, so pages that read it
  * (checkout, payment) can wait instead of flashing an empty state
  * or redirecting too early.
  */
 export function useCartHydration(): boolean {
   const [ready, setReady] = useState(false);
+  const load = useCatalog((s) => s.load);
+  const fromApi = useCatalog((s) => s.fromApi);
+  const items = useCatalog((s) => s.items);
+
   useEffect(() => {
     let alive = true;
     Promise.all([useCart.persist.rehydrate(), useCheckout.persist.rehydrate()]).then(() => {
       if (alive) setReady(true);
     });
+    load();
     return () => {
       alive = false;
     };
-  }, []);
+  }, [load]);
+
+  // Once the cart is loaded AND the real catalogue has arrived, fix stale lines.
+  // Skipped if the API failed, so a network error never empties the cart.
+  useEffect(() => {
+    if (ready && fromApi) useCart.getState().sync(items);
+  }, [ready, fromApi, items]);
+
   return ready;
 }
 

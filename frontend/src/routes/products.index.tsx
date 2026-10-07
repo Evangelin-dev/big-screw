@@ -5,7 +5,7 @@ import { ArrowLink } from "@/components/site/ArrowLink";
 import { PageHero } from "@/components/site/PageHero";
 import { img } from "@/lib/data";
 import image from "@/assets/image-0063.png";
-import { products, rupees, useCart, type ShopProduct } from "@/lib/shop";
+import { useProducts, rupees, useCart, type ShopProduct } from "@/lib/shop";
 
 const title = "Shop Helical Screw Piles & Ground Screws | BigScrew Solutions";
 const description =
@@ -27,6 +27,9 @@ export const Route = createFileRoute("/products/")({
 });
 
 function ProductsPage() {
+  // Live list from Django (falls back to the static product if the API is down)
+  const products = useProducts();
+
   return (
     <>
       <PageHero
@@ -38,11 +41,15 @@ function ProductsPage() {
         imageAlt="Crate of manufactured BigScrew helical screw piles ready for despatch"
       />
 
-      <section className="bg-white py-16 md:py-24">
-        <div className="shell space-y-20">
-          {products.map((p) => (
-            <ProductRow key={p.slug} p={p} />
-          ))}
+      <section className="bg-white py-12 md:py-16">
+        <div className="shell space-y-14">
+          {products.length === 0 ? (
+            <p className="text-center text-muted-foreground">
+              No products are available right now. Please check back soon.
+            </p>
+          ) : (
+            products.map((p, i) => <ProductRow key={p.slug} p={p} index={i + 1} />)
+          )}
         </div>
       </section>
 
@@ -67,51 +74,59 @@ function ProductsPage() {
   );
 }
 
-function ProductRow({ p }: { p: ShopProduct }) {
+function ProductRow({ p, index }: { p: ShopProduct; index: number }) {
   const add = useCart((s) => s.add);
   const nav = useNavigate();
   const soldOut = p.stock < 1;
 
   return (
-    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <Link to={"/products/$slug" as any} params={{ slug: p.slug } as any} className="block">
-        <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-white shadow-lg">
+    <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-12">
+      {/* Smaller image */}
+      <Link
+        to={"/products/$slug" as any}
+        params={{ slug: p.slug } as any}
+        className="mx-auto block w-full max-w-xs"
+      >
+        <div className="relative aspect-square overflow-hidden rounded-lg border border-border bg-white shadow-md">
           <span
-            className={`absolute left-4 top-4 z-10 rounded-full px-3 py-1 text-xs font-bold uppercase ${
+            className={`absolute left-3 top-3 z-10 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase ${
               soldOut ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"
             }`}
           >
             {soldOut ? "Out of stock" : "In stock"}
           </span>
-          <img src={p.image} alt={p.alt} className="h-full w-full object-contain p-6" />
+          <img src={p.image} alt={p.alt} className="h-full w-full object-contain p-4" />
         </div>
       </Link>
 
+      {/* Medium-size content */}
       <div>
-        <p className="tech-label font-semibold text-yellow">01</p>
-        <h2 className="mt-3 display-md text-foreground">{p.name}</h2>
-        <p className="mt-4 text-lg font-semibold text-foreground">{p.summary}</p>
-        <p className="mt-3 text-base leading-relaxed text-muted-foreground">{p.body}</p>
+        <p className="tech-label text-sm font-semibold text-yellow">
+          {String(index).padStart(2, "0")}
+        </p>
+        <h2 className="mt-2 display-md !text-xl md:!text-2xl !font-medium text-foreground">{p.name}</h2>
+        <p className="mt-3 text-base font-semibold text-foreground">{p.summary}</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {p.applications.map((app) => (
             <span
               key={app}
-              className="inline-block rounded-full border border-yellow/30 bg-yellow/10 px-3 py-1 text-xs font-semibold capitalize text-black"
+              className="inline-block rounded-full border border-yellow/30 bg-yellow/10 px-2.5 py-0.5 text-xs font-semibold capitalize text-black"
             >
               {app}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 border-t border-border pt-6">
-          <p className="text-4xl font-bold text-foreground">{rupees(p.price)}</p>
+        <div className="mt-5 border-t border-border pt-5">
+          <p className="text-3xl font-bold text-foreground">{rupees(p.price)}</p>
           <p className="text-xs text-muted-foreground">
             per piece + GST{p.minOrder > 1 ? ` · minimum order ${p.minOrder} pieces` : ""}
           </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap items-center gap-3">
           <button
             type="button"
             disabled={soldOut}
@@ -119,7 +134,7 @@ function ProductRow({ p }: { p: ShopProduct }) {
               add(p, p.minOrder);
               nav({ to: "/cart" as any });
             }}
-            className="inline-flex h-12 items-center gap-2 rounded-sm border-2 border-yellow px-5 text-sm font-bold uppercase tracking-wide text-foreground transition-colors hover:bg-yellow disabled:opacity-40"
+            className="inline-flex h-10 items-center gap-2 rounded-sm border-2 border-yellow px-4 text-xs font-bold uppercase tracking-wide text-foreground transition-colors hover:bg-yellow disabled:opacity-40"
           >
             <ShoppingCart className="h-4 w-4" /> Add to cart
           </button>
@@ -130,14 +145,14 @@ function ProductRow({ p }: { p: ShopProduct }) {
               add(p, p.minOrder);
               nav({ to: "/checkout" as any });
             }}
-            className="h-12 rounded-sm bg-yellow px-5 text-sm font-bold uppercase tracking-wide text-black transition-colors hover:bg-yellow-deep disabled:opacity-40"
+            className="h-10 rounded-sm bg-yellow px-4 text-xs font-bold uppercase tracking-wide text-black transition-colors hover:bg-yellow-deep disabled:opacity-40"
           >
             Purchase now
           </button>
           <Link
             to={"/products/$slug" as any}
             params={{ slug: p.slug } as any}
-            className="inline-flex h-12 items-center px-2 text-sm font-bold uppercase tracking-wide text-foreground underline-offset-4 hover:text-yellow-deep hover:underline"
+            className="inline-flex h-10 items-center px-1 text-xs font-bold uppercase tracking-wide text-foreground underline-offset-4 hover:text-yellow-deep hover:underline"
           >
             View details →
           </Link>
